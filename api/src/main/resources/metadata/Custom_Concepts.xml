@@ -1667,6 +1667,7 @@
     <concept  concept_id="166163"  retired="0"   datatype_id="4"  class_id="11"  is_set="0"  creator="1"  date_created="2021-02-02 14:23:05"  version="1.0.0"  changed_by="1"  date_changed="2021-02-02 15:05:45"    uuid="379b29a3-ba09-4cc6-bf77-ec9a470674b3"/>
     <concept  concept_id="166162"  retired="0"   datatype_id="2"  class_id="1"   is_set="0"  creator="1"  date_created="2021-02-02 10:41:54"  version="1.0.0"  changed_by="1"  date_changed="2021-02-02 11:38:03"    uuid="9916c88e-a89a-4789-ae1d-0a54bd7c1223"/>
     <concept  concept_id="166161"  retired="0"   datatype_id="4"  class_id="4"   is_set="0"  creator="1"  date_created="2021-02-01 16:45:34"  version="1.0.0"  changed_by="1"  date_changed="2021-02-01 16:45:34"    uuid="b7ee66d1-bd9c-4880-9d29-b2f9f8a5d5dc"/>
+    <concept  concept_id="166241"  retired="0"   datatype_id="10"  class_id="5"  is_set="0"  creator="1"  date_created="2021-02-21 18:02:39"  version="1.0.0"  changed_by="1"  date_changed="2021-02-21 18:02:39"    uuid="c545bec2-95c1-49ec-9a3d-c6c094bbb338"/>
 
     <!--CONCEPT NUMERIC-->
     <!--MCH-->
@@ -5429,8 +5430,7 @@
     <concept_name  concept_name_id="161576"  concept_id="166238"  name="Ultrasound"  locale="en"  locale_preferred="1"  creator="1"  date_created="2021-02-16 19:08:01"  concept_name_type="FULLY_SPECIFIED"  voided="0"   uuid="ff7b69bb-6919-44f8-84bc-76193658db4f"  />
     <concept_name  concept_name_id="161577"  concept_id="166239"  name="Physical Examination"  locale="en"  locale_preferred="1"  creator="1"  date_created="2021-02-16 21:25:06"  concept_name_type="FULLY_SPECIFIED"  voided="0"   uuid="e6d7bbe4-d59d-4388-b057-2517c0138c17"  />
     <concept_name  concept_name_id="161578"  concept_id="166240"  name="Pelvic Examination set"  locale="en"  locale_preferred="1"  creator="1"  date_created="2021-02-16 21:44:39"  concept_name_type="FULLY_SPECIFIED"  voided="0"   uuid="26ad1227-f430-46bd-a738-b6d2abfb78a7"  />
-    
-
+    <concept_name  concept_name_id="161579"  concept_id="166241"  name="Abortion"  locale="en"  locale_preferred="1"  creator="1"  date_created="2021-02-21 18:02:39"  concept_name_type="FULLY_SPECIFIED"  voided="0"  uuid="79c19b19-036a-4425-ac93-19c3a841147f"  />
 
     <!--CONCEPT ANSWERS-->
     <!--MCH-->
