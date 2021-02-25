@@ -577,7 +577,8 @@
     </script>
 
     <span class="hidden">
-        <encounterLocation default="629d78e9-93e5-43b0-ad8a-48313fd99117" order="629d78e9-93e5-43b0-ad8a-48313fd99117" />
+        <encounterLocation default="e9bc61b5-69ff-414b-9cf0-0c22d6dfca2b" order="e9bc61b5-69ff-414b-9cf0-0c22d6dfca2b" />
+        <encounterProviderAndRole encounterRole="240b26f9-dd88-4172-823d-4a8bfeb7841f" required="required" default="currentUser"/>
     </span>
     <!-- Beging of HTML Form -->
     <div>
@@ -1386,62 +1387,64 @@
                                         <div class="card">
                                             <div class="card-header">Urinalysis</div>
                                             <div class="card-body">
-                                                <div class="row">
-                                                    <div class="col-md-4">
-                                                        <label>Ph (Acidity)</label>
-                                                        <obs conceptId="166202"/>
+                                                <obsgroup groupingConceptId="302">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <label>Ph (Acidity)</label>
+                                                            <obs conceptId="166202"/>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <label>Hemoglobin</label>
+                                                            <obs conceptId="166204"/>
+                                                        </div>
+                                                        <div class="col-md-4 mt-4">
+                                                            <obs conceptId="166206" style="checkbox"/> 
+                                                            <label>Leukocyte esterase Presence</label>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-md-4">
-                                                        <label>Hemoglobin</label>
-                                                        <obs conceptId="166204"/>
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <label>Protein</label>
+                                                            <obs conceptId="166208"/>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <label>Urobilinogen</label>
+                                                            <obs conceptId="166209"/>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <label>Specific gravity of Urine</label>
+                                                            <obs conceptId="166211"/>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-md-4 mt-4">
-                                                        <obs conceptId="166206" style="checkbox"/> 
-                                                        <label>Leukocyte esterase Presence</label>
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <label>Ketones</label>
+                                                            <obs conceptId="166205"/>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <label>Bilirubin</label>
+                                                            <obs conceptId="166203"/>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <label>Glucose</label>
+                                                            <obs conceptId="166210" />
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-4">
-                                                        <label>Protein</label>
-                                                        <obs conceptId="166208"/>
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <label>Color of Urine</label>
+                                                            <obs conceptId="166212"/>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <label>Clarity of Urine</label>
+                                                            <obs conceptId="166213"/>
+                                                        </div>
+                                                        <div class="col-md-4 mt-4">
+                                                            <obs conceptId="166207" style="checkbox"/>
+                                                            <label>Nitrite Presence</label>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-md-4">
-                                                        <label>Urobilinogen</label>
-                                                        <obs conceptId="166209"/>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label>Specific gravity of Urine</label>
-                                                        <obs conceptId="166211"/>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-4">
-                                                        <label>Ketones</label>
-                                                        <obs conceptId="166205"/>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label>Bilirubin</label>
-                                                        <obs conceptId="166203"/>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label>Glucose</label>
-                                                        <obs conceptId="166210" />
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-4">
-                                                        <label>Color of Urine</label>
-                                                        <obs conceptId="166212"/>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label>Clarity of Urine</label>
-                                                        <obs conceptId="166213"/>
-                                                    </div>
-                                                    <div class="col-md-4 mt-4">
-                                                        <obs conceptId="166207" style="checkbox"/>
-                                                        <label>Nitrite Presence</label>
-                                                    </div>
-                                                </div>
+                                                </obsgroup>
                                             </div>
                                         </div>
                                     </div>
@@ -1657,4 +1660,6 @@
             </div>
         </div>
     </div>
+    <postSubmissionAction 
+        class="org.openmrs.module.ugandaemr.htmlformentry.AntenatalEncounterPostSubmissionAction"/>
 </htmlform>
