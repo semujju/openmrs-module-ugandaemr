@@ -1776,17 +1776,6 @@
     <concept_numeric  concept_id="165887" allow_decimal="0"/>
     <concept_numeric  concept_id="165888" allow_decimal="1"/>
 
-    <!-- URINALYSIS TESTS -->
-    <concept_numeric  concept_id="166203" units="mg/dL"  allow_decimal="1" />
-    <concept_numeric  concept_id="166210" units="mg/dL"  allow_decimal="1" />
-    <concept_numeric  concept_id="166204" units="mg/dL"  allow_decimal="1" />
-    <concept_numeric  concept_id="166205" units="mg/dL"  allow_decimal="1" />
-    <concept_numeric  concept_id="166208" units="mg/dL"  allow_decimal="1" />
-    <concept_numeric  concept_id="166209" units="mg/dL"  allow_decimal="1" />
-    <concept_numeric  concept_id="166202"  hi_absolute="14"  low_absolute="0"  units="pH" />
-    <concept_numeric  concept_id="166211"  units="grav"  allow_decimal="0" />
-
-
     <!--CONCEPT DESCRIPTION-->
     <!--ART-->
     <concept_description  concept_description_id="16685"  concept_id="160288"  description="A coded list of reasons for patient appointment or visit to a health provider."  locale="en"  creator="1"  date_created="2012-03-05 07:39:06"  changed_by="1"  date_changed="2016-08-22 18:42:17"  uuid="16685FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"/>
