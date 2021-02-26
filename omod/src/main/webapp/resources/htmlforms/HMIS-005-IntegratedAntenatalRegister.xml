@@ -89,8 +89,6 @@
                     }
                 });
 
-                
-
                 jq("#partner-emtct-code").change(function () {
 
                     var emtctCode = jq(this).find("select").find(":selected").val();
@@ -141,7 +139,6 @@
                     jq('#1-removeEntry-other').remove();
                     jq('#10-addEntry-other').remove();
                     jq('#1-toggleContainer-other').show();
-
                     jq('#11-removeEntry-other').remove();
                     jq('#20-addEntry-other').remove();
                     jq('#11-toggleContainer-other').show();
@@ -156,7 +153,7 @@
                     jq('#' + parseFloat(this.id) + '-removeEntry-other').toggle(true);
                     return false;
                     });
-                    });
+                });
 
                jq(document).ready(function () {
                     jq('.removeEntry-other').on("click", function () {
@@ -168,8 +165,7 @@
                     jq('#' + correctedRemoveButtonId + '-removeEntry-other').toggle(true);
                     return false;
                     });
-
-            });
+                });
 
                 jq(document).ready(function () {
                     $allRows = jq(this).find('.multi-arv-drug');
@@ -1398,8 +1394,9 @@
                                                             <obs conceptId="166204"/>
                                                         </div>
                                                         <div class="col-md-4 mt-4">
-                                                            <obs conceptId="166206" style="checkbox"/> 
                                                             <label>Leukocyte esterase Presence</label>
+                                                            <obs conceptId="166206" answerConceptIds="1065, 1066" answerLabels="Yes, No" style="radio" 
+                                                                 class="horizontal"/> 
                                                         </div>
                                                     </div>
                                                     <div class="row">
@@ -1440,8 +1437,9 @@
                                                             <obs conceptId="166213"/>
                                                         </div>
                                                         <div class="col-md-4 mt-4">
-                                                            <obs conceptId="166207" style="checkbox"/>
                                                             <label>Nitrite Presence</label>
+                                                            <obs conceptId="166207" answerConceptIds="1065, 1066" answerLabels="Yes, No" style="radio" 
+                                                                 class="horizontal"/>
                                                         </div>
                                                     </div>
                                                 </obsgroup>
