@@ -1776,6 +1776,17 @@
     <concept_numeric  concept_id="165887" allow_decimal="0"/>
     <concept_numeric  concept_id="165888" allow_decimal="1"/>
 
+     <!-- URINALYSIS TESTS -->
+    <concept_numeric  concept_id="166203" units="mg/dL"  allow_decimal="1" />
+    <concept_numeric  concept_id="166210" units="mg/dL"  allow_decimal="1" />
+    <concept_numeric  concept_id="166204" units="mg/dL"  allow_decimal="1" />
+    <concept_numeric  concept_id="166205" units="mg/dL"  allow_decimal="1" />
+    <concept_numeric  concept_id="166208" units="mg/dL"  allow_decimal="1" />
+    <concept_numeric  concept_id="166209" units="mg/dL"  allow_decimal="1" />
+    <concept_numeric  concept_id="166202"  hi_absolute="14"  low_absolute="0"  units="pH" />
+    <concept_numeric  concept_id="166211"  units="grav"  allow_decimal="0" />
+
+
 
     <!--CONCEPT DESCRIPTION-->
     <!--ART-->
