@@ -1643,7 +1643,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <obs id="5096" conceptId="5096" labelText="Return Date" />
+                                        <obs id="5096" conceptId="5096" labelText="Return Date" allowFutureDates="true"/>
                                     </div>
                                     <div class="col-md-3">
                                         <obs id="160288" conceptId="160288" answerConceptIds="166236,166237,166238" answerLabels="Checkup, Booking, Ultra sound" labelText="Reason" /> 
