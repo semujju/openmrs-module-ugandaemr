@@ -1,0 +1,165 @@
+<htmlform formName="Covd-19 Case Management Enrollment"
+          formDescription="Covd-19 Case Management Enrollment"
+          formEncounterType="fa6f3ff5-b784-43fb-ab35-a08ab7dbf074"
+          formUuid="d3270bd2-7cb3-11eb-9439-0242ac130002"
+          formVersion="3.0.0"
+          formAddMetadata="yes"
+          formUILocation="patientDashboard.visitActions"
+          formOrder="7"
+          formIcon="icon-medkit"
+          formShowIf="(visit.active || !visit.active) &amp;&amp; patient.person.dead==false&amp;&amp;sessionLocation.uuid=='e9bc61b5-69ff-414b-9cf0-0c22d6dfca2b'"
+          formDisplayStyle="Standard"
+          formLabel="Covd-19 Case Management Enrollment">
+
+    <script type="javascript">
+
+        if (jQuery) {
+
+            jq(document).ready(function () { 
+
+                //Block Multiple encounter entry on same date
+                blockEncounterOnSameDateEncounter(jq("#encounterDate").find("input[type=hidden]"),"block");
+            });
+        }
+
+    </script>
+
+    <div>
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Covd-19 Case Management Enrollment</h1>
+            </div>
+            <div class="col-md-5"></div>
+            <div class="col-md-1">
+                <submit class="confirm" submitLabel="Save" submitStyle="customSubmit"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="mother-info" >
+                                <div class="card">
+                                    <div class="card-header">
+                                        Admission Information
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-4" id="visit-date">
+                                                <label>Date</label>
+                                                <obs conceptId=" 166073" />
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>Case ID</label>
+                                                <obs conceptId="166263" />
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>Transfer in</label>
+                                                <obs conceptId="99110" answerConceptIds="90004,90003" answerLabels="No, Yes" 
+                                                     style="radio" class="horizontal"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="card">
+                                    <div class="card-header">
+                                        Testing Point and Disease Category
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-4"> 
+                                            <label>Point of Testing</label>
+                                                <obs conceptId="165159" />
+                                            </div>
+                                            <div class="col-md-4"> 
+                                            <label>Disease Category</label>     
+                                                <obs conceptId="166246" answerConceptIds="99561,1498" answerLabels="Severe,Mild" 
+                                                     style="radio" class="horizontal"/>
+                                            </div>
+                                            <div class="col-md-4"> 
+                                            <label>Re-infection</label>
+                                                <obs conceptId="166247" answerConceptIds="90004,90003" answerLabels="No, Yes" 
+                                                     style="radio" class="horizontal"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="card">
+                                    <div class="card-header">
+                                        Case Management
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label>Isolation Duration (Days)</label>
+                                                <obs conceptId="166245" />
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label>Date Last Symptoms/Signs Observed</label>
+                                                <obs conceptId="166248" />
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label>Average Stay (Days) </label>
+                                                <obs conceptId="166252" />
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label>Date Due for Discharge</label>
+                                                <obs conceptId="166251"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header"> 
+                                        Outcome
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-4" >
+                                                <obs conceptId="166244" answerConceptIds="159791,1366,165229,90306" 
+                                                     answerLabels="Cured, Dead, Lost, Transferred" 
+                                                     style="radio" class="horizontal"/>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>Transfer Reason</label>
+                                                <obs conceptId="99387" />
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>Date Transferred</label>
+                                                <obs conceptId="165854" allowTime="false"/>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        Dicharge Information
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label>Discharge Status</label>
+                                                <obs conceptId="166249" answerConceptIds="99353,99112" answerLabels="Alive, Dead" 
+                                                     style="radio" class="horizontal"/>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>Discharge Date</label>
+                                                <obs conceptId="162958" />
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>Discharge Notes</label>
+                                                <obs conceptId="166250" style="textarea" rows="4" cols="10"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</htmlform>
