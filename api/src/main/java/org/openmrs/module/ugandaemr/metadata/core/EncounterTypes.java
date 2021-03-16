@@ -232,7 +232,7 @@ public class EncounterTypes {
         }
     };
 
-    public static EncounterTypeDescriptor COVID19_INITIATION = new EncounterTypeDescriptor() {
+    public static EncounterTypeDescriptor COVID19_ENROLLMENT = new EncounterTypeDescriptor() {
         @Override
         public String name() {
             return "Covid19 Case Initiation";
@@ -240,7 +240,7 @@ public class EncounterTypes {
 
         @Override
         public String description() {
-            return "Covid19 Case Initiation Encounter";
+            return "Covid19 Case Enrollment Encounter";
         }
 
         public String uuid() {
