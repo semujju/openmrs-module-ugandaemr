@@ -5,9 +5,9 @@
           formVersion="3.0.0"
           formAddMetadata="yes"
           formUILocation="patientDashboard.visitActions"
-          formOrder="8"
+          formOrder="1"
           formIcon="icon-medkit"
-          formShowIf="(visit.active || !visit.active) &amp;&amp; patient.person.dead==false&amp;&amp; patient.person.gender=='F'&amp;&amp; sessionLocation.uuid=='e9bc61b5-69ff-414b-9cf0-0c22d6dfca2b'"
+          formShowIf="(visit.active || !visit.active) &amp;&amp; patient.person.dead==false&amp;&amp; sessionLocation.uuid=='1748bd6f-b013-449f-8d38-91319b576f3f'"
           formDisplayStyle="Standard"
           formLabel="Covd-19 Case Management Follow up">
 
@@ -20,10 +20,8 @@
                 blockEncounterOnSameDateEncounter(jq("#encounterDate").find("input[type=hidden]"),"block");
             });
 
-            
-
             jq(document).ready(function () {
-                    $allRows = jq(this).find('.pcr-test');
+                    $allRows = jq(this).find('.pcrtest');
                     $allRows.hide();
                     jq('#1-removeEntry').remove();
                     jq('#10-addEntry').remove();
@@ -126,13 +124,15 @@
                                             <repeat>
                                                 <template>
                                                 <obsgroup groupingConceptId="166239">
-                                                    <div class="row pcr-test" id="{id}-toggleContainer">
+                                                    <div class="row pcrtest" id="{id}-toggleContainer">
                                                             <div class="col-md-3">
-                                                                <obs conceptId="166268" labelText="PCR Test Date." />
+                                                                <label>PCR Test Date</label>
+                                                                <obs conceptId="166268" />
                                                             </div>
                                                             <div class="col-md-3">
                                                                 <label>Result</label>
-                                                                <obs conceptId="166253" style="checkbox" />
+                                                                <obs conceptId="166253" answerConceptIds="703,664" 
+                                                                    answerLabels="Positive, Negative" style="radio" class="horizontal"/>
                                                             </div>
                                                             <div class="col-md-1 pt-4">
                                                                 <div class="add-entry">
