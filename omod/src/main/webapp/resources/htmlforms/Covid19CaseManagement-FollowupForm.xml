@@ -1,6 +1,6 @@
 <htmlform formName="Covd-19 Case Management Followup"
           formDescription="Covd-19 Case Management Enrollment"
-          formEncounterType="fa6f3ff5-b784-43fb-ab35-a08ab7dbf074"
+          formEncounterType="95d334b0-c322-46ee-856a-4f503c8979ee"
           formUuid="f03bfc78-7cb3-11eb-9439-0242ac130002"
           formVersion="3.0.0"
           formAddMetadata="yes"
@@ -20,52 +20,44 @@
                 blockEncounterOnSameDateEncounter(jq("#encounterDate").find("input[type=hidden]"),"block");
             });
 
+            
+
             jq(document).ready(function () {
                     $allRows = jq(this).find('.pcr-test');
                     $allRows.hide();
-                    jq('#1-removeEntry7').remove();
-                    jq('#10-addEntry7').remove();
-                    jq('#1-toggleContainer7').show();
+                    jq('#1-removeEntry').remove();
+                    jq('#10-addEntry').remove();
+                    jq('#1-toggleContainer').show();
 
-                    jq('#11-removeEntry7').remove();
-                    jq('#20-addEntry7').remove();
-                    jq('#11-toggleContainer7').show();
+                    jq('#11-removeEntry').remove();
+                    jq('#20-addEntry').remove();
+                    jq('#11-toggleContainer').show();
                 });
 
-            jq(document).ready(function () {
-                jq('.removeEntry').on("click", function () {
-                    var correctedRemoveButtonId = parseFloat(this.id) - 1;
-                    var contentAddId = "#" + parseFloat(this.id) + "-toggleContainer";
-                    jq(contentAddId).toggle(false);
-                    jq(':input:not(:button)', contentAddId).val([]);
-                    jq('#' + correctedRemoveButtonId + '-addEntry').toggle(true);
-                    jq('#' + correctedRemoveButtonId + '-removeEntry').toggle(true);
-                    return false;
+                jq(document).ready(function () {
+                    jq('.addEntry').on("click", function () {
+                        var correctedAddButtonId = parseFloat(this.id) + 1;
+                        var contentAddId = "#" + correctedAddButtonId + "-toggleContainer";
+                        jq(contentAddId).toggle(true);
+                        jq('#' + this.id).toggle(false);
+                        jq('#' + parseFloat(this.id) + '-removeEntry').toggle(true);
+                        return false;
+                    });
                 });
-            });
 
-            jq(document).ready(function () {
-                jq('.addEntry').on("click", function () {
-                    var correctedAddButtonId = parseFloat(this.id) + 1;
-                    var contentAddId = "#" + correctedAddButtonId + "-toggleContainer";
-                    jq(contentAddId).toggle(true);
-                    jq('#' + this.id).toggle(false);
-                    jq('#' + parseFloat(this.id) + '-removeEntry').toggle(true);
-                    return false;
-                });
-            });
+                jq(document).ready(function () {
+                    jq('.removeEntry').on("click", function () {
+                        var correctedRemoveButtonId = parseFloat(this.id) - 1;
+                        var contentAddId = "#" + parseFloat(this.id) + "-toggleContainer";
+                        jq(contentAddId).toggle(false);
+                        jq(':input:not(:button)', contentAddId).val([]);
+                        jq('#' + correctedRemoveButtonId + '-addEntry').toggle(true);
+                        jq('#' + correctedRemoveButtonId + '-removeEntry').toggle(true);
 
-            jq(document).ready(function () {
-                jq('.removeEntry').on("click", function () {
-                    var correctedRemoveButtonId = parseFloat(this.id) - 1;
-                    var contentAddId = "#" + parseFloat(this.id) + "-toggleContainer";
-                    jq(contentAddId).toggle(false);
-                    jq(':input:not(:button)', contentAddId).val([]);
-                    jq('#' + correctedRemoveButtonId + '-addEntry').toggle(true);
-                    jq('#' + correctedRemoveButtonId + '-removeEntry').toggle(true);
-                    return false;
-                });
-            });
+                        return false;
+                    });
+
+                }); 
         }
 
     </script>
@@ -146,7 +138,7 @@
                                                                 <div class="add-entry">
                                                                     <a href="#" id="{id}-addEntry" class="addEntry add-more-link">
                                                                         <i class="icon-plus-sign"></i></a>
-                                                                    <a href="#" class="removeEntry remove-more-link" id="{id}-removeEntry7">
+                                                                    <a href="#" id="{id}-removeEntry" class="removeEntry remove-more-link">
                                                                         <i class="icon-minus"></i></a>
                                                                 </div>
                                                             </div>
