@@ -230,10 +230,6 @@
                                                 <label>Date of first presentation to health facility</label>
                                                 <obs conceptId="166245"/>
                                             </div>
-                                            <div class="col-md-6">
-                                                <label>Never went to facility</label> 
-                                                <obs conceptId="166245" />
-                                            </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
@@ -255,13 +251,7 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-md-1">
-                                            <label>Pregnancy</label>
-                                            </div>
-                                            <obs conceptId="165169" answerConceptId="165882" answerLabel="N/A" style="checkbox" class="col-md-1" />
-                                            <obs conceptId="165169" answerConceptId="5619" answerLabel="Yes" style="checkbox" class="col-md-1"/> 
-                                            <obs conceptId="165169" answerConceptId="165882" answerLabel="No" style="checkbox" class="col-md-1" />
-                                            <obs conceptId="165169" answerConceptId="162277" answerLabel="Unknown" style="checkbox" class="col-md-1" />
+                                            <obs conceptId="165169" answerConceptId="5619" answerLabel="Pregnancy" style="checkbox" class="col-md-2"/> 
                                         </div>
                                         <div class="row">
                                             <obs conceptId="165169" answerConceptId="5619" answerLabel="Post-Partum (&lt;6 Weeks)" style="checkbox" class="col-md-2"/> 
