@@ -1,5 +1,5 @@
 <htmlform formName="Covd-19 Case Management Enrollment"
-          formDescription="Covd-19 Case Management Enrollment"
+          formDescription="Covd-19: Case Management Enrollment"
           formEncounterType="422ee220-9e83-451d-9b25-79a688a0413a"
           formUuid="d3270bd2-7cb3-11eb-9439-0242ac130002"
           formVersion="3.0.0"
@@ -27,7 +27,7 @@
     <div>
         <div class="row">
             <div class="col-md-6">
-                <h1>Covd-19 Case Management Enrollment</h1>
+                <h1>Covid-19: Case Investigation Form</h1>
             </div>
             <div class="col-md-5"></div>
             <div class="col-md-1">
@@ -37,9 +37,25 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
+                    <div class="card-header">
+                        <ul class="nav nav-tabs nav-fill card-header-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#patient-info-section">Patient Information</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#symptoms-comorbidity-section">Symptoms,Conditions and Comorbidity</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#travel-history-section">Travel History</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#disposition-section">Disposition</a>
+                            </li>
+                        </ul>
+                    </div>
                     <div class="card-body">
                         <div class="tab-content">
-                            <div class="tab-pane active" id="mother-info" >
+                            <div class="tab-pane active" id="patient-info-section" >
                                 <div class="card">
                                     <div class="card-header">
                                         Admission Information
@@ -47,111 +63,350 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-4" id="visit-date">
-                                                <label>Date</label>
+                                                <label>Enrollment Date</label>
                                                 <obs conceptId=" 166073" />
                                             </div>
                                             <div class="col-md-4">
                                                 <label>Case ID</label>
                                                 <obs conceptId="166263" />
                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        Care Giver Information
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
                                             <div class="col-md-4">
-                                                <label>Transfer in</label>
-                                                <obs conceptId="99110" answerConceptIds="90004,90003" answerLabels="No, Yes" 
-                                                     style="radio" class="horizontal"/>
+                                                <label>Care Giver Name</label> <!-- missing -->
+                                                <obs conceptId="166263" />
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>Care Giver Phone Number</label> <!-- missing -->
+                                                <obs conceptId="166263" />
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>Care Giver Email</label> <!-- missing -->
+                                                <obs conceptId="166263" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        Occupation and Country of Residence
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <label>Occupation</label> <!-- missing -->
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                                <obs conceptId="165169" answerConceptId="5619" answerLabel="Health Care Worker" style="checkbox" class="col-md-2"/> 
+                                                <obs conceptId="165169" answerConceptId="165882" answerLabel="Truck Driver" style="checkbox" class="col-md-2" />
+                                                <obs conceptId="165169" answerConceptId="162277" answerLabel="Surveillance Officer/Contact Tracer" style="checkbox" class="col-md-3" />
+                                                <obs conceptId="165169" answerConceptId="165127" answerLabel="Other" style="checkbox" class="col-md-1" />
+                                            <div class="col-md-4">
+                                                <label>Specify Other Occupation</label> <!-- missing -->
+                                                <obs conceptId="166263" />
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label>Country of Residence</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <obs conceptId="165169" answerConceptId="5619" answerLabel="Uganda" style="checkbox" class="col-md-1"/> 
+                                            <obs conceptId="165169" answerConceptId="165882" answerLabel="Kenya" style="checkbox" class="col-md-1" />
+                                            <obs conceptId="165169" answerConceptId="162277" answerLabel="Tanzania" style="checkbox" class="col-md-1" />
+                                            <obs conceptId="165169" answerConceptId="5619" answerLabel="Rwanda" style="checkbox" class="col-md-1"/> 
+                                            <obs conceptId="165169" answerConceptId="165882" answerLabel="DRC" style="checkbox" class="col-md-1" />
+                                            <obs conceptId="165169" answerConceptId="162277" answerLabel="S.Sudan" style="checkbox" class="col-md-1" />
+                                            <obs conceptId="165169" answerConceptId="165127" answerLabel="Other" style="checkbox" class="col-md-1" />
+                                            <div class="col-md-4">
+                                                <label>Other Country</label><!-- missing -->
+                                                <obs conceptId="166263" />
                                             </div>
                                         </div>
                                     </div>
                                 </div> 
                                 <div class="card">
                                     <div class="card-header">
-                                        Testing Point and Disease Category
+                                        Confirmed Case
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-4"> 
-                                            <label>Point of Testing</label>
-                                                <obs conceptId="165159" />
-                                            </div>
-                                            <div class="col-md-4"> 
-                                            <label>Disease Category</label>     
-                                                <obs conceptId="166246" answerConceptIds="99561,1498" answerLabels="Severe,Mild" 
-                                                     style="radio" class="horizontal"/>
-                                            </div>
-                                            <div class="col-md-4"> 
-                                            <label>Re-infection</label>
-                                                <obs conceptId="166247" answerConceptIds="90004,90003" answerLabels="No, Yes" 
-                                                     style="radio" class="horizontal"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <div class="card">
-                                    <div class="card-header">
-                                        Case Management
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <label>Isolation Duration (Days)</label>
+                                                <label>Date of Positive Lab Test</label>
                                                 <obs conceptId="166245" />
                                             </div>
+                                            <div class="col-md-8 mt-4">
+                                                <div class="row">
+                                                    <div class="col-md-2"> 
+                                                    <label>Test Type</label>
+                                                    </div>
+                                                    <obs conceptId="165169" answerConceptId="5619" answerLabel="RDT Ag" style="checkbox" class="col-md-2"/> 
+                                                    <obs conceptId="165169" answerConceptId="165882" answerLabel="RDT Ab" style="checkbox" class="col-md-2" />
+                                                    <obs conceptId="165169" answerConceptId="162277" answerLabel="PCR" style="checkbox" class="col-md-2" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+
+                            <div class="tab-pane" id="symptoms-comorbidity-section" >
+                                <div class="card">
+                                    <div class="card-header">
+                                        Patient Status
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
                                             <div class="col-md-3">
-                                                <label>Date Last Symptoms/Signs Observed</label>
-                                                <obs conceptId="166248" />
+                                                <label>Is Patient Symptomatic</label>
+                                                <obs conceptId="166249" answerConceptIds="99353,99112" answerLabels="Yes, No" 
+                                                     style="radio" class="horizontal"/> <!-- add yes/no -->
                                             </div>
                                             <div class="col-md-3">
-                                                <label>Average Stay (Days) </label>
-                                                <obs conceptId="166265" />
-                                            </div>
-                                            <div class="col-md-3">
-                                                <label>Date Due for Discharge</label>
-                                                <obs conceptId="166251"/>
+                                                <label>Date on Set of First Symptom</label>
+                                                <obs conceptId="166245" />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card">
                                     <div class="card-header"> 
-                                        Outcome
+                                        Symptoms
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-md-4" >
-                                                <obs conceptId="166244" answerConceptIds="159791,1366,165229,90306" 
-                                                     answerLabels="Cured, Dead, Lost, Transferred" 
-                                                     style="radio" class="horizontal"/>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label>Transfer Reason</label>
-                                                <obs conceptId="99387" />
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label>Date Transferred</label>
-                                                <obs conceptId="165854" allowTime="false"/>
-                                            </div>
+                                            <obs conceptId="165169" answerConceptId="5619" answerLabel="History of Fever or Chils" style="checkbox" class="col-md-2"/> 
+                                            <obs conceptId="165169" answerConceptId="165882" answerLabel="Cough" style="checkbox" class="col-md-2" />
+                                            <obs conceptId="165169" answerConceptId="162277" answerLabel="Sore Throat" style="checkbox" class="col-md-2" />
+                                            <obs conceptId="165169" answerConceptId="5619" answerLabel="Runny Nose" style="checkbox" class="col-md-2"/> 
+                                            <obs conceptId="165169" answerConceptId="162277" answerLabel="Chest Pain Shortness of Breath" style="checkbox" class="col-md-3" />
+                                        </div>
+                                        <div class="row">
+                                            <obs conceptId="165169" answerConceptId="165882" answerLabel="Headache" style="checkbox" class="col-md-2" />
+                                            <obs conceptId="165169" answerConceptId="5619" answerLabel="Vomiting/Nausea" style="checkbox" class="col-md-2"/> 
+                                            <obs conceptId="165169" answerConceptId="165882" answerLabel="Diarrhoea" style="checkbox" class="col-md-2" />
+                                            <obs conceptId="165169" answerConceptId="162277" answerLabel="Conjunctivitis (Red Eyes) " style="checkbox" class="col-md-2" />
+                                            <obs conceptId="165169" answerConceptId="5619" answerLabel="Abdominal Pain" style="checkbox" class="col-md-3"/> 
+                                        </div>
+                                        <div class="row">
+                                            <obs conceptId="165169" answerConceptId="165882" answerLabel="Myalgia (Muscle Pain)" style="checkbox" class="col-md-2" />
+                                            <obs conceptId="165169" answerConceptId="162277" answerLabel="Arthralgia (Joint Pain)" style="checkbox" class="col-md-2" />
+                                            <obs conceptId="165169" answerConceptId="5619" answerLabel="Skin Rash" style="checkbox" class="col-md-2"/> 
+                                            <obs conceptId="165169" answerConceptId="165882" answerLabel="General Weakness" style="checkbox" class="col-md-2" />
+                                            <obs conceptId="165169" answerConceptId="5619" answerLabel="Confusion/Altered Consciousness" style="checkbox" class="col-md-3"/>
+                                        </div>
+                                        <div class="row">    
+                                            <obs conceptId="165169" answerConceptId="162277" answerLabel="PCR" style="Bleeding" class="col-md-2" />
+                                            <obs conceptId="165169" answerConceptId="5619" answerLabel="Site" class="col-md-2"/> 
+                                            <obs conceptId="165169" answerConceptId="165882" answerLabel="Recent Inability to Walk" style="checkbox" class="col-md-2" />
+                                            <obs conceptId="165169" answerConceptId="162277" answerLabel="Seizures" style="checkbox" class="col-md-2" />
 
+                                            <obs conceptId="165169" answerConceptId="165882" answerLabel="Other" style="checkbox" class="col-md-4" />
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label>Specify Other</label>
+                                                <obs conceptId="166263" />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card">
                                     <div class="card-header">
-                                        Dicharge Information
+                                       Presentation to facility and Diagnosis
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-md-4">
-                                                <label>Discharge Status</label>
-                                                <obs conceptId="166249" answerConceptIds="99353,99112" answerLabels="Alive, Dead" 
+                                            <div class="col-md-6">
+                                                <label>Date of first presentation to health facility</label>
+                                                <obs conceptId="166245"/>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label>Never went to facility</label> 
+                                                <obs conceptId="166245" />
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Was patient diagnosed with Covid as a result of this visit</label> <!-- Yes, No, Not Applicable -->
+                                                <obs conceptId="166249" answerConceptIds="99353,99112" answerLabels="Yes, No"
                                                      style="radio" class="horizontal"/>
                                             </div>
-                                            <div class="col-md-4">
-                                                <label>Discharge Date</label>
-                                                <obs conceptId="162958" />
+                                            <div class="col-md-6">
+                                                <label>Was patient diagnosed home after this visit</label> <!-- Yes, No, Not Applicable -->
+                                                <obs conceptId="166249" answerConceptIds="99353,99112" answerLabels="Yes, No" 
+                                                     style="radio" class="horizontal"/>
                                             </div>
-                                            <div class="col-md-4">
-                                                <label>Discharge Notes</label>
-                                                <obs conceptId="166250" style="textarea" rows="4" cols="10"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header"> 
+                                        Underlying Conditions
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-1">
+                                            <label>Pregnancy</label>
                                             </div>
+                                            <obs conceptId="165169" answerConceptId="165882" answerLabel="N/A" style="checkbox" class="col-md-1" />
+                                            <obs conceptId="165169" answerConceptId="5619" answerLabel="Yes" style="checkbox" class="col-md-1"/> 
+                                            <obs conceptId="165169" answerConceptId="165882" answerLabel="No" style="checkbox" class="col-md-1" />
+                                            <obs conceptId="165169" answerConceptId="162277" answerLabel="Unknown" style="checkbox" class="col-md-1" />
+                                        </div>
+                                        <div class="row">
+                                            <obs conceptId="165169" answerConceptId="5619" answerLabel="Post-Partum (&lt;6 Weeks)" style="checkbox" class="col-md-2"/> 
+                                            <obs conceptId="165169" answerConceptId="165882" answerLabel="Breast Feeding" style="checkbox" class="col-md-2" />
+                                            <obs conceptId="165169" answerConceptId="162277" answerLabel="Est Gestational Age (weeks)" class="col-md-2" />
+                                            <obs conceptId="165169" answerConceptId="5619" answerLabel="OR Trimester" class="col-md-2"/> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header"> 
+                                        Comorbidities
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <obs conceptId="165169" answerConceptId="5619" answerLabel="Chronic Cardiac Disease" style="checkbox" class="col-md-2"/> 
+                                            <obs conceptId="165169" answerConceptId="165882" answerLabel="Diabetes" style="checkbox" class="col-md-2" />
+                                            <obs conceptId="165169" answerConceptId="162277" answerLabel="Hypertension" style="checkbox" class="col-md-2" />
+                                            <obs conceptId="165169" answerConceptId="5619" answerLabel="Current Smoking" style="checkbox" class="col-md-2"/> 
+                                            <obs conceptId="165169" answerConceptId="165882" answerLabel="Chronic Pulmonanry Disease" style="checkbox" class="col-md-3" />
+                                        </div>
+                                        <div class="row">
+                                            <obs conceptId="165169" answerConceptId="162277" answerLabel="Tuberculosis" style="checkbox" class="col-md-2" />
+                                            <obs conceptId="165169" answerConceptId="5619" answerLabel="Asthma" style="checkbox" class="col-md-2"/> 
+                                            <obs conceptId="165169" answerConceptId="165882" answerLabel="Cancer" style="checkbox" class="col-md-2" />
+                                            <obs conceptId="165169" answerConceptId="162277" answerLabel="Chronic Kidney Disease" style="checkbox" class="col-md-2" />
+                                            <obs conceptId="165169" answerConceptId="162277" answerLabel="Chronic Neurological Disorder" style="checkbox" class="col-md-3" />
+                                        </div>
+                                        <div class="row">
+                                            <obs conceptId="165169" answerConceptId="165882" answerLabel="Chronic Liver Disease" style="checkbox" class="col-md-2" />
+                                            <obs conceptId="165169" answerConceptId="5619" answerLabel="Obesity" style="checkbox" class="col-md-2"/> 
+                                            <obs conceptId="165169" answerConceptId="5619" answerLabel="Other" style="checkbox" class="col-md-2"/> 
+                                            <div class="col-md-4">
+                                                <label>Specify Other</label>
+                                                <obs conceptId="166263" />
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <obs conceptId="165169" answerConceptId="5619" answerLabel="HIV" style="checkbox" class="col-md-1"/>
+                                            <obs conceptId="165169" answerConceptId="5619" answerLabel="On ART" style="checkbox" class="col-md-1"/>
+                                            <obs conceptId="165169" answerConceptId="5619" answerLabel="Not On ART" style="checkbox" class="col-md-2"/>
+                                            <obs conceptId="165169" answerConceptId="5619" answerLabel="Unknown" style="checkbox" class="col-md-2"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane" id="travel-history-section" >
+                                <div class="card">
+                                    <div class="card-header">
+                                       Travel History
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Did patient travel out of town in 2 weeks before on set (or sample taking, if no symptoms) </label>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <obs conceptId="166249" answerConceptIds="99353,99112" answerLabels="Yes, No" 
+                                                     style="radio" class="horizontal"/> <!-- add yes/no -->
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label>Country</label>
+                                                <obs conceptId="166245" />
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label>City</label>
+                                                <obs conceptId="166245" />
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label>Date of arrival to this site</label>
+                                                <obs conceptId="166245" />
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label>Date of departure to next site</label>
+                                                <obs conceptId="166245" />
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Mode of Transport</label>
+                                                <div class="row mt-3">
+                                                <obs conceptId="165169" answerConceptId="5619" answerLabel="Air" style="checkbox" class="col-md-2"/> 
+                                                <obs conceptId="165169" answerConceptId="165882" answerLabel="Public Road" style="checkbox" class="col-md-3" />
+                                                <obs conceptId="165169" answerConceptId="162277" answerLabel="Private Road" style="checkbox" class="col-md-3" />
+                                                <obs conceptId="165169" answerConceptId="5619" answerLabel="Water" style="checkbox" class="col-md-2"/> 
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label>Public transport means</label>
+                                                <div class="row mt-3">
+                                                <obs conceptId="165169" answerConceptId="5619" answerLabel="Bus" style="checkbox" class="col-md-2"/> 
+                                                <obs conceptId="165169" answerConceptId="165882" answerLabel="Matatu/Minibus" style="checkbox" 
+                                                     class="col-md-3" />
+                                                <obs conceptId="165169" answerConceptId="162277" answerLabel="Boda Boda" style="checkbox" class="col-md-3" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row"> <!-- if domestic travel -->
+                                            <div class="col-md-3">
+                                                <label>Travel Type</label>
+                                                 <obs conceptId="166249" answerConceptIds="99353,99112" answerLabels="Domestic, International" 
+                                                     style="radio" class="horizontal"/> <!-- add Domestic and International -->
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label>District</label>
+                                                <obs conceptId="166245" />
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label>County</label>
+                                                <obs conceptId="166245" />
+                                            </div>
+                                            <!-- if international travel -->
+                                            <div class="col-md-3">
+                                                <label>Country/Countries</label>
+                                                <obs conceptId="166245" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="disposition-section" >
+                                <div class="card">
+                                    <div class="card-header">
+                                       Disposition
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <obs conceptId="165169" answerConceptId="5619" answerLabel="Admit to hospital" style="checkbox" class="col-md-3"/> 
+                                                <obs conceptId="165169" answerConceptId="165882" answerLabel="Admit to non-traditional isolation facility" style="checkbox" class="col-md-3" />
+                                                <obs conceptId="165169" answerConceptId="162277" answerLabel="Home Isolation" style="checkbox" class="col-md-2" />
+                                                <obs conceptId="165169" answerConceptId="162277" answerLabel="Died" style="checkbox" class="col-md-2" />  
+                                        </div>
+                                        <div class="row"> <!-- if admitted to hospital -->
+                                            <obs conceptId="165169" answerConceptId="5619" answerLabel="Isolation ward for suspect cases" style="checkbox" 
+                                                 class="col-md-3"/> 
+                                            <obs conceptId="165169" answerConceptId="165882" answerLabel="Isolation ward for confirmed cases" style="checkbox" class="col-md-3" />
+                                            <obs conceptId="165169" answerConceptId="162277" answerLabel="High dependency unit" style="checkbox" class="col-md-2" />
+                                            <obs conceptId="165169" answerConceptId="162277" answerLabel="ICU" style="checkbox" class="col-md-2" /> 
+                                        </div>
+                                        <div class="row">
+                                            <obs conceptId="165169" answerConceptId="162277" answerLabel="Other" style="checkbox" class="col-md-3" /> 
+                                            <obs conceptId="166245" labelText="Specify Other" class="col-md-4"/>
                                         </div>
                                     </div>
                                 </div>
