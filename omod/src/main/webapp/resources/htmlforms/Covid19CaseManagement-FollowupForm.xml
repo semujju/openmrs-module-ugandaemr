@@ -1,5 +1,5 @@
 <htmlform formName="Covd-19 Case Management Followup"
-          formDescription="Covd-19 Case Management Enrollment"
+          formDescription="Covd-19: Clinical Management Form"
           formEncounterType="95d334b0-c322-46ee-856a-4f503c8979ee"
           formUuid="f03bfc78-7cb3-11eb-9439-0242ac130002"
           formVersion="3.0.0"
@@ -63,7 +63,7 @@
     <div>
         <div class="row">
             <div class="col-md-6">
-                <h1>Covd-19 Case Management Follow up</h1>
+                <h1>Covd-19: Clinical Management Form</h1>
             </div>
             <div class="col-md-5"></div>
             <div class="col-md-1">
