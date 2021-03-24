@@ -1,5 +1,5 @@
-<htmlform formName="Covd-19 Case Management Followup"
-          formDescription="Covd-19: Clinical Management Form"
+<htmlform formName="Covid-19 Clinical Management"
+          formDescription="Covid-19: Clinical Management Form"
           formEncounterType="95d334b0-c322-46ee-856a-4f503c8979ee"
           formUuid="f03bfc78-7cb3-11eb-9439-0242ac130002"
           formVersion="3.0.0"
@@ -9,7 +9,22 @@
           formIcon="icon-medkit"
           formShowIf="(visit.active || !visit.active) &amp;&amp; patient.person.dead==false&amp;&amp; sessionLocation.uuid=='1748bd6f-b013-449f-8d38-91319b576f3f'"
           formDisplayStyle="Standard"
-          formLabel="Covd-19 Case Management Follow up">
+          formLabel="Covid-19 Case Management">
+
+    <ifMode mode="ENTER,EDIT" include="false">
+        <includeIf velocityTest="$fn.allEncounters('422ee220-9e83-451d-9b25-79a688a0413a').size() == 0">
+            <script>
+                jq(function () {
+                    jq().toastmessage('showErrorToast', "This Case has no Investigation (Enrolment) Form");
+                    alert("This Case has no Investigation (Enrolment) Form. You will now be directed to the patient dashboard");
+
+                    location.href = window.location.protocol + "//" + window.location.host +
+                        '/' + OPENMRS_CONTEXT_PATH + '/coreapps/clinicianfacing/patient.page?patientId='
+                        + queryParameters['patientId']; // Causes page to reload
+                });
+            </script>
+        </includeIf>
+    </ifMode>
 
     <script type="javascript">
 
@@ -21,49 +36,47 @@
             });
 
             jq(document).ready(function () {
-                    $allRows = jq(this).find('.pcrtest');
-                    $allRows.hide();
-                    jq('#1-removeEntry').remove();
-                    jq('#10-addEntry').remove();
-                    jq('#1-toggleContainer').show();
+                $allRows = jq(this).find('.pcrtest');
+                $allRows.hide();
+                jq('#1-removeEntry').remove();
+                jq('#10-addEntry').remove();
+                jq('#1-toggleContainer').show();
 
-                    jq('#11-removeEntry').remove();
-                    jq('#20-addEntry').remove();
-                    jq('#11-toggleContainer').show();
+                jq('#11-removeEntry').remove();
+                jq('#20-addEntry').remove();
+                jq('#11-toggleContainer').show();
+            });
+
+            jq(document).ready(function () {
+                jq('.addEntry').on("click", function () {
+                    var correctedAddButtonId = parseFloat(this.id) + 1;
+                    var contentAddId = "#" + correctedAddButtonId + "-toggleContainer";
+                    jq(contentAddId).toggle(true);
+                    jq('#' + this.id).toggle(false);
+                    jq('#' + parseFloat(this.id) + '-removeEntry').toggle(true);
+                    return false;
                 });
+            });
 
-                jq(document).ready(function () {
-                    jq('.addEntry').on("click", function () {
-                        var correctedAddButtonId = parseFloat(this.id) + 1;
-                        var contentAddId = "#" + correctedAddButtonId + "-toggleContainer";
-                        jq(contentAddId).toggle(true);
-                        jq('#' + this.id).toggle(false);
-                        jq('#' + parseFloat(this.id) + '-removeEntry').toggle(true);
-                        return false;
-                    });
+            jq(document).ready(function () {
+                jq('.removeEntry').on("click", function () {
+                    var correctedRemoveButtonId = parseFloat(this.id) - 1;
+                    var contentAddId = "#" + parseFloat(this.id) + "-toggleContainer";
+                    jq(contentAddId).toggle(false);
+                    jq(':input:not(:button)', contentAddId).val([]);
+                    jq('#' + correctedRemoveButtonId + '-addEntry').toggle(true);
+                    jq('#' + correctedRemoveButtonId + '-removeEntry').toggle(true);
+
+                    return false;
                 });
-
-                jq(document).ready(function () {
-                    jq('.removeEntry').on("click", function () {
-                        var correctedRemoveButtonId = parseFloat(this.id) - 1;
-                        var contentAddId = "#" + parseFloat(this.id) + "-toggleContainer";
-                        jq(contentAddId).toggle(false);
-                        jq(':input:not(:button)', contentAddId).val([]);
-                        jq('#' + correctedRemoveButtonId + '-addEntry').toggle(true);
-                        jq('#' + correctedRemoveButtonId + '-removeEntry').toggle(true);
-
-                        return false;
-                    });
-
-                }); 
+            }); 
         }
-
     </script>
 
     <div>
         <div class="row">
             <div class="col-md-6">
-                <h1>Covd-19: Clinical Management Form</h1>
+                <h1>Covid-19: Clinical Management Form</h1>
             </div>
             <div class="col-md-5"></div>
             <div class="col-md-1">

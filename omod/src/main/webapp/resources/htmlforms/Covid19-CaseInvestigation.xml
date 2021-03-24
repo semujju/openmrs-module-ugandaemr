@@ -1,5 +1,5 @@
-<htmlform formName="Covd-19 Case Management Enrollment"
-          formDescription="Covd-19: Case Management Enrollment"
+<htmlform formName="Covid-19 Case Investigation"
+          formDescription="Covid-19: Case Investigation"
           formEncounterType="422ee220-9e83-451d-9b25-79a688a0413a"
           formUuid="d3270bd2-7cb3-11eb-9439-0242ac130002"
           formVersion="3.0.0"
@@ -9,8 +9,8 @@
           formIcon="icon-medkit"
           formShowIf="(visit.active || !visit.active) &amp;&amp; patient.person.dead==false&amp;&amp; sessionLocation.uuid=='1748bd6f-b013-449f-8d38-91319b576f3f'"
           formDisplayStyle="Standard"
-          formLabel="Covd-19 Case Management Enrollment">
-
+          formLabel="Covid-19 Case Investigation">
+          
     <script type="text/javascript">
 
         if (jQuery) {
@@ -130,10 +130,8 @@
                         disable_fields("166316"); 
                     }
                 });
-
             });
         }
-
     </script>
 
     <div>
@@ -176,7 +174,8 @@
                                         <div class="row">
                                             <div class="col-md-4" id="visit-date">
                                                 <label>Enrolment Date</label>
-                                                <obs conceptId="166073"  allowFutureDates="false" disallowMultipleEncountersOnDate="block"/>
+                                                <!-- <obs conceptId="166073"  allowFutureDates="false" disallowMultipleEncountersOnDate="block"/> -->
+                                                <encounterDate default="today" disallowMultipleEncountersOnDate="block"/>
                                             </div>
                                             <div class="col-md-4">
                                                 <label>Case ID</label>
