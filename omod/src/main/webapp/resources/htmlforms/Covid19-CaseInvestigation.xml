@@ -174,7 +174,6 @@
                                         <div class="row">
                                             <div class="col-md-4" id="visit-date">
                                                 <label>Enrolment Date</label>
-                                                <!-- <obs conceptId="166073"  allowFutureDates="false" disallowMultipleEncountersOnDate="block"/> -->
                                                 <encounterDate default="today" disallowMultipleEncountersOnDate="block"/>
                                             </div>
                                             <div class="col-md-4">
@@ -356,17 +355,17 @@
                                     <div class="card-header"> 
                                         Underlying Conditions
                                     </div>
-                                    <!-- <div class="card-body">
+                                    <div class="card-body">
                                         <div class="row">
-                                            <obs conceptId="166293" answerConceptId="90041" answerLabel="Pregnancy" style="checkbox" class="col-md-2"/>
+                                            <obs conceptId="90251" answerConceptId="90041" answerLabel="Pregnancy" style="checkbox" class="col-md-2"/>
                                         </div>
                                         <div class="row">
-                                            <obs conceptId="166293" answerConceptId="166291" answerLabel="Post-Partum (&lt;6 Weeks)" style="checkbox" class="col-md-2"/>
-                                            <obs conceptId="166293" answerConceptId="99601" answerLabel="Breast Feeding" style="checkbox" class="col-md-2" />
-                                            <obs conceptId="166293" answerConceptId="162983" answerLabel="Est Gestational Age (weeks)" class="col-md-2" />
-                                            <obs conceptId="166293" answerConceptId="166292" answerLabel="OR Trimester" class="col-md-2"/>
+                                            <obs conceptId="90251" answerConceptId="166291" answerLabel="Post-Partum (&lt;6 Weeks)" style="checkbox" class="col-md-2"/>
+                                            <obs conceptId="90251" answerConceptId="99601" answerLabel="Breast Feeding" style="checkbox" class="col-md-2" />
+                                            <obs conceptId="90251" answerConceptId="162983" answerLabel="Est Gestational Age (weeks)" class="col-md-2" />
+                                            <obs conceptId="90251" answerConceptId="166292" answerLabel="OR Trimester" class="col-md-2"/>
                                         </div>
-                                    </div> -->
+                                    </div>
                                 </div>
                                 <div class="card">
                                     <div class="card-header"> 
@@ -374,30 +373,30 @@
                                     </div>
                                     <div class="card-body 166319">
                                         <div class="row">
-                                            <obs conceptId="166319" answerConceptId="166161" answerLabel="Chronic Cardiac Disease" style="checkbox" class="col-md-2"/>
-                                            <obs conceptId="166319" answerConceptId="166318" answerLabel="Diabetes" style="checkbox" class="col-md-2" />
-                                            <obs conceptId="166319" answerConceptId="117399" answerLabel="Hypertension" style="checkbox" class="col-md-2" />
-                                            <obs conceptId="166319" answerConceptId="1455" answerLabel="Current Smoking" style="checkbox" class="col-md-2"/>
-                                            <obs conceptId="166319" answerConceptId="1295" answerLabel="Chronic Pulmonary Disease" style="checkbox" class="col-md-3" />
+                                            <obs conceptId="90251" answerConceptId="166161" answerLabel="Chronic Cardiac Disease" style="checkbox" class="col-md-2"/>
+                                            <obs conceptId="90251" answerConceptId="166318" answerLabel="Diabetes" style="checkbox" class="col-md-2" />
+                                            <obs conceptId="90251" answerConceptId="117399" answerLabel="Hypertension" style="checkbox" class="col-md-2" />
+                                            <obs conceptId="90251" answerConceptId="1455" answerLabel="Current Smoking" style="checkbox" class="col-md-2"/>
+                                            <obs conceptId="90251" answerConceptId="1295" answerLabel="Chronic Pulmonary Disease" style="checkbox" class="col-md-3" />
                                         </div>
                                         <div class="row">
-                                            <obs conceptId="166319" answerConceptId="58" answerLabel="Tuberculosis" style="checkbox" class="col-md-2" />
-                                            <obs conceptId="166319" answerConceptId="121375" answerLabel="Asthma" style="checkbox" class="col-md-2"/>
-                                            <obs conceptId="166319" answerConceptId="116030" answerLabel="Cancer" style="checkbox" class="col-md-2" />
-                                            <obs conceptId="166319" answerConceptId="99094" answerLabel="Chronic Kidney Disease" style="checkbox" class="col-md-2" />
-                                            <obs conceptId="166319" answerConceptId="160176" answerLabel="Chronic Neurological Disorder" style="checkbox" class="col-md-3" />
+                                            <obs conceptId="90251" answerConceptId="58" answerLabel="Tuberculosis" style="checkbox" class="col-md-2" />
+                                            <obs conceptId="90251" answerConceptId="121375" answerLabel="Asthma" style="checkbox" class="col-md-2"/>
+                                            <obs conceptId="90251" answerConceptId="116030" answerLabel="Cancer" style="checkbox" class="col-md-2" />
+                                            <obs conceptId="90251" answerConceptId="99094" answerLabel="Chronic Kidney Disease" style="checkbox" class="col-md-2" />
+                                            <obs conceptId="90251" answerConceptId="160176" answerLabel="Chronic Neurological Disorder" style="checkbox" class="col-md-3" />
                                         </div>
                                         <div class="row">
-                                            <obs conceptId="166319" answerConceptId="99095" answerLabel="Chronic Liver Disease" style="checkbox" class="col-md-2" />
-                                            <obs conceptId="166319" answerConceptId="166294" answerLabel="Obesity" style="checkbox" class="col-md-2"/>
-                                            <obs id="90002" conceptId="166319" answerConceptId="90002" answerLabel="Other" style="checkbox" class="col-md-2"/>
+                                            <obs conceptId="90251" answerConceptId="99095" answerLabel="Chronic Liver Disease" style="checkbox" class="col-md-2" />
+                                            <obs conceptId="90251" answerConceptId="166294" answerLabel="Obesity" style="checkbox" class="col-md-2"/>
+                                            <obs id="90002" conceptId="90251" answerConceptId="90002" answerLabel="Other" style="checkbox" class="col-md-2"/>
                                             <div class="col-md-4">
                                                 <label>Specify Other</label>
                                                 <obs conceptId="166297" id="166297"/>
                                             </div>
                                         </div>
                                         <div class="row"> <!-- conceptIDs  miss match 
-                                            <obs conceptId="166319" answerConceptId="1169" answerLabel="HIV" style="checkbox" class="col-md-1"/>  attach answers to HIV concept -->
+                                            <obs conceptId="90251" answerConceptId="1169" answerLabel="HIV" style="checkbox" class="col-md-1"/>  attach answers to HIV concept -->
                                             <!-- <obs conceptId="165169" answerConceptId="99415" answerLabel="On ART" style="checkbox" class="col-md-1"/>
                                             <obs conceptId="165169" answerConceptId="165904" answerLabel="Not On ART" style="checkbox" class="col-md-2"/>
                                             <obs conceptId="165169" answerConceptId="90001" answerLabel="Unknown" style="checkbox" class="col-md-2"/> -->

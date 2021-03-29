@@ -33,7 +33,6 @@
             jq(document).ready(function () { 
                 //Block Multiple encounter entry on same date
                 blockEncounterOnSameDateEncounter(jq("#encounterDate").find("input[type=hidden]"),"block");
-            });
 
             disable_fields("166344");
             disable_fields("166362");
@@ -46,13 +45,13 @@
             disable_fields("166340");
             disable_fields("166341");
 
-            jq(".1195").change(function () {
+            <!-- jq(".1195").change(function () {
                 if (jq(this).find('#90002').find(':checkbox').prop('checked')) {
                     enable_fields("166344");
                 } else {
                     disable_fields("166344"); 
                 }
-            });
+            }); -->
 
             jq(".1195").change(function () {
                 if (jq(this).find('#90002').find(':checkbox').prop('checked')) {
@@ -110,7 +109,7 @@
                 }
             });
 
-            jq(document).ready(function () {
+            <!-- jq(document).ready(function () {
                 $allRows = jq(this).find('.pcrtest');
                 $allRows.hide();
                 jq('#1-removeEntry').remove();
@@ -143,7 +142,7 @@
                     jq('#' + correctedRemoveButtonId + '-removeEntry').toggle(true);
 
                     return false;
-                });
+                }); -->
             }); 
         }
     </script>
@@ -246,11 +245,11 @@
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <label>Severe Dehydration</label>
-                                                <!-- <obs conceptId="166406" /> -->
+                                                <obs conceptId="5087" />
                                             </div>
                                             <div class="col-md-3">
                                                 <label>GCS/15</label>
-                                                <!-- <obs conceptId="166407" /> -->
+                                                <obs conceptId="5087" />
                                             </div>
                                             <div class="col-md-3">
                                                 <label>Oxygen Saturation</label>
