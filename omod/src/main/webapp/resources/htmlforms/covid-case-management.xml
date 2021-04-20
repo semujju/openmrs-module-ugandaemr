@@ -422,7 +422,8 @@
                                         <div class="row">
                                           <div class="col-md-3">
                                             <label>Severe Dehydration</label>
-                                              <!-- <obs conceptId="166406" /> -->
+                                              <obs conceptId="166406" answerConceptIds="90003,90004,90001" answerLabels="Yes, No, Unknown" 
+                                                 style="radio" class="horizontal" />
                                           </div>
                                           <div class="col-md-3">
                                             <label>GCS/15</label>
@@ -433,15 +434,17 @@
                                             <obs conceptId="5092"/>
                                           </div>
                                           <div class="col-md-3">
-                                            <obs conceptId="166411" answerConceptId="166408" answerLabel="Digital Capillary Refill time > 25"/>
-                                          </div> <!-- concept should be to boolean -->
+                                            <label>Digital Capillary Refill time > 2s</label>
+                                            <obs conceptId="166408" answerConceptIds="90003,90004" answerLabels="Yes, No" 
+                                                 style="radio" class="horizontal" />
+                                          </div>
                                         </div>
                                         <label>Breathing On</label>
                                         <div class="row">
                                           <obs conceptId="166411" answerConceptId="166409" answerLabel="On Room Air" style="radio" class="col-md-3"/>
                                           <obs conceptId="166411" answerConceptId="166396" answerLabel="Oxygen Therapy" style="radio" class="col-md-3"/>
                                           <obs conceptId="166411" answerConceptId="90001" answerLabel="Unknown" style="radio" class="col-md-3"/>
-                                          <obs conceptId="166411" answerConceptId="166410" answerLabel="AUPU" style="radio" class="col-md-3"/>
+                                          <obs conceptId="166411" answerConceptId="166410" answerLabel="AVPU" style="radio" class="col-md-3"/>
                                         </div>
                                     </div>
                                 </div>
@@ -464,7 +467,7 @@
                                              <obs conceptId="166413" answerConceptId="5980"  answerLabel="Vomiting/Nausea Diarrhea" class="col-md-3"/>
                                              <obs conceptId="166413" answerConceptId="6034"  answerLabel="Conjuctivitis Myalgia" class="col-md-3"/>
                                              <obs conceptId="166413" answerConceptId="90002"  answerLabel="Other" class="col-md-3"/>
-                                             <!-- <obs conceptId="166413" answerConceptId=""  answerLabel="Specify Other" class="col-md-3"/> missing -->
+                                             <obs conceptId="166414" answerConceptId="166414"  answerLabel="Specify Other" class="col-md-3"/>
                                         </div>
                                    </div>
                               </div>
@@ -481,22 +484,21 @@
                                         <obs conceptId="166336" answerConceptId="678"   answerLabel="WBC Count" class="col-md-12 mb-1" id="WBC-Count-test" />
                                         <obs conceptId="166336" answerConceptId="1015"   answerLabel="Haematocrit (%)" class="col-md-12 mb-1" id="Haematocrit-test" />
                                         <obs conceptId="166336" answerConceptId="729"   answerLabel="Platelets" class="col-md-12 mb-1" id="Platelets-test"/>
-                                        <obs conceptId="166336" answerConceptId="166329" answerLabel="APTT/APTR" class="col-md-12 mb-1" id="APTT-APTR-test"/><!-- attach -->
-                                        <obs conceptId="166336" answerConceptId="166330" answerLabel="PT (seconds)" class="col-md-12 mb-1" id="PT-test"/><!-- attach -->
-                                        <obs conceptId="166336" answerConceptId="166331" answerLabel="INR" class="col-md-12 mb-1" id="INR-test"/> <!-- attach -->
+                                        <obs conceptId="166336" answerConceptId="166329" answerLabel="APTT/APTR" class="col-md-12 mb-1" id="APTT-APTR-test"/>
+                                        <obs conceptId="166336" answerConceptId="166330" answerLabel="PT (seconds)" class="col-md-12 mb-1" id="PT-test"/>
+                                        <obs conceptId="166336" answerConceptId="166331" answerLabel="INR" class="col-md-12 mb-1" id="INR-test"/> 
                                         <obs conceptId="166336" answerConceptId="90190"  answerLabel="ALT/SGPT" class="col-md-12 mb-1" id="ALT-SGPT-test" />
                                         <obs conceptId="166336" answerConceptId="655"  answerLabel="Total Bilirubin" class="col-md-12 mb-1" id="Total-Bilirubin-test" />
                                         <obs conceptId="166336" answerConceptId="654"  answerLabel="AST/SGOT" class="col-md-12 mb-1" id="AST-SGOT-test" /> <!-- missing -->
                                         <obs conceptId="166336" answerConceptId="857"  answerLabel="Urea (BUN) " class="col-md-12 mb-1" id="Urea-test" />
                                         <obs conceptId="166336" answerConceptId="1012"  answerLabel="Lactate" class="col-md-12 mb-1" id="Lactate-test" />
-                                        <obs conceptId="166336" answerConceptId="790"  answerLabel="Creatinine" class="col-md-12 mb-1" id="Creatinine-test" /> <!-- attach -->
+                                        <obs conceptId="166336" answerConceptId="790"  answerLabel="Creatinine" class="col-md-12 mb-1" id="Creatinine-test" />
                                         <obs conceptId="166336" answerConceptId="1132"  answerLabel="Sodium" class="col-md-12 mb-1" id="Sodium-test" />
                                         <obs conceptId="166336" answerConceptId="1133"  answerLabel="Potassium" class="col-md-12 mb-1" id="Potassium-test" />
                                         <obs conceptId="166336" answerConceptId="166327"  answerLabel="Procalcitonin " class="col-md-12 mb-1" id="Procalcitonin-test" />
                                         <obs conceptId="166336" answerConceptId="166328"  answerLabel="CRP" class="col-md-12 mb-1" id="CRP-test" />
-                                        <obs conceptId="166336" answerConceptId="1014"  answerLabel="LDH" class="col-md-12 mb-1" id="LDH-test" /> <!-- missing -->
-                                        <obs conceptId="166336" answerConceptId="1011"  answerLabel="Creatine" class="col-md-12 mb-1" id="Creatine-test" /> <!-- missing -->
-                                        <obs conceptId="166336" answerConceptId="1011"   answerLabel="Kinase" class="col-md-12 mb-1" id="Kinase-test"/> <!-- missing -->
+                                        <obs conceptId="166336" answerConceptId="1014"  answerLabel="LDH" class="col-md-12 mb-1" id="LDH-test" /> 
+                                        <obs conceptId="166336" answerConceptId="1011"  answerLabel="Creatine Kinase" class="col-md-12 mb-1" id="Creatine-test" />
                                         <obs conceptId="166336" answerConceptId="166332"   answerLabel="UTroponin" class="col-md-12 mb-1" id="UTroponin-test" />
                                         <obs conceptId="166336" answerConceptId="855"   answerLabel="ESR" class="col-md-12 mb-1" id="ESR-test" />
                                         <obs conceptId="166336" answerConceptId="166333"   answerLabel="UD-dimer" class="col-md-12 mb-1" id="UD-dimer-test"/>
@@ -570,13 +572,13 @@
                                     <div class="row">
                                         <div class="col-md-3">
                                             <label>Chest X-ray</label>
-                                            <obs conceptId="166249" answerConceptIds="90003,99112" answerLabels="Yes, No" 
-                                                 style="radio" class="horizontal" id="chest-xray"/> <!-- add unknown, missing concept --> 
+                                            <obs conceptId="166249" answerConceptIds="90003,90004,90001" answerLabels="Yes, No, Unknown" 
+                                                 style="radio" class="horizontal" id="chest-xray"/> 
                                         </div>
                                         <div class="col-md-3">
                                             <label>Infiltrates Present</label>
-                                            <obs conceptId="166249" answerConceptIds="99353,99112" answerLabels="Yes, No" 
-                                                 style="radio" class="horizontal" id="infiltrates-present"/> <!-- add unknown missing concept-->
+                                            <obs conceptId="6049" answerConceptIds="90003,90004,90001" answerLabels="Yes, No, Unknown" 
+                                                 style="radio" class="horizontal" id="infiltrates-present"/>
                                         </div>
                                     </div>
                                 </div>
@@ -623,39 +625,38 @@
                                           <obs conceptId="166346" answerConceptId="71589" answerLabel="Vitamin C" style="checkbox"/> 
                                       </div>
                                       <div class="col-md-2">
-                                          <obs conceptId="166346" answerConceptId="165772" answerLabel="Zinc" style="checkbox"/> <!--wrong concept -->
+                                          <obs conceptId="166346" answerConceptId="166415" answerLabel="Zinc" style="checkbox"/>
                                       </div>
                                     </div></div></div>
                                     <div class="row">
                                       <div class="col-md-12">
                                       <label>Antibiotics Given</label>
                                       <div class="row">
-                                        <div class="col-md-2"> <!--wrong concept -->
-                                            <!-- <obs conceptId="1195" answerConceptId="89" answerLabel="" style="checkbox"/> --> <!-- add yes and no -->
-                                            <obs conceptId="166342" answerConceptIds="90003,90004" answerLabels="Yes, No" 
-                                               style="radio" class="horizontal"/> <!-- temp fix -->
+                                        <div class="col-md-2">
+                                            <obs conceptId="166421" answerConceptIds="90003,90004" answerLabels="Yes, No" 
+                                               style="radio" class="horizontal"/>
                                         </div>
                                       </div></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12 anti-biotics">
                                             <label>Antibiotics</label>
-                                            <div class="row">
-                                              <obs conceptId="166351" answerConceptId="735" answerLabel="Azithromycin" style="checkbox" class="col-md-2"/>
-                                              <obs conceptId="166351" answerConceptId="265" answerLabel="Amoxicillin" style="checkbox" class="col-md-2"/>
-                                              <obs conceptId="166351" answerConceptId="166345" answerLabel="Co-amoxiclav" style="checkbox" class="col-md-2"/>
-                                              <obs conceptId="166351" answerConceptId="496" answerLabel="Ceftriaxone" style="checkbox" class="col-md-2"/>
+                                            <!-- <div class="row"> change 1195 from N/A to coded
+                                              <obs conceptId="1195" answerConceptId="735" answerLabel="Azithromycin" style="checkbox" class="col-md-2"/>
+                                              <obs conceptId="1195" answerConceptId="265" answerLabel="Amoxicillin" style="checkbox" class="col-md-2"/>
+                                              <obs conceptId="1195" answerConceptId="166345" answerLabel="Co-amoxiclav" style="checkbox" class="col-md-2"/>
+                                              <obs conceptId="1195" answerConceptId="496" answerLabel="Ceftriaxone" style="checkbox" class="col-md-2"/>
                                             </div>
                                             <div class="row">
-                                              <obs conceptId="166351" answerConceptId="269" answerLabel="Ampicillin" style="checkbox" class="col-md-2"/>
-                                              <obs conceptId="166351" answerConceptId="100" answerLabel="Gentamycin" style="checkbox" class="col-md-2"/>
-                                              <obs conceptId="166351" answerConceptId="90002" answerLabel="Other" style="checkbox" class="col-md-2" id="other-anti-biotics"/>
+                                              <obs conceptId="1195" answerConceptId="269" answerLabel="Ampicillin" style="checkbox" class="col-md-2"/>
+                                              <obs conceptId="1195" answerConceptId="100" answerLabel="Gentamycin" style="checkbox" class="col-md-2"/>
+                                              <obs conceptId="1195" answerConceptId="90002" answerLabel="Other" style="checkbox" class="col-md-2" id="other-anti-biotics"/>
                                               <div class="col-md-4">
                                               <label>Specify Other</label>
                                               <obs id="specify-other-anti-biotics" conceptId="166344" />
                                               </div>
-                                            </div>
-                                        </div> <!-- change to coded and use right concept for anti-biotics -->
+                                            </div> -->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -666,22 +667,22 @@
                                 <div class="card-body">
                                   <div class="row">
                                     <div class="col-md-2">
-                                        <label>Hydroxychloroquine</label> <!-- wrong concept -->
-                                        <obs conceptId="166351" answerConceptIds="99353,99112" answerLabels="Yes, No" 
-                                             style="radio" class="horizontal"/> <!-- add yes no to concept -->
+                                        <label>Hydroxychloroquine</label>
+                                        <obs conceptId="166348" answerConceptIds="90003,90004" answerLabels="Yes, No" 
+                                             style="radio" class="horizontal"/>
                                     </div>
                                     <div class="col-md-2">
                                         <label>Antiviral given</label>
-                                        <obs conceptId="166351" answerConceptIds="99353,99112" answerLabels="Yes, No" 
-                                             style="radio" class="horizontal"/><!-- add yes no unknown -->
+                                        <obs conceptId="166351" answerConceptIds="90003,90004,90001" answerLabels="Yes, No, Unknown" 
+                                             style="radio" class="horizontal"/>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="col-md-12">
                                         <label>Antivirals</label>
                                         <div class="row">
-                                          <obs conceptId="166351" answerConceptId="166350" answerLabel="Ribavirin" style="checkbox" class="col-md-2"/>
+                                          <obs conceptId="166351" answerConceptId="166350" answerLabel="Ribavirin" style="checkbox" class="col-md-3"/>
                                           <obs conceptId="166351" answerConceptId="794" answerLabel="Lopinavir/Ritonavir" style="checkbox" class="col-md-3"/>
-                                          <obs conceptId="166351" answerConceptId="166349" answerLabel="Neuraminidase Inhibitor" style="checkbox" class="col-md-4"/>
+                                          <obs conceptId="166351" answerConceptId="166349" answerLabel="Neuraminidase Inhibitor" style="checkbox" class="col-md-3"/>
                                         </div>
                                       </div>
                                     </div>
@@ -689,13 +690,13 @@
                                 <div class="row">
                                   <div class="col-md-2">
                                       <label>Corticosteroid</label>
-                                      <obs conceptId="166353" answerConceptIds="90003,99112" answerLabels="Yes, No" 
-                                           style="radio" class="horizontal" id="corticosteroid"/><!--yes, no, unknown -->
+                                      <obs conceptId="166353" answerConceptIds="90003,90004,90001" answerLabels="Yes, No, Unknown" 
+                                           style="radio" class="horizontal" id="corticosteroid"/>
                                   </div>
                                   <div class="col-md-2">
-                                      <label>Route</label> <!-- change concept -->
+                                      <label>Route</label>
                                       <div class="row">
-                                      <obs conceptId="166353" answerConceptIds="160240,160242,162400" answerLabel="Oral,Intravenous,Inhaled" id="corticosteroid-route"/>
+                                      <obs conceptId="166352" answerConceptIds="160240,160242,162400" answerLabel="Oral,Intravenous,Inhaled" id="corticosteroid-route"/>
                                       </div>
                                   </div>
                                 <div class="col-md-8">
@@ -772,7 +773,7 @@
                                       </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-3">
+                                        <div class="col-md-2">
                                             <label>Diabetes Medication</label>
                                             <obs conceptId="166365" answerConceptIds="90003,90004" answerLabels="Yes, No" 
                                                  style="radio" class="horizontal" id="diabetes-medication"/>
@@ -781,18 +782,19 @@
                                             <label>Specify Diabetes Medication</label>
                                             <obs conceptId="166364" id="specify-other-diabetes-medication"/>
                                         </div>
+                                        <div class="col-md-1"></div>
                                         <div class="col-md-3">
                                             <label>Statin</label>
                                             <!-- <obs conceptId="162307" answerConceptIds="90003,90004" answerLabels="Yes, No" 
                                                  style="radio" class="horizontal" id="satin"/> --> <!-- answers not yet coded -->
                                         </div>
                                         <div class="col-md-3">
-                                            <label>Specify Satin</label>
+                                            <label>Specify Statin</label>
                                             <obs conceptId="166366" id="specify-other-satin"/>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-3">
+                                        <div class="col-md-2">
                                             <label>Anticoagulation</label>
                                             <obs conceptId="166359" answerConceptIds="90003,99112" answerLabels="Yes, No" 
                                                  style="radio" class="horizontal" id="anticoagulation"/>
@@ -801,6 +803,7 @@
                                             <label>Specify Anticoagulation</label>
                                             <obs conceptId="166263" id="specify-other-anticoagulation"/> <!-- add more -->
                                         </div>
+                                        <div class="col-md-1"></div>
                                         <div class="col-md-3">
                                             <label>Other treatment for cormobidities</label>
                                         </div>
@@ -815,91 +818,105 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                               <label>ICU or High Dependency Unit Admission </label>
                                               <obs conceptId="166249" answerConceptIds="99353,99112" answerLabels="Yes, No" 
                                                    style="radio" class="horizontal"/>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-1"></div>
+                                            <div class="col-md-2">
                                               <label>Oxygen Therapy </label>
                                               <obs conceptId="166396" answerConceptIds="90003,90004,90001" answerLabels="Yes, No, Unknown" 
                                                    style="radio" class="horizontal"/>
                                             </div>
-                                            <div class="col-md-3">
-                                              <label>O<sub>2</sub>Flow</label> <!-- add subscript -->
-                                              <obs conceptId="166395" answerConceptIds="166392,166393,166394,90001" answerLabel="1-5 L/min,6-10 L/min,11-15 L/min,Unknown" style="checkbox" class="col-md-3"/> <!-- &gt15 L/min is missing -->
+                                            <div class="col-md-1"></div>
+                                            <div class="col-md-2">
+                                              <label>O<sub>2</sub>Flow</label>
+                                              <obs conceptId="166395" answerConceptIds="166392,166393,166394,166416,90001" 
+                                                   answerLabels="1-5 L/min, 6-10 L/min, 11-15 L/min, &gt;15 L/min, Unknown"/>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-1"></div>
+                                            <div class="col-md-2">
                                               <label>Source of Oxygen</label>
                                               <obs conceptId="166391" answerConceptIds="166390,166389,166388,90001" 
-                                                   answerLabel="Piped,Cylinder,Concentrator,Unknown"/>
+                                                   answerLabels="Piped, Cylinder, Concentrator, Unknown"/>
                                             </div>
                                         </div>
                                         <div class="row">
-                                          <div class="col-md-3">
-                                            <label>Interface </label>
-                                            <obs conceptId="166387" answerConceptIds="161253,166383,166384,166385,166386" answerLabel="Nasal Prongs,Mask,Mask with reservoir,CPAP/NIV mask,HF nasal cannula"/>
+                                          <div class="col-md-2">
+                                            <label>Interface</label>
+                                            <obs conceptId="166387" answerConceptIds="161253,166383,166384,166385,166386" answerLabels="Nasal Prongs,Mask,Mask with reservoir,CPAP/NIV mask,HF nasal cannula"/>
                                           </div>
-                                          <div class="col-md-3">
+                                          <div class="col-md-1"></div>
+                                          <div class="col-md-2">
                                             <label>Non-invasive Ventilation(e.g BIPAP/CPAP)</label>
                                             <obs conceptId="166398" answerConceptIds="90003,90004,1175" answerLabels="Yes,No,N/A" 
                                                    style="radio" class="horizontal" id="non-invasive-ventilation"/>
                                           </div>
-                                          <div class="col-md-3">
+                                          <div class="col-md-1"></div>
+                                          <div class="col-md-2">
                                             <label>Worst Pressure Support Required (cm H<sub>2</sub>O)</label>
                                             <obs conceptId="166397" id="worst-pressure-support"/>
                                           </div>
-                                          <div class="col-md-3">
+                                          <div class="col-md-1"></div>
+                                          <div class="col-md-2">
                                             <label>Invasive Ventilation (Any)?</label>
                                             <obs conceptId="166400" answerConceptIds="90003,90004,90001" answerLabels="Yes,No,Unknown" 
                                                   style="radio" class="horizontal" id="invasive-ventilation"/>
                                           </div>
                                         </div>
                                         <div class="row">
-                                          <div class="col-md-3">
+                                          <div class="col-md-2">
                                             <label>SPO<sub>2</sub>/FiO<sub>2</sub> ratio of day</label>
                                             <obs conceptId="166399" id="worst-spo-fio-ratio"/>
                                           </div>
-                                          <div class="col-md-3">
+                                          <div class="col-md-1"></div>
+                                          <div class="col-md-2">
                                             <label>Inotropes/Vasopressors</label>
                                             <obs conceptId="166382" answerConceptIds="90003,90004,90001" answerLabels="Yes,No,Unknown" 
                                                  style="radio" class="horizontal"/>
                                           </div>
-                                          <div class="col-md-3">
-                                            <label>Blood Gas Done</label> <!-- wrong concept -->
-                                            <obs conceptId="166382" answerConceptIds="90003,90004,90001" answerLabels="Yes,No,Unknown" 
+                                          <div class="col-md-1"></div>
+                                          <div class="col-md-2">
+                                            <label>Blood Gas Done</label>
+                                            <obs conceptId="166405" answerConceptIds="90003,90004" answerLabels="Yes,No" 
                                                  style="radio" class="horizontal" id="blood-gas-done"/>
                                           </div>
-                                          <div class="col-md-3">
+                                          <div class="col-md-1"></div>
+                                          <div class="col-md-2">
                                             <label>pH</label>
                                             <obs conceptId="166401" id="pH"/>
                                           </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <label>PaO<sub>2</sub></label>
                                                 <obs conceptId="166402" id="PaO2"/>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-1"></div>
+                                            <div class="col-md-2">
                                                 <label>PCO<sub>2</sub></label>
                                                 <obs conceptId="166403" id="PCO2"/>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-1"></div>
+                                            <div class="col-md-2">
                                                 <label>HCO<sub>3</sub></label>
                                                 <obs conceptId="166404" id="HCO3"/>
                                             </div>
-                                        </div>
-                                        <div class="row">
+                                            <div class="col-md-1"></div>
                                             <div class="col-md-3">
                                                 <label>Extracorporeal (ECMO) Support</label>
                                                 <obs conceptId="166381" answerConceptIds="90003,90004,90001" answerLabels="Yes,No,Unknown" 
                                                      style="radio" class="horizontal"/>
                                             </div>
-                                            <div class="col-md-3">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-2">
                                                 <label>Prone Position</label>
                                                 <obs conceptId="166380" answerConceptIds="90003,90004,90001" answerLabels="Yes,No,Unknown" 
                                                      style="radio" class="horizontal"/>
                                             </div>
+                                            <div class="col-md-1"></div>
                                             <div class="col-md-3">
                                                 <label>Renal Replacement Therapy (RRT) or Dialysis?</label>
                                                 <obs conceptId="166379" answerConceptIds="90003,90004,90001" answerLabels="Yes,No,Unknown"
@@ -964,7 +981,7 @@
                                       </div>
                                       <div class="col-md-4">
                                         <label>Cardiac Arrest</label>
-                                        <obs conceptId="166379" answerConceptIds="90003,90004,90001" answerLabels="Yes,No,Unknown" style="radio" class="horizontal"/>
+                                        <obs conceptId="166417" answerConceptIds="90003,90004,90001" answerLabels="Yes,No,Unknown" style="radio" class="horizontal"/>
                                       </div>
                                       <div class="col-md-4">
                                         <label>Pancreatitis</label>
@@ -978,7 +995,7 @@
                                       </div>
                                       <div class="col-md-4">
                                         <label>Liver Dysfunction</label>
-                                        <obs conceptId="166379" answerConceptIds="90003,90004,90001" answerLabels="Yes,No,Unknown" style="radio" class="horizontal"/>
+                                        <obs conceptId="166418" answerConceptIds="90003,90004,90001" answerLabels="Yes,No,Unknown" style="radio" class="horizontal"/>
                                       </div>
                                       <div class="col-md-4">
                                         <label>Bronchiolitis</label>
@@ -1014,10 +1031,10 @@
                                         <obs conceptId="166378" answerConceptId="166375" answerLabel="Acute Renal Injury" style="checkbox" class="col-md-3" />
                                     </div>
                                     <div class="row">
-                                        <obs conceptId="166378" answerConceptId="165882" answerLabel="Cardiac Arrest" style="checkbox" class="col-md-2" /> <!-- missing -->
+                                        <obs conceptId="166378" answerConceptId="166417" answerLabel="Cardiac Arrest" style="checkbox" class="col-md-2" /> 
                                         <obs conceptId="166378" answerConceptId="166376" answerLabel="Pancreatitis" style="checkbox" class="col-md-2"/> 
                                         <obs conceptId="166378" answerConceptId="114100" answerLabel="Pneumonia" style="checkbox" class="col-md-2"/> 
-                                        <obs conceptId="166378" answerConceptId="5619" answerLabel="Liver Dysfunction" style="checkbox" class="col-md-2"/> <!-- missing -->
+                                        <obs conceptId="166378" answerConceptId="166418" answerLabel="Liver Dysfunction" style="checkbox" class="col-md-2"/>
                                         <obs conceptId="166378" answerConceptId="147" answerLabel="Bronchiolitis" style="checkbox" class="col-md-2"/>
                                     </div>
                                     <div class="row">
@@ -1028,7 +1045,7 @@
                                         <obs conceptId="166378" answerConceptId="90002" answerLabel="Other" style="checkbox" class="col-md-2" id="other-complications"/>
                                         <div class="col-md-4">
                                             <label>Specify Other</label>
-                                            <obs conceptId="166377" id="Specify-other-complications" />
+                                            <obs conceptId="166378" answerConceptId="166377" id="Specify-other-complications" />
                                         </div>
                                     </div>
                                 </div>
