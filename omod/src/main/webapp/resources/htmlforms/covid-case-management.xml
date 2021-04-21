@@ -361,13 +361,6 @@
                                                 <encounterDate default="today" disallowMultipleEncountersOnDate="block" />
                                             </div>
                                         </div>
-                                        <!-- <div class="row">
-                                            <div class="col-md-3">
-                                                <label>Covid-19 Infection</label>
-                                                <obs conceptId="166326" answerConceptIds="166324,166325" answerLabels="Confirmed, Suspected"
-                                                     style="radio" class="horizontal"/>
-                                            </div>
-                                        </div> -->
                                     </div>
                                 </div>
                                 <div class="card">
@@ -796,12 +789,12 @@
                                     <div class="row">
                                         <div class="col-md-2">
                                             <label>Anticoagulation</label>
-                                            <obs conceptId="166359" answerConceptIds="90003,99112" answerLabels="Yes, No" 
+                                            <obs conceptId="166359" answerConceptIds="90003,90004" answerLabels="Yes, No" 
                                                  style="radio" class="horizontal" id="anticoagulation"/>
                                         </div>
                                         <div class="col-md-3">
                                             <label>Specify Anticoagulation</label>
-                                            <obs conceptId="166263" id="specify-other-anticoagulation"/> <!-- add more -->
+                                            <obs conceptId="166355" id="specify-other-anticoagulation"/> 
                                         </div>
                                         <div class="col-md-1"></div>
                                         <div class="col-md-3">
@@ -1052,7 +1045,8 @@
                             </div>
                         </div>
                     </div>
-                </div></div>
+                </div>
+              </div>
             </div>
         </div>
     </div>
