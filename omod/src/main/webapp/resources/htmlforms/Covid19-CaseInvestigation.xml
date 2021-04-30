@@ -309,12 +309,8 @@
                                                     <div class="col-md-2"> 
                                                     <label>Test Type</label>
                                                     </div>
-                                                    <obs id="rdt-ag" conceptId="166284" answerConceptId="166282" answerLabel="RDT Ag" style="checkbox" 
-                                                         class="col-md-2"/>
-                                                    <obs id="rdt-ab" conceptId="166284" answerConceptId="166283" answerLabel="RDT Ab" style="checkbox" 
-                                                         class="col-md-2" />
-                                                    <obs id="pcr" conceptId="166284" answerConceptId="163006" answerLabel="PCR" style="checkbox" 
-                                                         class="col-md-2" />
+                                                    <obs id="rdt-ag" conceptId="166284" answerConceptIds="166282,166283,163006" 
+                                                         answerLabels="RDT Ag, RDT Ab, PCR" style="radio" class="horizontal"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -558,9 +554,13 @@
                                     <div class="card-header">
                                        Admit to Hospital
                                     </div>
-                                    <div class="card-body admit-to-hospital">
+                                    <div class="card-body admission">
                                         <div class="row">
-                                            <obs id="admit-to-hospital" conceptId="166323" answerConceptId="166317" answerLabel="Admit to hospital" style="checkbox" class="col-md-3"/>
+                                            <div class="col-md-12">
+                                            <obs id="admit-to-hospital" conceptId="166323" answerConceptIds="166317, 166311, 166312, 160034" 
+                                                 answerLabel="Admit to hospital, Admit to non-traditional isolation facility, Home Isolation, Died" 
+                                                 style="radio" class="horizontal"/>
+                                            </div>
                                         </div>
                                         <div class="row">
                                             <obs id="isolation-ward-for-suspect-cases" conceptId="166317" answerConceptId="166313" answerLabel="Isolation ward for suspect cases" style="checkbox"
@@ -574,19 +574,6 @@
                                             <obs id="admit-to-hospital-specify-other" conceptId="166316" labelText="Specify Other" class="col-md-3"/>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                       Other Admissions
-                                    </div>
-                                    <div class="card-body 166317">
-                                        <div class="row">
-                                            <obs conceptId="166323" answerConceptId="166311" answerLabel="Admit to non-traditional isolation facility" style="checkbox" class="col-md-4" />
-                                            <obs conceptId="166323" answerConceptId="166312" answerLabel="Home Isolation" style="checkbox" class="col-md-4" />
-                                            <obs conceptId="166323" answerConceptId="160034" answerLabel="Died" style="checkbox" class="col-md-2" />
-                                        </div>
-
-                                    </div>    
                                 </div>
                             </div>
                         </div>
