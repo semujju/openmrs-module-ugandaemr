@@ -155,7 +155,7 @@ formDisplayStyle="Standard">
 
                                         <div class="col-md-3">
                                             <label>TB Pills</label>
-                                            <obs conceptId="160856" />
+                                            <obs conceptId="166464" />
                                         </div>
                                         <div class="col-md-3">
                                             <label>INH Status</label>
