@@ -1,20 +1,13 @@
-<htmlform formName="Walk-in ART Service" 
-formDescription="Walk-in Client Data Capture Tool" 
-formEncounterType="d18bd8f2-dfcd-11eb-ba80-0242ac130004" 
-formUuid="aa858f72-0080-44a8-8bac-55bc275e1d10" 
-formVersion="3.0" 
-formAddMetadata="yes" 
-formUILocation="patientDashboard.visitActions" 
-formOrder="3" 
-formIcon="icon-medkit" 
-formShowIf="(visit.active || !visit.active) &amp;&amp; patient.person.dead==false &amp;&amp; (sessionLocation.uuid=='86863db4-6101-4ecf-9a86-5e716d6504e4' || sessionLocation.uuid=='7c231e1a-1db5-11ea-978f-2e728ce88125')" 
-formDisplayStyle="Standard">
+<htmlform formName="Walk-in ART Service" formDescription="Walk-in Client Data Capture Tool" formEncounterType="d18bd8f2-dfcd-11eb-ba80-0242ac130004" formUuid="aa858f72-0080-44a8-8bac-55bc275e1d10" formVersion="3.0" formAddMetadata="yes" formUILocation="patientDashboard.visitActions" formOrder="3" formIcon="icon-medkit" formShowIf="(visit.active || !visit.active) &amp;&amp; patient.person.dead==false &amp;&amp; (sessionLocation.uuid=='86863db4-6101-4ecf-9a86-5e716d6504e4' || sessionLocation.uuid=='7c231e1a-1db5-11ea-978f-2e728ce88125')" formDisplayStyle="Standard">
 
     <script type="text/javascript">
 
             if (jQuery) {
     
-                jq(document).ready(function () {                    
+                jq(document).ready(function () {   
+                    
+                    //Block Multiple encounter entry on same date
+                    blockEncounterOnSameDateEncounter(jq("#encounterDate").find("input[type=hidden]"),"block");
     
                     disable_fields("other-regimen");                    
                     disable_fields("reason-for-visit-other")                    
@@ -138,6 +131,8 @@ formDisplayStyle="Standard">
                                             Serial No
                                         </label>
                                         <obs id="serial-number" conceptId="1646" />
+                                        <label>Encounter Date</label>
+                                        <encounterDate default="today" disallowMultipleEncountersOnDate="block" />
                                     </div>
 
                                     <div class="row">
