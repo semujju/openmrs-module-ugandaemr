@@ -20,19 +20,19 @@
                             }
     
                             if(getValue('reason-for-visit.value')==""){
-                                jq().toastmessage('showErrorToast', "Reason for visit is required");
+                                jq().toastmessage('showErrorToast', "Reason for visit has not been added");
                             }
                 
                             if(getValue('current-regimen.value')==""){
-                                jq().toastmessage('showErrorToast', "Current Regimen is required");
+                                jq().toastmessage('showErrorToast', "Current Regimen has not been added");
                             }
     
                             if(getValue('parent-health-facility.value')==""){
-                                jq().toastmessage('showErrorToast', "Parent Health Facility is required");
+                                jq().toastmessage('showErrorToast', "Add the Parent Health Facility as required");
                             }
     
                             if(getValue('serial-number.value')==""){
-                                jq().toastmessage('showErrorToast', "Serial Number is required");
+                                jq().toastmessage('showErrorToast', "Add the Serial Number as required");
                             }
     
                             if(getValue('pt-clinic-number.value')==""){
@@ -40,7 +40,7 @@
                             }
     
                             if(getValue('tb-status.value')==""){
-                                jq().toastmessage('showErrorToast', "The TB Status is required");
+                                jq().toastmessage('showErrorToast', "The TB Status is has not been added");
                             }
     
                             if(getValue('no-of-art-pills.value')==""){
@@ -82,37 +82,33 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <label>
-                                            <span class="required">*</span>
+                                        <label>Walk-in Date</label>
+                                        <encounterDate default="today" disallowMultipleEncountersOnDate="block" />
+                                        <label>                                            
                                             Reason for Visit
                                         </label>
-                                        <obs id="reason-for-visit" conceptId="160288" answerConceptIds="166455, 166456, 165043, 90002" answerLabels="Lockdown, Natural Disaster, Admission, Other">
+                                        <obs id="reason-for-visit" conceptId="160288" answerConceptIds="166455, 166456, 165043, 90002" answerLabels="Lockdown, Natural Disaster, Admission, Other" required="true">
                                             <controls>
                                                 <when value="90002" thenDisplay="#reason-for-visit-other"/>
                                             </controls>
                                             </obs>
-                                        <label>
-                                            <span class="required">*</span>
+                                        <label>                                            
                                             Current Regimen
                                         </label>
-                                        <obs id="current-regimen" conceptId="90315" answerConceptIds="99015,99016,99005,99006,164979,99039,99040,164977,99041,99042,99007,99008,99044,99043,99282,99283,99046,99017,99018,99019,99045,99284,99285,99286,99884,99885,164978,99888,163017,99887,90002" answerLabels="d4T-3TC-NVP,d4T-3TC-EFV,AZT-3TC-NVP,AZT-3TC-EFV,AZT-3TC-DTG,TDF-3TC-NVP,TDF-3TC-EFV,TDF-3TC-DTG,TDF-FTC-NVP,TDF-FTC-EFV,ABC-ddI(250)-LPV/r,ABC-ddI(400)-LPV/r,TDF-3TC-LPV/r,TDF-FTC-LPV/r,ZDV-ddI(250)-LPV/r,ZDV-ddI(400)-LPV/r,AZT-3TC-LPV/r,ABC-ddI-LPV/r,ABC-ddI-NFV,ABC-ddI-SQV/r,ZDV-ddI-LPV/r,AZT-ABC-LPV/r,ABC-ddI-ATV/r,AZT-3TC-ATV/r,ABC-3TC-NVP,ABC-3TC-EFV,ABC-3TC-DTG,ABC-3TC-ATV/r,ABC-3TC-LPV/r,TDF-3TC-ATV/r,Other">
+                                        <obs id="current-regimen" conceptId="90315" answerConceptIds="99015,99016,99005,99006,164979,99039,99040,164977,99041,99042,99007,99008,99044,99043,99282,99283,99046,99017,99018,99019,99045,99284,99285,99286,99884,99885,164978,99888,163017,99887,90002" answerLabels="d4T-3TC-NVP,d4T-3TC-EFV,AZT-3TC-NVP,AZT-3TC-EFV,AZT-3TC-DTG,TDF-3TC-NVP,TDF-3TC-EFV,TDF-3TC-DTG,TDF-FTC-NVP,TDF-FTC-EFV,ABC-ddI(250)-LPV/r,ABC-ddI(400)-LPV/r,TDF-3TC-LPV/r,TDF-FTC-LPV/r,ZDV-ddI(250)-LPV/r,ZDV-ddI(400)-LPV/r,AZT-3TC-LPV/r,ABC-ddI-LPV/r,ABC-ddI-NFV,ABC-ddI-SQV/r,ZDV-ddI-LPV/r,AZT-ABC-LPV/r,ABC-ddI-ATV/r,AZT-3TC-ATV/r,ABC-3TC-NVP,ABC-3TC-EFV,ABC-3TC-DTG,ABC-3TC-ATV/r,ABC-3TC-LPV/r,TDF-3TC-ATV/r,Other" required="true">
                                             <controls>
                                                 <when value="90002" thenDisplay="#other-regimen"/>
                                             </controls>
                                             </obs>
-                                        <label>
-                                            <span class="required">*</span>
+                                        <label>                                            
                                             Parent Health facility
                                         </label>
-                                        <obs id="parent-health-facility" conceptId="166453" />
+                                        <obs id="parent-health-facility" conceptId="166453" required="true"/>
                                         <obs id="district-of-parent-health-facility" labelText="District of Parent Health Facility" conceptId="166454" />
-                                        <label>
-                                            <span class="required">*</span>
+                                        <label>                                            
                                             Serial No
                                         </label>
-                                        <obs id="serial-number" conceptId="1646" />
-                                        <label>Encounter Date</label>
-                                        <encounterDate default="today" disallowMultipleEncountersOnDate="block" />
+                                        <obs id="serial-number" conceptId="1646" required="true"/>                                        
                                     </div>
 
                                     <div class="row">
@@ -132,25 +128,17 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <label>
-                                            <span class="required">*</span>
-                                            Phone Number
-                                        </label>
-                                        <obs id="phone-number" conceptId="90266" />
-                                        <label>
-                                            <span class="required">*</span>
-                                            ART Number at Parent Facility
-                                        </label>
-                                        <obs id="pt-clinic-number" conceptId="90264" />
+                                        <label>Phone Number:</label>
+                                        <lookup expression="personAttributes.get('Telephone Number')"/>
+                                        <label>ART Number at Parent Facility</label>
+                                        <obs id="pt-clinic-number" conceptId="90264" required="true"/>
 
                                         <obs id="eid-number" labelText="EID Number" conceptId="166453" />
 
                                         <obs id="client-category" conceptId="165169" labelText="Client Category" answerConceptIds="90315, 165132, 159674, 162198, 165125, 90041, 99601, 157351, 99087,165133, 159991, 165127, 166461, 166462, 166463" answerLabels="MW- Migrant Workers, AGYW- Adoloscent Girls and Young Women, FF- Fisher Folk, LDT- Long Distance Truck Drivers, UF- Uniformed Forces, Preg- Pregnant, BF- Breastfeeding, IDU- Injectable Drug User, HEI- HIV Exposed Infant, OKP- Other KPs, TB- TB/HIV Client, RF- Refugee, ART- General ART Client, NIDU- Non IDU, OPP- Other PPs" />
-                                        <label>
-                                                    National ID Number
-                                                </label>
+                                        <label>National ID Number</label>
                                         <span id="nin-number">
-                                            <patient field="identifier" identifierTypeId="e1731641-30ab-102d-86b0-7a5022ba4115" required="false" />
+                                            <patient field="identifier" identifierTypeId="f0c16a6d-dc5f-4118-a803-616d0075d282" required="false" />
                                         </span>
                                     </div>
                                 </div>
@@ -190,6 +178,16 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-4">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label>TB Pills</label>
+                                                <obs conceptId="166464" />
+                                                <label>INH Status</label>
+                                                <obs id="tpt-status" conceptId="165288" answerConceptIds="1090,90072,165307,90040,160035" answerLabels="H0-Never Initiated,H1-On INH,H2-Defaulted,H3-Taken off due to side effects,H4-Completed" />
+                                                <label>INH Pills</label>
+                                                <obs conceptId="160856" id="inh-pills" />
+                                            </div>
+                                        </div>
                                         <label>ART Regimen</label>
                                                     <obs id="90315" 
                                                          conceptId="90315"                                                              answerConceptIds="99015,99016,99005,99006,164979,99039,99040,164977,99041,99042,99007,99008,99044,99043,99282,99283,99046,99017,99018,99019,99045,99284,99285,99286,99884,99885,164978,99888,163017,99887,165797,165796,165795,165808,165807,165806,165805,165804,165803,165802,165801,165800,165799,165798,90002"
@@ -203,25 +201,15 @@
                                             SAMO - Severe Acute Malnutrition with Oedema, O - Overweight/Obese" />
                                         <obs labelText="CTX Refill" id="160856" conceptId="160856" />                                        
                                         <label>
-                                            <span class="required">*</span>
+                                            
                                             ART Refill
                                         </label>
-                                        <obs id="no-of-art-pills" conceptId="99038" />
+                                        <obs id="no-of-art-pills" conceptId="99038" required="true"/>
                                         <label>
-                                            <span class="required">*</span>
+                                            
                                             TB Status
                                         </label>
-                                        <obs id="tb-status" class="long-value-select" conceptId="90216" answerConceptIds="90079,90073, 165295, 165296, 165297, 165298, 165299,165300,90071" answerLabels="1 - No signs,2 - Presumptive, 3C - TB Diagnosed - Clinically diagnosed,  3G - TB Diagnosed - Gene Xpert, 3L - TB Diagnosed - TB LAM,3M - TB Diagnosed -TB Microscopy, 3X - TB Diagnosed - Chest Xray, 3O - TB Diagnosed - Others, 4 - Tb Rx" />
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <label>TB Pills</label>
-                                                <obs conceptId="166464" />
-                                                <label>INH Status</label>
-                                                <obs id="tpt-status" conceptId="165288" answerConceptIds="1090,90072,165307,90040,160035" answerLabels="H0-Never Initiated,H1-On INH,H2-Defaulted,H3-Taken off due to side effects,H4-Completed" />
-                                                <label>INH Pills</label>
-                                                <obs conceptId="160856" id="inh-pills" />
-                                            </div>
-                                        </div>
+                                        <obs id="tb-status" class="long-value-select" conceptId="90216" answerConceptIds="90079,90073, 165295, 165296, 165297, 165298, 165299,165300,90071" answerLabels="1 - No signs,2 - Presumptive, 3C - TB Diagnosed - Clinically diagnosed,  3G - TB Diagnosed - Gene Xpert, 3L - TB Diagnosed - TB LAM,3M - TB Diagnosed -TB Microscopy, 3X - TB Diagnosed - Chest Xray, 3O - TB Diagnosed - Others, 4 - Tb Rx" required="true"/>                                        
                                     </div>
                                     <div class="row">                                        
                                         <div class="col-md-12">
