@@ -131,8 +131,9 @@
                                         <label>Phone Number:</label>
                                         <lookup expression="personAttributes.get('Telephone Number')"/>
                                         <label>ART Number at Parent Facility</label>
-                                        <obs id="pt-clinic-number" conceptId="90264" required="true"/>
-
+                                        <span id="patientNumber">
+                                            <patient field="identifier" identifierTypeId="e1731641-30ab-102d-86b0-7a5022ba4115" required="false"/>
+                                        </span>
                                         <obs id="eid-number" labelText="EID Number" conceptId="166453" />
 
                                         <obs id="client-category" conceptId="165169" labelText="Client Category" answerConceptIds="90315, 165132, 159674, 162198, 165125, 90041, 99601, 157351, 99087,165133, 159991, 165127, 166461, 166462, 166463" answerLabels="MW- Migrant Workers, AGYW- Adoloscent Girls and Young Women, FF- Fisher Folk, LDT- Long Distance Truck Drivers, UF- Uniformed Forces, Preg- Pregnant, BF- Breastfeeding, IDU- Injectable Drug User, HEI- HIV Exposed Infant, OKP- Other KPs, TB- TB/HIV Client, RF- Refugee, ART- General ART Client, NIDU- Non IDU, OPP- Other PPs" />
