@@ -22,12 +22,7 @@ formDisplayStyle="Standard">
                         
                         beforeSubmit.push(function () {
                             var submitVal = true;
-    
-                            
-    
-                            if(getValue('phone-number.value')==""){
-                                jq().toastmessage('showErrorToast', "Add the Telephone Number as required");
-                            }
+                                                                
     
                             if(getValue('reason-for-visit.value')==""){
                                 jq().toastmessage('showErrorToast', "Reason for visit has not been added");
@@ -135,9 +130,7 @@ formDisplayStyle="Standard">
                             </div>
         <div class="card-body">
             <div class="row">
-                <div class="col-md-4">
-                    <label>Phone Number:</label>
-                    <lookup expression="personAttributes.get('Telephone Number')"/>
+                <div class="col-md-4">                    
                     <label>ART Number at Parent Facility</label>
                     <obs id="patient-clinic-number" conceptId="90264" field="identifier" identifierTypeId="e1731641-30ab-102d-86b0-7a5022ba4115" required="false" />
                     <excludeIf velocityTest="$patient.age &gt; 5">
