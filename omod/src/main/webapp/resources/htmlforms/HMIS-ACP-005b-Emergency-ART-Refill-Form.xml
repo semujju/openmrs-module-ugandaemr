@@ -7,52 +7,18 @@ formAddMetadata="yes"
 formUILocation="patientDashboard.visitActions" 
 formOrder="3" 
 formIcon="icon-medkit" 
-formShowIf="(visit.active || !visit.active) &amp;&amp; patient.person.dead==false &amp;&amp; (sessionLocation.uuid=='86863db4-6101-4ecf-9a86-5e716d6504e4' || sessionLocation.uuid=='7c231e1a-1db5-11ea-978f-2e728ce88125')"
+formShowIf="(visit.active || !visit.active) &amp;&amp; patient.person.dead==false &amp;&amp; (sessionLocation.uuid=='86863db4-6101-4ecf-9a86-5e716d6504e4' || sessionLocation.uuid=='e9bc61b5-69ff-414b-9cf0-0c22d6dfca2b')"
 formDisplayStyle="Standard">
 
 
     <script type="text/javascript">
 
-            if (jQuery) {
+        if (jQuery) {
     
                 jq(document).ready(function () {   
                     
                 //Block Multiple encounter entry on same date
-                blockEncounterOnSameDateEncounter(jq("#encounterDate").find("input[type=hidden]"),"block");                        
-                    
-                beforeSubmit.push(function () {
-                    var submitVal = true;
-
-                if(getValue('reason-for-visit.value')==""){
-                    jq().toastmessage('showErrorToast', "Reason for visit has not been added");
-                }
-    
-                if(getValue('current-regimen.value')==""){
-                    jq().toastmessage('showErrorToast', "Current Regimen has not been added");
-                }
-
-                if(getValue('parent-health-facility.value')==""){
-                    jq().toastmessage('showErrorToast', "Add the Parent Health Facility as required");
-                }
-
-                if(getValue('serial-number.value')==""){
-                    jq().toastmessage('showErrorToast', "Add the Serial Number as required");
-                }
-
-                if(getValue('pt-clinic-number.value')==""){
-                    jq().toastmessage('showErrorToast', "ART Number at Parent Facility has not been entered");
-                }
-
-                if(getValue('tb-status.value')==""){
-                    jq().toastmessage('showErrorToast', "The TB Status is has not been added");
-                }
-
-                if(getValue('no-of-art-pills.value')==""){
-                    jq().toastmessage('showErrorToast', "The Art Refill is required");
-                }   
-
-                    return submitVal;
-                });                                                   
+                blockEncounterOnSameDateEncounter(jq("#encounterDate").find("input[type=hidden]"),"block");                                                                                      
             });                        
         }
             
@@ -60,7 +26,7 @@ formDisplayStyle="Standard">
 
     <div class="row">
         <div class="col-md-6">
-            <h3>Walk-in ART Service</h3>
+            <h3>Emergency ART Refill</h3>
         </div>
         <div class="col-md-5"></div>
         <div class="col-md-1">
@@ -126,11 +92,11 @@ formDisplayStyle="Standard">
             <div class="row">
                 <div class="col-md-4">                    
                     <label>ART Number at Parent Facility</label>
-                    <obs id="patient-clinic-number" conceptId="90264" field="identifier" identifierTypeId="e1731641-30ab-102d-86b0-7a5022ba4115" required="false" />
-                    <excludeIf velocityTest="$patient.age &gt; 5">
+                    <patient field="identifier" identifierTypeId="e1731641-30ab-102d-86b0-7a5022ba4115" required="false" />
+                    <includeIf velocityTest="$patient.age &gt; 5">
                         <label>EID Number</label>
                         <obs id="eid-number" conceptId="99077" />
-                    </excludeIf>
+                    </includeIf>
                     <obs id="client-category" conceptId="165169" labelText="Client Category" answerConceptIds="90315, 165132, 159674, 162198, 165125, 90041, 99601, 157351, 99087,165133, 159991, 165127, 166461, 166462, 166463" answerLabels="MW- Migrant Workers, AGYW- Adoloscent Girls and Young Women, FF- Fisher Folk, LDT- Long Distance Truck Drivers, UF- Uniformed Forces, Preg- Pregnant, BF- Breastfeeding, IDU- Injectable Drug User, HEI- HIV Exposed Infant, OKP- Other KPs, TB- TB/HIV Client, RF- Refugee, ART- General ART Client, NIDU- Non IDU, OPP- Other PPs" />
                     <label>National ID Number</label>
                     <span id="nin-number">
