@@ -36,9 +36,7 @@ formDisplayStyle="Standard">
 
 
     <div class="card">
-        <div class="card-header">
-                                    Patient History
-                                </div>
+        <div class="card-header">Patient History</div>
 
         <div class="card-body">
             <div class="row">
@@ -47,30 +45,23 @@ formDisplayStyle="Standard">
                     <div class="html-form-entry-disabled-field" id="walkin-date">
                         <encounterDate default="today" disallowMultipleEncountersOnDate="block" />
                     </div>
-                    <label>                                            
-                                            Reason for Visit
-                                        </label>
+                    <label>Parent Health facility</label>
+                    <obs id="parent-health-facility" conceptId="166453" required="true" />
+                    <label>District of Parent Health Facility</label>
+                    <obs id="district-of-parent-health-facility" labelText="" conceptId="166454" />
+                    <label>Reason for Visit </label>
                     <obs id="reason-for-visit" conceptId="160288" answerConceptIds="166455, 166456, 165043, 90002" answerLabels="Lockdown, Natural Disaster, Admission, Other" required="true">
                         <controls>
                             <when value="90002" thenDisplay="#reason-for-visit-other" />
                         </controls>
                     </obs>
-                    <label>                                            
-                                            Current Regimen
-                                        </label>
+                    <label>Current Regimen</label>
                     <obs id="current-regimen" conceptId="90315" answerConceptIds="99015,99016,99005,99006,164979,99039,99040,164977,99041,99042,99007,99008,99044,99043,99282,99283,99046,99017,99018,99019,99045,99284,99285,99286,99884,99885,164978,99888,163017,99887,90002" answerLabels="d4T-3TC-NVP,d4T-3TC-EFV,AZT-3TC-NVP,AZT-3TC-EFV,AZT-3TC-DTG,TDF-3TC-NVP,TDF-3TC-EFV,TDF-3TC-DTG,TDF-FTC-NVP,TDF-FTC-EFV,ABC-ddI(250)-LPV/r,ABC-ddI(400)-LPV/r,TDF-3TC-LPV/r,TDF-FTC-LPV/r,ZDV-ddI(250)-LPV/r,ZDV-ddI(400)-LPV/r,AZT-3TC-LPV/r,ABC-ddI-LPV/r,ABC-ddI-NFV,ABC-ddI-SQV/r,ZDV-ddI-LPV/r,AZT-ABC-LPV/r,ABC-ddI-ATV/r,AZT-3TC-ATV/r,ABC-3TC-NVP,ABC-3TC-EFV,ABC-3TC-DTG,ABC-3TC-ATV/r,ABC-3TC-LPV/r,TDF-3TC-ATV/r,Other" required="true">
                         <controls>
                             <when value="90002" thenDisplay="#other-regimen" />
                         </controls>
-                    </obs>
-                    <label>                                            
-                                            Parent Health facility
-                                        </label>
-                    <obs id="parent-health-facility" conceptId="166453" required="true" />
-                    <obs id="district-of-parent-health-facility" labelText="District of Parent Health Facility" conceptId="166454" />
-                    <label>                                            
-                                            Serial No
-                                        </label>
+                    </obs>                                        
+                    <label> Serial No</label>
                     <obs id="serial-number" conceptId="1646" required="true" />
                 </div>
 
@@ -85,17 +76,15 @@ formDisplayStyle="Standard">
     </div>
 
     <div class="card">
-        <div class="card-header">
-                                Patient Demographics
-                            </div>
+        <div class="card-header">Patient Demographics</div>
         <div class="card-body">
             <div class="row">
                 <div class="col-md-4">                    
                     <label>ART Number at Parent Facility</label>
-                    <patient field="identifier" identifierTypeId="e1731641-30ab-102d-86b0-7a5022ba4115" required="false" />
+                    <obs id="patientnumber" conceptId="90264" required="false" />
                     <includeIf velocityTest="$patient.age &gt; 5">
-                        <label>EID Number</label>
-                        <obs id="eid-number" conceptId="99077" />
+                    <label>EID Number</label>
+                    <obs id="eid-number" conceptId="99077" />
                     </includeIf>
                     <obs id="client-category" conceptId="165169" labelText="Client Category" answerConceptIds="90315, 165132, 159674, 162198, 165125, 90041, 99601, 157351, 99087,165133, 159991, 165127, 166461, 166462, 166463" answerLabels="MW- Migrant Workers, AGYW- Adoloscent Girls and Young Women, FF- Fisher Folk, LDT- Long Distance Truck Drivers, UF- Uniformed Forces, Preg- Pregnant, BF- Breastfeeding, IDU- Injectable Drug User, HEI- HIV Exposed Infant, OKP- Other KPs, TB- TB/HIV Client, RF- Refugee, ART- General ART Client, NIDU- Non IDU, OPP- Other PPs" />
                     <label>National ID Number</label>
@@ -119,9 +108,7 @@ formDisplayStyle="Standard">
                     <label>Blood Pressure</label>
                     <div class="row ml-1">
                         <obs conceptId="5085" id="bp_systolic" />
-                        <p class="left">
-                                                /
-                                            </p>
+                        <p class="left">/</p>
                         <obs conceptId="5086" id="bp_diastolic" />
                     </div>
                     <label>Temperature (c)</label>
@@ -134,9 +121,7 @@ formDisplayStyle="Standard">
     </div>
 
     <div class="card">
-        <div class="card-header">
-                                Clinical Assessment and Refill
-                            </div>
+        <div class="card-header">Clinical Assessment and Refill</div>
         <div class="card-body">
             <div class="row">
                 <div class="col-md-4">
@@ -153,8 +138,7 @@ formDisplayStyle="Standard">
                         </div>
                     </div>
                     <label>Nutrition Status</label>
-                    <obs conceptId="165050" answerConceptIds="1115, 99271, 99272, 99273, 5277" answerLabels="N - Normal, MAM - Moderate Acute Malnutrition, SAM - Severe Acute Malnutrition,
-                                            SAMO - Severe Acute Malnutrition with Oedema, O - Overweight/Obese" />
+                    <obs conceptId="165050" answerConceptIds="1115, 99271, 99272, 99273, 5277" answerLabels="N - Normal, MAM - Moderate Acute Malnutrition, SAM - Severe Acute Malnutrition, SAMO - Severe Acute Malnutrition with Oedema, O - Overweight/Obese" />
                     <obs labelText="CTX Refill" id="160856" conceptId="160856" />
 
                     <label>ART Regimen</label>
@@ -176,9 +160,7 @@ formDisplayStyle="Standard">
     </div>
 
     <div class="card">
-        <div class="card-header">
-                                Follow-up after Emergency
-                            </div>
+        <div class="card-header">Follow-up after Emergency</div>
         <div class="card-body">
             <div class="row">
                 <div class="col-md-6">
