@@ -142,10 +142,10 @@ formDisplayStyle="Standard">
                 <div class="col-md-4">
                     <div class="row">
                         <div class="col-md-12">
-                            <label>TB Pills</label>
-                            <obs conceptId="166464" />
                             <label>TB Status</label>
                             <obs id="tb-status" class="long-value-select" conceptId="90216" answerConceptIds="90079,90073, 165295, 165296, 165297, 165298, 165299,165300,90071" answerLabels="1 - No signs,2 - Presumptive, 3C - TB Diagnosed - Clinically diagnosed,  3G - TB Diagnosed - Gene Xpert, 3L - TB Diagnosed - TB LAM,3M - TB Diagnosed -TB Microscopy, 3X - TB Diagnosed - Chest Xray, 3O - TB Diagnosed - Others, 4 - Tb Rx" required="true" />
+                            <label>TB Pills</label>
+                            <obs conceptId="166464" />                            
                             <label>INH Status</label>
                             <obs id="tpt-status" conceptId="165288" answerConceptIds="1090,90072,165307,90040,160035" answerLabels="H0- Never Initiated, H1- On INH, H2- Defaulted, H3- Taken off due to side effects, H4- Completed" />
                             <label>INH Pills</label>
