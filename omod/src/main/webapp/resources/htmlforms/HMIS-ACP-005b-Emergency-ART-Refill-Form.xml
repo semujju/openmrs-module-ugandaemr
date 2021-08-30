@@ -45,6 +45,8 @@ formDisplayStyle="Standard">
                     <div class="html-form-entry-disabled-field" id="walkin-date">
                         <encounterDate default="today" disallowMultipleEncountersOnDate="block" />
                     </div>
+                    <label> Serial No</label>
+                    <obs id="serial-number" conceptId="1646" required="true" />
                     <label>Parent Health facility</label>
                     <obs id="parent-health-facility" conceptId="166453" required="true" />
                     <label>District of Parent Health Facility</label>
@@ -60,9 +62,7 @@ formDisplayStyle="Standard">
                         <controls>
                             <when value="90002" thenDisplay="#other-regimen" />
                         </controls>
-                    </obs>                                        
-                    <label> Serial No</label>
-                    <obs id="serial-number" conceptId="1646" required="true" />
+                    </obs>                                                            
                 </div>
 
                 <div class="row">
@@ -86,11 +86,11 @@ formDisplayStyle="Standard">
                     <label>EID Number</label>
                     <obs id="eid-number" conceptId="99077" />
                     </includeIf>
-                    <obs id="client-category" conceptId="165169" labelText="Client Category" answerConceptIds="90315, 165132, 159674, 162198, 165125, 90041, 99601, 157351, 99087,165133, 159991, 165127, 166461, 166462, 166463" answerLabels="MW- Migrant Workers, AGYW- Adoloscent Girls and Young Women, FF- Fisher Folk, LDT- Long Distance Truck Drivers, UF- Uniformed Forces, Preg- Pregnant, BF- Breastfeeding, IDU- Injectable Drug User, HEI- HIV Exposed Infant, OKP- Other KPs, TB- TB/HIV Client, RF- Refugee, ART- General ART Client, NIDU- Non IDU, OPP- Other PPs" />
                     <label>National ID Number</label>
                     <span id="nin-number">
                         <patient field="identifier" identifierTypeId="f0c16a6d-dc5f-4118-a803-616d0075d282" required="false" />
                     </span>
+                    <obs id="client-category" conceptId="165169" labelText="Client Category" answerConceptIds="90315, 165132, 159674, 162198, 165125, 90041, 99601, 157351, 99087,165133, 159991, 165127, 166461, 166462, 166463" answerLabels="MW- Migrant Workers, AGYW- Adoloscent Girls and Young Women, FF- Fisher Folk, LDT- Long Distance Truck Drivers, UF- Uniformed Forces, Preg- Pregnant, BF- Breastfeeding, IDU- Injectable Drug User, HEI- HIV Exposed Infant, OKP- Other KPs, TB- TB/HIV Client, RF- Refugee, ART- General ART Client, NIDU- Non IDU, OPP- Other PPs" />
                 </div>
             </div>
         </div>
