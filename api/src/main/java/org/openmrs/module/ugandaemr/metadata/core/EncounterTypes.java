@@ -324,15 +324,15 @@ public class EncounterTypes {
             return "afcdfcd8-defe-11eb-ba80-0242ac130004";
         }
     };
-    public static EncounterTypeDescriptor WALKIN_CLIENT_CAPTURE = new EncounterTypeDescriptor() {
+    public static EncounterTypeDescriptor EMERGENCY_ART_SERVICE = new EncounterTypeDescriptor() {
         @Override
         public String name() {
-            return "Walkin Art Service";
+            return "Emergency ART Service Encounter";
         }
 
         @Override
         public String description() {
-            return "Walkin Art Service Encounter";
+            return "Emergency ART Service Encounter";
         }
 
         public String uuid() {
