@@ -2185,17 +2185,6 @@ formDisplayStyle="Standard">
                       ]
                     }); 
                 });
-
-            jq("#parent-health-facility").change(function () {
-                    if(getValue("art-code-woman.value") == "1175") {
-                        disable_fields("pre-art-no-woman");
-                    } else {
-                        enable_fields("pre-art-no-woman");
-                    }
-                });
-
-
-
             });                    
         }
             
