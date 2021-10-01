@@ -18,7 +18,240 @@ formDisplayStyle="Standard">
           jq(document).ready(function () {   
                     
           //Block Multiple encounter entry on same date
-          blockEncounterOnSameDateEncounter(jq("#encounterDate").find("input[type=hidden]"),"block");                                                                                      
+          blockEncounterOnSameDateEncounter(jq("#encounterDate").find("input[type=hidden]"),"block");
+
+          jq('#district-of-parent-health-facility').click(function () {
+
+          var districtId = jq(this).find("input[type=text]").attr("id");
+
+          jq('#'+districtId).autocomplete({
+             source: [
+                      "Buikwe"
+                      ,
+                       "Bukomansimbi"
+                      ,
+                       "Butambala"
+                      ,
+                       "Buvuma"
+                      ,
+                       "Gomba"
+                      ,
+                       "Kalangala"
+                      ,
+                       "Kalungu"
+                      ,
+                       "Kampala"
+                      ,
+                       "Kayunga"
+                      ,
+                       "Kiboga"
+                      ,
+                       "Kyankwanzi"
+                      ,
+                       "Luweero"
+                      ,
+                       "Lwengo"
+                      ,
+                       "Lyantonde"
+                      ,
+                       "Masaka"
+                      ,
+                       "Mityana"
+                      ,
+                       "Mpigi"
+                      ,
+                       "Mubende"
+                      ,
+                       "Mukono"
+                      ,
+                       "Nakaseke"
+                      ,
+                       "Nakasongola"
+                      ,
+                       "Rakai"
+                      ,
+                       "Sembabule"
+                      ,
+                       "Wakiso"
+                      ,
+                       "Amuria"
+                      ,
+                       "Budaka"
+                      ,
+                       "Bududa"
+                      ,
+                       "Bugiri"
+                      ,
+                       "Bukedea"
+                      ,
+                       "Bukwa"
+                      ,
+                       "Bulambuli"
+                      ,
+                       "Busia"
+                      ,
+                       "Butaleja"
+                      ,
+                       "Buyende"
+                      ,
+                       "Iganga"
+                      ,
+                       "Jinja"
+                      ,
+                       "Kaberamaido"
+                      ,
+                       "Kaliro"
+                      ,
+                       "Kamuli"
+                      ,
+                       "Kapchorwa"
+                      ,
+                       "Katakwi"
+                      ,
+                       "Kibuku"
+                      ,
+                       "Kumi"
+                      ,
+                       "Kween"
+                      ,
+                       "Luuka"
+                      ,
+                       "Manafwa"
+                      ,
+                       "Mayuge"
+                      ,
+                       "Mbale"
+                      ,
+                       "Namayingo"
+                      ,
+                       "Namutumba"
+                      ,
+                       "Ngora"
+                      ,
+                       "Pallisa"
+                      ,
+                       "Serere"
+                      ,
+                       "Sironko"
+                      ,
+                       "Soroti"
+                      ,
+                       "Tororo"
+                      ,
+                       "Abim"
+                      ,
+                       "Adjumani"
+                      ,
+                       "Agago"
+                      ,
+                       "Alebtong"
+                      ,
+                       "Amolatar"
+                      ,
+                       "Amudat"
+                      ,
+                       "Amuru"
+                      ,
+                       "Apac"
+                      ,
+                       "Arua"
+                      ,
+                       "Dokolo"
+                      ,
+                       "Gulu"
+                      ,
+                       "Kaabong"
+                      ,
+                       "Kitgum"
+                      ,
+                       "Koboko"
+                      ,
+                       "Kole"
+                      ,
+                       "Kotido"
+                      ,
+                       "Lamwo"
+                      ,
+                       "Lira"
+                      ,
+                       "Maracha"
+                      ,
+                       "Moroto"
+                      ,
+                       "Moyo"
+                      ,
+                       "Nakapiripirit"
+                      ,
+                       "Napak"
+                      ,
+                       "Nebbi"
+                      ,
+                       "Nwoya"
+                      ,
+                       "Otuke"
+                      ,
+                       "Oyam"
+                      ,
+                       "Pader"
+                      ,
+                       "Yumbe"
+                      ,
+                       "Zombo"
+                      ,
+                       "Buhweju"
+                      ,
+                       "Buliisa"
+                      ,
+                       "Bundibugyo"
+                      ,
+                       "Bushenyi"
+                      ,
+                       "Hoima"
+                      ,
+                       "Ibanda"
+                      ,
+                       "Isingiro"
+                      ,
+                       "Kabale"
+                      ,
+                       "Kabarole"
+                      ,
+                       "Kamwenge"
+                      ,
+                       "Kanungu"
+                      ,
+                       "Kasese"
+                      ,
+                       "Kibaale"
+                      ,
+                       "Kiruhura"
+                      ,
+                       "Kiryandongo"
+                      ,
+                       "Kisoro"
+                      ,
+                       "Kyegegwa"
+                      ,
+                       "Kyenjojo"
+                      ,
+                       "Masindi"
+                      ,
+                       "Mbarara"
+                      ,
+                       "Mitooma"
+                      ,
+                       "Ntoroko"
+                      ,
+                       "Ntungamo"
+                      ,
+                       "Rubirizi"
+                      ,
+                       "Rukungiri"
+                      ,
+                       "Sheema"
+                    ]
+                  });
+                });                                                                                        
 
           jq('#parent-health-facility').click(function () {
 
@@ -32,10 +265,7 @@ formDisplayStyle="Standard">
                         
                         "Alerek HC III"
                         ,
-                        
-                        "Awach (Abim) HC II"
-                        ,
-                        
+                                                
                         "Morulem HC III"
                         ,
                         
@@ -53,10 +283,7 @@ formDisplayStyle="Standard">
                         
                         "Ayilo HC III"
                         ,
-                        
-                        "Ayiri HC II"
-                        ,
-                        
+                                                
                         "Biira HC III"
                         ,
                         
@@ -65,17 +292,11 @@ formDisplayStyle="Standard">
                         
                         "Dzaipi HC III"
                         ,
-                        
-                        "Elema HC II"
-                        ,
-                        
+                                                
                         "Maryland HC III"
                         ,
                         
                         "Mungula HC IV"
-                        ,
-                        
-                        "Nyumanzi HC II"
                         ,
                         
                         "Ofua HC III"
@@ -119,10 +340,7 @@ formDisplayStyle="Standard">
                         
                         "Patongo HC IV"
                         ,
-                        
-                        "Wol HC II"
-                        ,
-                        
+                                                
                         "Abako HC III"
                         ,
                         
@@ -161,16 +379,10 @@ formDisplayStyle="Standard">
                         
                         "Amudat Hospital"
                         ,
-                        
-                        "Cheptapoyo HC II"
-                        ,
-                        
+                                                
                         "Karita HC III"
                         ,
-                        
-                        "Lokales HC II"
-                        ,
-                        
+                                                
                         "Loroo HC III"
                         ,
                         
@@ -239,10 +451,7 @@ formDisplayStyle="Standard">
                         
                         "Abongomola HC III"
                         ,
-                        
-                        "Aduku HC II"
-                        ,
-                        
+                                                
                         "Aduku(Gov't) HC IV"
                         ,
                         
@@ -326,10 +535,7 @@ formDisplayStyle="Standard">
                         
                         "Logiri HC III"
                         ,
-                        
-                        "Ocea HC II"
-                        ,
-                        
+                                                
                         "Odupi HC III"
                         ,
                         
@@ -356,20 +562,11 @@ formDisplayStyle="Standard">
                         
                         "Oriajini Hospital"
                         ,
-                        
-                        "Orivu HC II"
-                        ,
-                        
+                                                
                         "Otumbari HC III"
                         ,
                         
                         "Oyima HC III"
-                        ,
-                        
-                        "Pajulu HC II"
-                        ,
-                        
-                        "Pawor HC II"
                         ,
                         
                         "Pioneer Hospital"
@@ -395,10 +592,7 @@ formDisplayStyle="Standard">
                         
                         "Vurra HC III"
                         ,
-                        
-                        "Wandi HC II"
-                        ,
-                        
+                                                
                         "Yinga HC III"
                         ,
                         
@@ -434,10 +628,7 @@ formDisplayStyle="Standard">
                         
                         "Sapiri HC III"
                         ,
-                        
-                        "Beatrice Tierney HC II"
-                        ,
-                        
+                                                
                         "Bududa Hospital"
                         ,
                         
@@ -533,10 +724,7 @@ formDisplayStyle="Standard">
                         
                         "Health Initiatives for Africa-U HC III"
                         ,
-                        
-                        "Kabiizi HC II"
-                        ,
-                        
+                                                
                         "Kasubi HC III"
                         ,
                         
@@ -599,10 +787,7 @@ formDisplayStyle="Standard">
                         
                         "Kachumbala HC III"
                         ,
-                        
-                        "Kachumbala Mission HC II"
-                        ,
-                        
+                                                
                         "Kidongole HC III"
                         ,
                         
@@ -611,10 +796,7 @@ formDisplayStyle="Standard">
                         
                         "Malera HC III"
                         ,
-                        
-                        "St. Martha Maternity Home HC II"
-                        ,
-                        
+                                                
                         "Bigasa HC III"
                         ,
                         
@@ -623,16 +805,7 @@ formDisplayStyle="Standard">
                         
                         "Buyoga HC III"
                         ,
-                        
-                        "Kagogo HC II"
-                        ,
-                        
-                        "Kigangazi HC II"
-                        ,
-                        
-                        "Kisojjo HC II"
-                        ,
-                        
+                                                
                         "Kitaasa HC III"
                         ,
                         
@@ -693,13 +866,7 @@ formDisplayStyle="Standard">
                         "Muyembe HC IV"
                         ,
                         
-                        "Avogera HC II"
-                        ,
-                        
                         "Biiso HC III"
-                        ,
-                        
-                        "Bugoigo HC II"
                         ,
                         
                         "Buliisa HC IV"
@@ -707,16 +874,7 @@ formDisplayStyle="Standard">
                         
                         "Buliisa Hospital Hospital"
                         ,
-                        
-                        "Butiaba HC II"
-                        ,
-                        
-                        "Kigwera HC II"
-                        ,
-                        
-                        "Kihungya HC II"
-                        ,
-                        
+                                                
                         "Bubukwanga HC III"
                         ,
                         
@@ -749,10 +907,7 @@ formDisplayStyle="Standard">
                         
                         "Nyahuka HC IV"
                         ,
-                        
-                        "Kabonero HC II"
-                        ,
-                        
+                                                
                         "Kakinga HC III"
                         ,
                         
@@ -924,15 +1079,9 @@ formDisplayStyle="Standard">
                         "Kibibi Nursing Home HC III"
                         ,
                         
-                        "Kibuga HC II"
-                        ,
-                        
                         "Kitimba HC III"
                         ,
-                        
-                        "Kiziko HC II"
-                        ,
-                        
+                                                
                         "Kyabadaaza HC III"
                         ,
                         
@@ -971,13 +1120,7 @@ formDisplayStyle="Standard">
                         
                         "Buvuma HC IV"
                         ,
-                        
-                        "Buwooya HC II"
-                        ,
-                        
-                        "Namatale HC II"
-                        ,
-                        
+                                                
                         "Namiti HC III"
                         ,
                         
@@ -1019,10 +1162,7 @@ formDisplayStyle="Standard">
                         
                         "Bukalagi HC III"
                         ,
-                        
-                        "Bulwada HC II"
-                        ,
-                        
+                                                
                         "Buyanja (Gomba) HC III"
                         ,
                         
@@ -1040,22 +1180,10 @@ formDisplayStyle="Standard">
                         
                         "Maddu HC IV"
                         ,
-                        
-                        "Mamba HC II"
-                        ,
-                        
-                        "Mawuki HC II"
-                        ,
-                        
+                                                
                         "Mpenja HC III"
                         ,
-                        
-                        "Ngeribarya HC II"
-                        ,
-                        
-                        "Ngomanene HC II"
-                        ,
-                        
+                                                
                         "Rapha Medical Private clinic"
                         ,
                         
@@ -1085,10 +1213,7 @@ formDisplayStyle="Standard">
                         
                         "Gulu Prison HC III"
                         ,
-                        
-                        "Karin Medical Centre HC II"
-                        ,
-                        
+                                                
                         "Labworomor HC III"
                         ,
                         
@@ -1097,10 +1222,7 @@ formDisplayStyle="Standard">
                         
                         "Layibi Techo HC III"
                         ,
-                        
-                        "Light Rays Uganda HC II"
-                        ,
-                        
+                                                
                         "Mola Medical Centre Private clinic"
                         ,
                         
@@ -1112,16 +1234,7 @@ formDisplayStyle="Standard">
                         
                         "St. Mary's Lacor Hospital"
                         ,
-                        
-                        "St. Monica HC II"
-                        ,
-                        
-                        "St. Moritz HC II"
-                        ,
-                        
-                        "St. Phillips HC II"
-                        ,
-                        
+                                                
                         "TASO Gulu Special Clinic"
                         ,
                         
@@ -1167,9 +1280,6 @@ formDisplayStyle="Standard">
                         "Hoima Police HC III"
                         ,
                         
-                        "James Finalys Bugambe HC II"
-                        ,
-                        
                         "Kabaale(Hoima) HC III"
                         ,
                         
@@ -1208,10 +1318,7 @@ formDisplayStyle="Standard">
                         
                         "Nsozi HC III"
                         ,
-                        
-                        "Tonya HC II"
-                        ,
-                        
+                                                
                         "Bisheshe HC III"
                         ,
                         
@@ -1277,10 +1384,7 @@ formDisplayStyle="Standard">
                         
                         "Igombe HC III"
                         ,
-                        
-                        "Kasambika HC II"
-                        ,
-                        
+                                                
                         "Lubira HC III"
                         ,
                         
@@ -1325,13 +1429,7 @@ formDisplayStyle="Standard">
                         
                         "Kyabirukwa HC III"
                         ,
-                        
-                        "Kyanywamaizi HC II"
-                        ,
-                        
-                        "Kyeirumba HC II"
-                        ,
-                        
+                                                
                         "Mabona HC III"
                         ,
                         
@@ -1463,10 +1561,7 @@ formDisplayStyle="Standard">
                         
                         "Kaabong Mission HC III"
                         ,
-                        
-                        "Kaimese HC II"
-                        ,
-                        
+                                                
                         "Kalapata HC III"
                         ,
                         
@@ -1481,10 +1576,7 @@ formDisplayStyle="Standard">
                         
                         "Kopoth HC III"
                         ,
-                        
-                        "Lobalangit HC II"
-                        ,
-                        
+                                                
                         "Lokolia HC III"
                         ,
                         
@@ -1580,10 +1672,7 @@ formDisplayStyle="Standard">
                         
                         "Kida Hospital"
                         ,
-                        
-                        "Kidubuli HC II"
-                        ,
-                        
+                                                
                         "Kijura HC III"
                         ,
                         
@@ -1595,10 +1684,7 @@ formDisplayStyle="Standard">
                         
                         "Mugusu HC III"
                         ,
-                        
-                        "Muhooti Baracks HC II"
-                        ,
-                        
+                                                
                         "Nyabuswa HC III"
                         ,
                         
@@ -1667,10 +1753,7 @@ formDisplayStyle="Standard">
                         
                         "Muhorro HC III"
                         ,
-                        
-                        "Muzizi (James Finlays) HC II"
-                        ,
-                        
+                                                
                         "Rugashari HC III"
                         ,
                         
@@ -1712,10 +1795,7 @@ formDisplayStyle="Standard">
                         
                         "Kalangala HC IV"
                         ,
-                        
-                        "Lujjabwa HC II"
-                        ,
-                        
+                                                
                         "Lulamba HC III"
                         ,
                         
@@ -1751,10 +1831,7 @@ formDisplayStyle="Standard">
                         
                         "Kabaale(Kalungu) HC III"
                         ,
-                        
-                        "Kalungi(Kalungu) HC II"
-                        ,
-                        
+                                                
                         "Kalungu HC IV"
                         ,
                         
@@ -1778,16 +1855,10 @@ formDisplayStyle="Standard">
                         
                         "Mukwano Medical Service Private clinic"
                         ,
-                        
-                        "St. Francis of Assisi HC II"
-                        ,
-                        
+                                                
                         "St. Joseph Kyamulibwa HC IV"
                         ,
-                        
-                        "St. Monica Birongo HC II"
-                        ,
-                        
+                                                
                         "Uganda Cares Kalungu Special Clinic"
                         ,
                         
@@ -1952,10 +2023,7 @@ formDisplayStyle="Standard">
                         
                         "Mengo Hospital"
                         ,
-                        
-                        "Mirembe Medical Centre-Najja HC II"
-                        ,
-                        
+                                                
                         "Mukisa Nursing Home Private clinic"
                         ,
                         
@@ -2051,10 +2119,7 @@ formDisplayStyle="Standard">
                         
                         "Span Medical Centre Private clinic"
                         ,
-                        
-                        "Springs Medical Center Bukoto HC II"
-                        ,
-                        
+
                         "St. Balikudembe Market Clinic Special Clinic"
                         ,
                         
@@ -2114,10 +2179,7 @@ formDisplayStyle="Standard">
                         
                         "Bulopa HC III"
                         ,
-                        
-                        "Buluya HC II"
-                        ,
-                        
+                                                
                         "Bupadhengo HC III"
                         ,
                         
@@ -2172,9 +2234,6 @@ formDisplayStyle="Standard">
                         "Kabuga HC III"
                         ,
                         
-                        "Kakasi(NGO) HC II"
-                        ,
-                        
                         "Kamwenge HC III"
                         ,
                         
@@ -2198,10 +2257,7 @@ formDisplayStyle="Standard">
                         
                         "Rwamwanja HC III"
                         ,
-                        
-                        "Bugiri(Kanungu) HC II"
-                        ,
-                        
+                                                
                         "Butogota HC III"
                         ,
                         
@@ -2273,10 +2329,7 @@ formDisplayStyle="Standard">
                         
                         "Kaserem HC III"
                         ,
-                        
-                        "Masha HC II"
-                        ,
-                        
+                                                
                         "Sipi HC III"
                         ,
                         
@@ -2357,10 +2410,7 @@ formDisplayStyle="Standard">
                         
                         "Kitswamba HC III"
                         ,
-                        
-                        "Kyanya SDA HC II"
-                        ,
-                        
+                                                
                         "Kyarumba HC III"
                         ,
                         
@@ -2450,10 +2500,7 @@ formDisplayStyle="Standard">
                         
                         "Kangulumira HC IV"
                         ,
-                        
-                        "Kangulumira Integrated HC II"
-                        ,
-                        
+                                                
                         "Kawongo HC III"
                         ,
                         
@@ -2589,13 +2636,7 @@ formDisplayStyle="Standard">
                         "Nkungu HC III"
                         ,
                         
-                        "Nyakasharara HC II"
-                        ,
-                        
                         "Nyakashashara HC III"
-                        ,
-                        
-                        "Rurambira HC II"
                         ,
                         
                         "Rushere Hospital"
@@ -2609,10 +2650,7 @@ formDisplayStyle="Standard">
                         
                         "St Mary's Kyeibuuza HC III"
                         ,
-                        
-                        "Apodorwa HC II"
-                        ,
-                        
+                                                
                         "Diima HC III"
                         ,
                         
@@ -2633,10 +2671,7 @@ formDisplayStyle="Standard">
                         
                         "Panyadoli HC III"
                         ,
-                        
-                        "Panyadoli Hills HC II"
-                        ,
-                        
+                                                
                         "St. Mary's Kigumba HC III"
                         ,
                         
@@ -2768,10 +2803,7 @@ formDisplayStyle="Standard">
                         
                         "Aboke HC IV"
                         ,
-                        
-                        "Aboke Mission HC II"
-                        ,
-                        
+                                                
                         "Akalo HC III"
                         ,
                         
@@ -2852,10 +2884,7 @@ formDisplayStyle="Standard">
                         
                         "Butemba HC III"
                         ,
-                        
-                        "Kikolimbo HC II"
-                        ,
-                        
+                                                
                         "Kikonda HC III"
                         ,
                         
@@ -2864,10 +2893,7 @@ formDisplayStyle="Standard">
                         
                         "Kyakwanzi HC III"
                         ,
-                        
-                        "Mujunza HC II"
-                        ,
-                        
+                                                
                         "Nalinya Ndagire HC III"
                         ,
                         
@@ -2885,10 +2911,7 @@ formDisplayStyle="Standard">
                         
                         "Kakabara HC III"
                         ,
-                        
-                        "Karwenyi HC II"
-                        ,
-                        
+                                                
                         "Kasule HC III"
                         ,
                         
@@ -2969,22 +2992,13 @@ formDisplayStyle="Standard">
                         
                         "St. Theresa Lisieux Rwibale HC III"
                         ,
-                        
-                        "Kayanja HC II"
-                        ,
-                        
-                        "Muzito HC II"
-                        ,
-                        
+                                                
                         "Kabira HC III"
                         ,
                         
                         "Kabuwoko(Gov't) HC III"
                         ,
-                        
-                        "Kabuwoko(PNFP) HC II"
-                        ,
-                        
+                                                
                         "Kakuuto HC IV"
                         ,
                         
@@ -3023,14 +3037,8 @@ formDisplayStyle="Standard">
                         
                         "Rakai Health Science Project Special Clinic"
                         ,
-                        
-                        "Sanje Domiciliary Clinic HC II"
-                        ,
-                        
+                                                
                         "St. Andrew Bikira HC III"
-                        ,
-                        
-                        "St. Martin's  HC II"
                         ,
                         
                         "Agoro HC III"
@@ -3183,9 +3191,6 @@ formDisplayStyle="Standard">
                         "Katikamu Kisule HC III"
                         ,
                         
-                        "Kibengo HC II"
-                        ,
-                        
                         "Kikoma HC III"
                         ,
                         
@@ -3212,10 +3217,7 @@ formDisplayStyle="Standard">
                         
                         "Nyimbwa HC IV"
                         ,
-                        
-                        "Sekamuli HC II"
-                        ,
-                        
+                                                
                         "St. Luke Namaliga HC III"
                         ,
                         
@@ -3261,12 +3263,6 @@ formDisplayStyle="Standard">
                         "St. Francis Mbirizi HC III"
                         ,
                         
-                        "Kabatema HC II"
-                        ,
-                        
-                        "Kabayanda HC II"
-                        ,
-                        
                         "Kaliiro HC III"
                         ,
                         
@@ -3275,10 +3271,7 @@ formDisplayStyle="Standard">
                         
                         "Kinuuka HC III"
                         ,
-                        
-                        "Lyakajura HC II"
-                        ,
-                        
+                                                
                         "Lyantonde Hospital"
                         ,
                         
@@ -3354,9 +3347,6 @@ formDisplayStyle="Standard">
                         "Buwunga(Masaka) HC III"
                         ,
                         
-                        "Kamulegu HC II"
-                        ,
-                        
                         "Kitovu Hospital"
                         ,
                         
@@ -3390,18 +3380,12 @@ formDisplayStyle="Standard">
                         "TASO Masaka Special Clinic"
                         ,
                         
-                        "Alimugonza HC II"
-                        ,
-                        
                         "Bwijanga HC IV"
                         ,
                         
                         "Ikooba HC III"
                         ,
-                        
-                        "Kigezi HC II"
-                        ,
-                        
+                                                
                         "Kijunjubwa HC III"
                         ,
                         
@@ -3422,10 +3406,7 @@ formDisplayStyle="Standard">
                         
                         "Masindi Prisons HC III"
                         ,
-                        
-                        "Mihembero HC II"
-                        ,
-                        
+                                                
                         "Nyakitiibwa HC III"
                         ,
                         
@@ -3485,10 +3466,7 @@ formDisplayStyle="Standard">
                         
                         "Bungokhokho HC III"
                         ,
-                        
-                        "Busamaga HC II"
-                        ,
-                        
+                                                
                         "Busano HC III"
                         ,
                         
@@ -3593,13 +3571,7 @@ formDisplayStyle="Standard">
                         
                         "Kakoba HC III"
                         ,
-                        
-                        "Kamukuzi HC II"
-                        ,
-                        
-                        "Karwensanga HC II"
-                        ,
-                        
+                                                
                         "Kashare HC III"
                         ,
                         
@@ -3635,10 +3607,7 @@ formDisplayStyle="Standard">
                         
                         "Nyamitanga HC III"
                         ,
-                        
-                        "Nyamitobora HC II"
-                        ,
-                        
+                                                
                         "Rubaya(Mbarara) HC III"
                         ,
                         
@@ -3646,12 +3615,6 @@ formDisplayStyle="Standard">
                         ,
                         
                         "Ruharo Mission Hospital"
-                        ,
-                        
-                        "Ruti HC II"
-                        ,
-                        
-                        "Rwemigina HC II"
                         ,
                         
                         "St. Francisca Makonje HC III"
@@ -3696,18 +3659,9 @@ formDisplayStyle="Standard">
                         "Bulera HC III"
                         ,
                         
-                        "Busunju HC II"
-                        ,
-                        
                         "Kabule HC III"
                         ,
-                        
-                        "Kajoji HC II"
-                        ,
-                        
-                        "Kalangalo HC II"
-                        ,
-                        
+                                                
                         "Kambaala HC III"
                         ,
                         
@@ -3738,18 +3692,12 @@ formDisplayStyle="Standard">
                         "Mityana Hospital"
                         ,
                         
-                        "Mpogo HC II"
-                        ,
-                        
                         "Mwera HC IV"
                         ,
                         
                         "Naama HC III"
                         ,
-                        
-                        "Namugo HC II"
-                        ,
-                        
+                                                
                         "Namutamba HC III"
                         ,
                         
@@ -3773,10 +3721,7 @@ formDisplayStyle="Standard">
                         
                         "UMSC Mityana HC III"
                         ,
-                        
-                        "Kosiroi HC II"
-                        ,
-                        
+                                                
                         "Moroto RRH"
                         ,
                         
@@ -3785,10 +3730,7 @@ formDisplayStyle="Standard">
                         
                         "Nadunget HC III"
                         ,
-                        
-                        "Nakiloro HC II"
-                        ,
-                        
+                                                
                         "St Pius"
                         ,
                         
@@ -3803,10 +3745,7 @@ formDisplayStyle="Standard">
                         
                         "Dufile HC III"
                         ,
-                        
-                        "Eremi HC II"
-                        ,
-                        
+                                                
                         "Eria HC III"
                         ,
                         
@@ -3849,18 +3788,12 @@ formDisplayStyle="Standard">
                         "Buwama HC III"
                         ,
                         
-                        "Buyiga HC II"
-                        ,
-                        
                         "Donna Medical Center Private clinic"
                         ,
                         
                         "Double Cure Medical Centre Private clinic"
                         ,
-                        
-                        "Epi center Kiringente HC II"
-                        ,
-                        
+                                                
                         "Fiduga Staff Clinic HC III"
                         ,
                         
@@ -3911,22 +3844,10 @@ formDisplayStyle="Standard">
                         
                         "Bukuya HC III"
                         ,
-                        
-                        "Butawata HC II"
-                        ,
-                        
-                        "Butologo HC II"
-                        ,
-                        
+                                                
                         "Kabamba barracks HC III"
                         ,
-                        
-                        "Kabyuma HC II"
-                        ,
-                        
-                        "Kakigando HC II"
-                        ,
-                        
+                                                
                         "Kalonga HC III"
                         ,
                         
@@ -3941,10 +3862,7 @@ formDisplayStyle="Standard">
                         
                         "Kiganda HC IV"
                         ,
-                        
-                        "Kikandwa (Mubende) HC II"
-                        ,
-                        
+                                                
                         "Kitenga HC III"
                         ,
                         
@@ -3959,10 +3877,7 @@ formDisplayStyle="Standard">
                         
                         "Mubende CMRC HC III"
                         ,
-                        
-                        "Mundade HC II"
-                        ,
-                        
+                                                
                         "Musozi HC III"
                         ,
                         
@@ -3983,10 +3898,7 @@ formDisplayStyle="Standard">
                         
                         "St. Matia Mulumba HC III"
                         ,
-                        
-                        "Eseri Domiciliary HC II"
-                        ,
-                        
+                                                
                         "Goma HC III"
                         ,
                         
@@ -3998,10 +3910,7 @@ formDisplayStyle="Standard">
                         
                         "Katoogo HC III"
                         ,
-                        
-                        "Kimenyedde HC II"
-                        ,
-                        
+                                                
                         "Kojja HC IV"
                         ,
                         
@@ -4050,13 +3959,7 @@ formDisplayStyle="Standard">
                         "St. Francis"
                         ,
                         
-                        "Takajjunge HC II"
-                        ,
-                        
                         "Amaler HC III"
-                        ,
-                        
-                        "Karinga HC II"
                         ,
                         
                         "Lolachat HC III"
@@ -4079,16 +3982,7 @@ formDisplayStyle="Standard">
                         
                         "Bidabugya HC III"
                         ,
-                        
-                        "Kabogwe HC II"
-                        ,
-                        
-                        "Kalagala(Nakaseke) HC II"
-                        ,
-                        
-                        "Kalege HC II"
-                        ,
-                        
+                                                
                         "Kapeeka HC III"
                         ,
                         
@@ -4106,28 +4000,16 @@ formDisplayStyle="Standard">
                         
                         "Kiwoko Hospital"
                         ,
-                        
-                        "Kyangato HC II"
-                        ,
-                        
-                        "Lusanja HC II"
-                        ,
-                        
+                                                
                         "Nakaseke Hospital Hospital"
                         ,
-                        
-                        "Namusale HC II"
-                        ,
-                        
+                                                
                         "Ngoma(Nakaseke) HC IV"
                         ,
                         
                         "Semuto HC IV"
                         ,
-                        
-                        "Singo HC II"
-                        ,
-                        
+                                                
                         "Wakyato HC III"
                         ,
                         
@@ -4187,10 +4069,7 @@ formDisplayStyle="Standard">
                         
                         "Hukeseho HC III"
                         ,
-                        
-                        "Lolwe HC II"
-                        ,
-                        
+                                                
                         "Mutumba HC III"
                         ,
                         
@@ -4225,9 +4104,6 @@ formDisplayStyle="Standard">
                         ,
                         
                         "Nabitsiki HC III"
-                        ,
-                        
-                        "Beatrice Tierney (Namisindwa) HC II"
                         ,
                         
                         "Bukonte HC III"
@@ -4346,10 +4222,7 @@ formDisplayStyle="Standard">
                         
                         "Stella Maris HC III"
                         ,
-                        
-                        "Butare(Ntungamo) HC II"
-                        ,
-                        
+                                                
                         "Bwongyera HC III"
                         ,
                         
@@ -4409,10 +4282,7 @@ formDisplayStyle="Standard">
                         
                         "Purongo HC III"
                         ,
-                        
-                        "St. Francis Anaka HC II"
-                        ,
-                        
+                                                
                         "Bobi HC III"
                         ,
                         
@@ -4430,16 +4300,7 @@ formDisplayStyle="Standard">
                         
                         "Ongako HC III"
                         ,
-                        
-                        "St. Joseph Minakulu Bobi HC II"
-                        ,
-                        
-                        "St. Luke HC II"
-                        ,
-                        
-                        "St. Peter Awere HC II"
-                        ,
-                        
+                                                
                         "Mother Angioletta Memorial Clinic Private clinic"
                         ,
                         
@@ -4486,9 +4347,6 @@ formDisplayStyle="Standard">
                         ,
                         
                         "Acholpii 5th Division Hospital"
-                        ,
-                        
-                        "Angagura HC II"
                         ,
                         
                         "Atanga HC III"
@@ -4581,9 +4439,6 @@ formDisplayStyle="Standard">
                         "Pallisa Hospital"
                         ,
                         
-                        "Pallisa Mission Kauco HC II"
-                        ,
-                        
                         "Pallisa Town Council HC III"
                         ,
                         
@@ -4616,10 +4471,7 @@ formDisplayStyle="Standard">
                         
                         "Kyalulangira HC III"
                         ,
-                        
-                        "Lwakalolo HC II"
-                        ,
-                        
+                                                
                         "Lwamaggwa HC III"
                         ,
                         
@@ -4628,10 +4480,7 @@ formDisplayStyle="Standard">
                         
                         "Rakai Hospital"
                         ,
-                        
-                        "St Jacob Lwamaggwa HC II"
-                        ,
-                        
+                                                
                         "St. Bernard Manya HC III"
                         ,
                         
@@ -4649,16 +4498,10 @@ formDisplayStyle="Standard">
                         
                         "Kagarama HC III"
                         ,
-                        
-                        "Kagunga HC II"
-                        ,
-                        
+                                                
                         "Kakore HC III"
                         ,
-                        
-                        "Mpungu(Kabale) HC II"
-                        ,
-                        
+                                                
                         "Muko HC IV"
                         ,
                         
@@ -4670,52 +4513,19 @@ formDisplayStyle="Standard">
                         
                         "Ruhija HC III"
                         ,
-                        
-                        "Butoha HC II"
-                        ,
-                        
-                        "Kashaka HC II"
-                        ,
-                        
+
                         "Katerera HC III"
                         ,
                         
                         "Katunguru(Rubirizi) HC III"
                         ,
-                        
-                        "Kazinga (Rubirizi) HC II"
-                        ,
-                        
+                                                
                         "Kichwamba HC III"
                         ,
-                        
-                        "Kishenyi HC II"
-                        ,
-                        
-                        "Kyabakara HC II"
-                        ,
-                        
-                        "Kyenzaza HC II"
-                        ,
-                        
-                        "Mushumba HC II"
-                        ,
-                        
-                        "Ndangaro HC II"
-                        ,
-                        
-                        "Queen Elizabeth (Katunguru) HC II"
-                        ,
-                        
+                                                
                         "Rugazi HC IV"
                         ,
-                        
-                        "Rugazi Mission HC II"
-                        ,
-                        
-                        "Rumuri HC II"
-                        ,
-                        
+                                                
                         "Rutoto HC III"
                         ,
                         
@@ -4821,9 +4631,6 @@ formDisplayStyle="Standard">
                         "Bamu Medical Centre Hospital"
                         ,
                         
-                        "Kabale (Sembabule) HC II"
-                        ,
-                        
                         "Katimba HC III"
                         ,
                         
@@ -4838,16 +4645,10 @@ formDisplayStyle="Standard">
                         
                         "Lwemiyaga HC III"
                         ,
-                        
-                        "Makoole HC II"
-                        ,
-                        
+                                                
                         "Matete HC III"
                         ,
-                        
-                        "Ntete HC II"
-                        ,
-                        
+                                                
                         "Ntuusi(Gov't) HC IV"
                         ,
                         
@@ -4890,9 +4691,6 @@ formDisplayStyle="Standard">
                         "Bugongi HC III"
                         ,
                         
-                        "Hope Medical Centre(Sheema) HC II"
-                        ,
-                        
                         "Kabwohe HC IV"
                         ,
                         
@@ -4901,10 +4699,7 @@ formDisplayStyle="Standard">
                         
                         "Kigarama HC III"
                         ,
-                        
-                        "Kihunda HC II"
-                        ,
-                        
+                                                
                         "Kitagata Hospital"
                         ,
                         
@@ -4997,10 +4792,7 @@ formDisplayStyle="Standard">
                         
                         "Soroti Medical Associates HC III"
                         ,
-                        
-                        "Soroti Medical Chambers HC II"
-                        ,
-                        
+                                                
                         "Soroti(Gov't) HC III"
                         ,
                         
@@ -5279,16 +5071,10 @@ formDisplayStyle="Standard">
                         
                         "Wattuba HC III"
                         ,
-                        
-                        "Zia Angelina HC II"
-                        ,
-                        
+                                                
                         "Ariwa HC III"
                         ,
-                        
-                        "Barakala HC II"
-                        ,
-                        
+                                                
                         "Dramba HC III"
                         ,
                         
@@ -5381,30 +5167,24 @@ formDisplayStyle="Standard">
                     <obs id="serial-number" conceptId="1646" required="true" />
                     <div class = "ui-widget">
                     <label>Parent Health Facility</label>
-                      <obs id="dhis2" conceptId="166453" required="true" class="hidden"/>
                       <obs id="parent-health-facility" conceptId="166453" required="true" />
                     </div>
                     <label>District of Parent Health Facility</label>
-                    <obs id="district-of-parent-health-facility" labelText="" conceptId="166454" />
+                    <obs id="district-of-parent-health-facility" conceptId="166454" />
                     <label>Reason for Visit</label>
-                    <obs id="reason-for-visit" conceptId="160288" answerConceptIds="166455, 166456, 165043, 90002" answerLabels="Lockdown, Natural Disaster, Admission, Other" required="true">
+                    <obs id="reason-for-visit" conceptId="160288" answerConceptIds="165043,166455,166456,90002" answerLabels="Admission, Lockdown, Natural Disaster, Other" required="true">
                         <controls>
                             <when value="90002" thenDisplay="#reason-for-visit-other" />
                         </controls>
                     </obs>
+                    <obs id="reason-for-visit-other" labelText="Other Reason for Visit" conceptId="164975" />
                     <label>Current Regimen</label>
                     <obs id="current-regimen" conceptId="90315" answerConceptIds="99015,99016,99005,99006,164979,99039,99040,164977,99041,99042,99007,99008,99044,99043,99282,99283,99046,99017,99018,99019,99045,99284,99285,99286,99884,99885,164978,99888,163017,99887,90002" answerLabels="d4T-3TC-NVP,d4T-3TC-EFV,AZT-3TC-NVP,AZT-3TC-EFV,AZT-3TC-DTG,TDF-3TC-NVP,TDF-3TC-EFV,TDF-3TC-DTG,TDF-FTC-NVP,TDF-FTC-EFV,ABC-ddI(250)-LPV/r,ABC-ddI(400)-LPV/r,TDF-3TC-LPV/r,TDF-FTC-LPV/r,ZDV-ddI(250)-LPV/r,ZDV-ddI(400)-LPV/r,AZT-3TC-LPV/r,ABC-ddI-LPV/r,ABC-ddI-NFV,ABC-ddI-SQV/r,ZDV-ddI-LPV/r,AZT-ABC-LPV/r,ABC-ddI-ATV/r,AZT-3TC-ATV/r,ABC-3TC-NVP,ABC-3TC-EFV,ABC-3TC-DTG,ABC-3TC-ATV/r,ABC-3TC-LPV/r,TDF-3TC-ATV/r,Other" required="true">
                         <controls>
                             <when value="90002" thenDisplay="#other-regimen" />
                         </controls>
-                    </obs>                                                            
-                </div>
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <obs id="reason-for-visit-other" labelText="Other Specify" conceptId="164975" />
-                        <obs id="other-regimen" labelText="Other Regimen" conceptId="99126" />
-                    </div>
+                    </obs>
+                    <obs id="other-regimen" labelText="Other Regimen" conceptId="99126" />
                 </div>
             </div>
         </div>
@@ -5417,15 +5197,31 @@ formDisplayStyle="Standard">
                 <div class="col-md-4">                    
                     <label>ART Number at Parent Facility</label>
                     <obs id="patientnumber" conceptId="90264" required="false" />
-                    <includeIf velocityTest="$patient.age &gt; 5">
-                    <label>EID Number</label>
-                    <obs id="eid-number" conceptId="99077" />
-                    </includeIf>
+                    <excludeIf velocityTest="$patient.age &gt; 5">
+                      <label>EID Number</label>
+                      <obs id="eid-number" conceptId="99077" />
+                    </excludeIf>
                     <label>National ID Number</label>
                     <span id="nin-number">
                         <patient field="identifier" identifierTypeId="f0c16a6d-dc5f-4118-a803-616d0075d282" required="false" />
                     </span>
-                    <obs id="client-category" conceptId="165169" labelText="Client Category" answerConceptIds="90315, 165132, 159674, 162198, 165125, 90041, 99601, 157351, 99087,165133, 159991, 165127, 166461, 166462, 166463" answerLabels="MW- Migrant Workers, AGYW- Adoloscent Girls and Young Women, FF- Fisher Folk, LDT- Long Distance Truck Drivers, UF- Uniformed Forces, Preg- Pregnant, BF- Breastfeeding, IDU- Injectable Drug User, HEI- HIV Exposed Infant, OKP- Other KPs, TB- TB/HIV Client, RF- Refugee, ART- General ART Client, NIDU- Non IDU, OPP- Other PPs" />
+                    <obs id="client-category" conceptId="165169" labelText="Client Category" 
+                        answerConceptIds="165132,166461,99601,159674,99087,162198,157351,165126,165133,166463,90041,165127,159991,165125,166462" 
+                        answerLabels="AGYW - Adoloscent Girls and Young Women,
+                                      ART - General ART Client,
+                                      BF - Breastfeeding, 
+                                      FF - Fisher Folk,
+                                      HEI - HIV Exposed Infant, 
+                                      LDT - Long Distance Truck Drivers, 
+                                      IDU - Injectable Drug User, 
+                                      MW - Migrant Workers, 
+                                      OKP - Other KPs,
+                                      OPP - Other PPs 
+                                      Preg - Pregnant, 
+                                      RF - Refugee, 
+                                      TB - TB/HIV Client, 
+                                      UF - Uniformed Forces,
+                                      NIDU - Non IDU" />
                 </div>
             </div>
         </div>
@@ -5463,7 +5259,7 @@ formDisplayStyle="Standard">
                     <div class="row">
                         <div class="col-md-12">
                             <label>TB Status</label>
-                            <obs id="tb-status" class="long-value-select" conceptId="90216" answerConceptIds="90079,90073, 165295, 165296, 165297, 165298, 165299,165300,90071" answerLabels="1 - No signs,2 - Presumptive, 3C - TB Diagnosed - Clinically diagnosed,  3G - TB Diagnosed - Gene Xpert, 3L - TB Diagnosed - TB LAM,3M - TB Diagnosed -TB Microscopy, 3X - TB Diagnosed - Chest Xray, 3O - TB Diagnosed - Others, 4 - Tb Rx" required="true" />
+                            <obs id="tb-status" conceptId="90216" answerConceptIds="90079,90073, 165295, 165296, 165297, 165298, 165299,165300,90071" answerLabels="1 - No signs,2 - Presumptive, 3C - TB Diagnosed - Clinically diagnosed,  3G - TB Diagnosed - Gene Xpert, 3L - TB Diagnosed - TB LAM,3M - TB Diagnosed -TB Microscopy, 3X - TB Diagnosed - Chest Xray, 3O - TB Diagnosed - Others, 4 - Tb Rx" required="true" />
                             <label>TB Pills</label>
                             <obs conceptId="166464" />                            
                             <label>INH Status</label>
@@ -5482,12 +5278,12 @@ formDisplayStyle="Standard">
                             <when value="90002" thenDisplay="#other-art-regimen" />
                         </controls>
                     </obs>
-                    <label>ART Refill</label>
+                    <label>ART Refill (Number of pills)</label>
                     <obs id="no-of-art-pills" conceptId="99038" required="true" />
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <obs id="other-art-regimen" labelText="Other Specify" conceptId="166368" />
+                        <obs id="other-art-regimen" labelText="Other ART Regimen" conceptId="166368" />
                     </div>
                 </div>
             </div>
