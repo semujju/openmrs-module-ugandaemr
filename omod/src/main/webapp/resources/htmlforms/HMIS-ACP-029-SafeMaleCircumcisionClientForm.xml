@@ -332,10 +332,10 @@
 
                                         <div class="row">                                            
                                             <div class="col-md-4">
-                                                <obs conceptId="99142" required="false" labelText="Lignocaine Batch Number" />
+                                                <obs conceptId="166507" required="false" labelText="Lignocaine Batch Number" />
                                             </div>
                                             <div class="col-md-4">
-                                                <obs conceptId="90278"  class="ugphone" id="90278" labelText="Bupivicaine Batch Number" required="false" />
+                                                <obs conceptId="166506"  class="ugphone" id="90278" labelText="Bupivicaine Batch Number" required="false" />
                                             </div>
                                         </div>
 
