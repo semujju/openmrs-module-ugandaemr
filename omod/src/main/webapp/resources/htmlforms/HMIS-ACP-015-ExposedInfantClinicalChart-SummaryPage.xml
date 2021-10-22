@@ -33,188 +33,90 @@
 
                 disableEncounterDate();
 
-        <ifMode mode="ENTER">
-        disable_fields("art-clinic-no");
-                disable_fields("referred-to-art-clinic");
-                disable_fields("link-to-care-date");
-                disable_fields("enrolled-at-art-clinic");
-                disable_fields("date-enrolled-art-clinic");
-                disable_fields("infant-pre-art-number");
-                disable_fields("presumptive-refarral");
-                disable_fields("other-infant-pmtc-arvs");
-                disable_fields("first-pcr-results");
-                disable_fields("second-pcr-results");
-                disable_fields("third-pcr-results");
-                disable_fields("repeat-pcr-results");
-                disable_fields("rapid-pcr-results");
-                disable_fields("first-pcr-results-date");
-                disable_fields("second-pcr-results-date");
-                disable_fields("third-pcr-results-date");
-                disable_fields("repeat-pcr-results-date");
-                disable_fields("rapid-pcr-results-date");
-                disable_fields("art-no");
-                disable_fields("transfer-facility");
-                disable_fields("transfer-date");
+                <ifMode mode="ENTER">
+                    
+                    disable_fields("art-clinic-no");
+                    disable_fields("referred-to-art-clinic");
+                    disable_fields("link-to-care-date");
+                    disable_fields("enrolled-at-art-clinic");
+                    disable_fields("date-enrolled-art-clinic");
+                    disable_fields("infant-pre-art-number");
+                    disable_fields("presumptive-refarral");
+                    disable_fields("other-infant-pmtc-arvs");
+                   
+                    disable_fields("art-no");
+                    disable_fields("transfer-facility");
+                    disable_fields("transfer-date");
 
+                    jq("#mother-in-care").change(function () {
+                        if(jq(this).find("input[type='radio']:checked").val() == 90003) {
+                            enable_fields("art-clinic-no");
+                            
+                        } else {
+                            disable_fields("art-clinic-no");
+                        }
+                    });
 
+                    jq("#final-hiv-status").change(function () {
+                        if(jq(this).find("input[type='radio']:checked").val() == 703) {
+                            enable_fields("referred-to-art-clinic");
+                            enable_fields("link-to-care-date");
+                            enable_fields("enrolled-at-art-clinic");
+                            enable_fields("date-enrolled-art-clinic");
+                            enable_fields("infant-pre-art-number");
+                            enable_fields("presumptive-refarral");
+                        } else {
+                            disable_fields("referred-to-art-clinic");
+                            disable_fields("link-to-care-date");
+                            disable_fields("enrolled-at-art-clinic");
+                            disable_fields("date-enrolled-art-clinic");
+                            disable_fields("infant-pre-art-number");
+                            disable_fields("presumptive-refarral");
+                        }
+                    });
 
-                jq("#mother-in-care").change(function () {
-                    if(jq(this).find("input[type='radio']:checked").val() == 90003) {
-                        enable_fields("art-clinic-no");
-                        
-                    } else {
-                        disable_fields("art-clinic-no");
-                    }
-                });
+                    jq("#infant-pmtc-arvs").change(function () {
+                        if (jq(this).find("select").find(":selected").val() == "90002") {
+                            enable_fields("other-infant-pmtc-arvs");
+                        } else {
+                            disable_fields("other-infant-pmtc-arvs");
+                        }
+                    });
 
-                jq("#final-hiv-status").change(function () {
-                    if(jq(this).find("input[type='radio']:checked").val() == 703) {
-                        enable_fields("referred-to-art-clinic");
-                        enable_fields("link-to-care-date");
-                        enable_fields("enrolled-at-art-clinic");
-                        enable_fields("date-enrolled-art-clinic");
-                        enable_fields("infant-pre-art-number");
-                        enable_fields("presumptive-refarral");
-                    } else {
-                        disable_fields("referred-to-art-clinic");
-                        disable_fields("link-to-care-date");
-                        disable_fields("enrolled-at-art-clinic");
-                        disable_fields("date-enrolled-art-clinic");
-                        disable_fields("infant-pre-art-number");
-                        disable_fields("presumptive-refarral");
-                    }
-                });
+                    jq("#final-outcome").change(function () {
+                        if(jq(this).find("select").find(":selected").val() == "162873") {
+                            enable_fields("art-no");
+                        } else {
+                            disable_fields("art-no");
+                        }
+                    });
 
-                jq("#infant-pmtc-arvs").change(function () {
-                    if (jq(this).find("select").find(":selected").val() == "90002") {
-                        enable_fields("other-infant-pmtc-arvs");
-                    } else {
-                        disable_fields("other-infant-pmtc-arvs");
-                    }
-                });
+                    jq("#final-outcome").change(function () {
+                        if(jq(this).find("select").find(":selected").val() == "90306") {
+                            enable_fields("transfer-facility");
+                            enable_fields("transfer-date");
+                        } else {
+                            disable_fields("transfer-facility");
+                            disable_fields("transfer-date");
+                        }
+                    });
+                </ifMode>
 
-                jq("#first-pcr-date").change(function () {
-                    if(jq(this).find("input[type=hidden]").val() != ""){
-                        enable_fields("first-pcr-results");
-                    } else {
-                        disable_fields("first-pcr-results");
-                    }
-                });
+                <ifMode mode="EDIT">
+                    enable_fields("art-clinic-no");
+                    enable_fields("referred-to-art-clinic");
+                    enable_fields("link-to-care-date");
+                    enable_fields("enrolled-at-art-clinic");
+                    enable_fields("date-enrolled-art-clinic");
+                    enable_fields("infant-pre-art-number");
+                    enable_fields("presumptive-refarral");
+                    enable_fields("other-infant-pmtc-arvs");
+                    
+                    enable_fields("art-no");
+                    enable_fields("transfer-facility");
+                    enable_fields("transfer-date");
+                </ifMode>
 
-                jq("#first-pcr-results").change(function () {
-                    if(jq(this).find("input[type='radio']:checked")) {
-                        enable_fields("first-pcr-results-date");
-                    } else {
-                        disable_fields("first-pcr-results-date");
-                    }
-                });
-
-                jq("#second-pcr-date").change(function () {
-                    if(jq(this).find("input[type=hidden]").val() != ""){
-                        enable_fields("second-pcr-results");
-                    } else {
-                        disable_fields("second-pcr-results");
-                    }
-                });
-
-                jq("#second-pcr-results").change(function () {
-                    if(jq(this).find("input[type='radio']:checked")) {
-                        enable_fields("second-pcr-results-date");
-                    } else {
-                        disable_fields("second-pcr-results-date");
-                    }
-                });
-
-                jq("#third-pcr-date").change(function () {
-                    if(jq(this).find("input[type=hidden]").val() != ""){
-                        enable_fields("third-pcr-results");
-                    } else {
-                        disable_fields("third-pcr-results");
-                    }
-                });
-
-                jq("#third-pcr-results").change(function () {
-                    if(jq(this).find("input[type='radio']:checked")) {
-                        enable_fields("third-pcr-results-date");
-                    } else {
-                        disable_fields("third-pcr-results-date");
-                    }
-                });
-
-                jq("#repeat-pcr-date").change(function () {
-                    if(jq(this).find("input[type=hidden]").val() != ""){
-                        enable_fields("repeat-pcr-results");
-                    } else {
-                        disable_fields("repeat-pcr-results");
-                    }
-                });
-
-                jq("#repeat-pcr-results").change(function () {
-                    if(jq(this).find("input[type='radio']:checked")) {
-                        enable_fields("repeat-pcr-results-date");
-                    } else {
-                        disable_fields("repeat-pcr-results-date");
-                    }
-                });
-
-                jq("#rapid-pcr-date").change(function () {
-                    if(jq(this).find("input[type=hidden]").val() != ""){
-                        enable_fields("rapid-pcr-results");
-                    } else {
-                        disable_fields("rapid-pcr-results");
-                    }
-                });
-
-                jq("#rapid-pcr-results").change(function () {
-                    if(jq(this).find("input[type='radio']:checked")) {
-                        enable_fields("rapid-pcr-results-date");
-                    } else {
-                        disable_fields("rapid-pcr-results-date");
-                    }
-                });
-
-                jq("#final-outcome").change(function () {
-                    if(jq(this).find("select").find(":selected").val() == "162873") {
-                        enable_fields("art-no");
-                    } else {
-                        disable_fields("art-no");
-                    }
-                });
-
-                jq("#final-outcome").change(function () {
-                    if(jq(this).find("select").find(":selected").val() == "90306") {
-                        enable_fields("transfer-facility");
-                        enable_fields("transfer-date");
-                    } else {
-                        disable_fields("transfer-facility");
-                        disable_fields("transfer-date");
-                    }
-                });
-        </ifMode>
-
-        <ifMode mode="EDIT">
-            enable_fields("art-clinic-no");
-            enable_fields("referred-to-art-clinic");
-            enable_fields("link-to-care-date");
-            enable_fields("enrolled-at-art-clinic");
-            enable_fields("date-enrolled-art-clinic");
-            enable_fields("infant-pre-art-number");
-            enable_fields("presumptive-refarral");
-            enable_fields("other-infant-pmtc-arvs");
-            enable_fields("first-pcr-results");
-            enable_fields("second-pcr-results");
-            enable_fields("third-pcr-results");
-            enable_fields("repeat-pcr-results");
-            enable_fields("rapid-pcr-results");
-            enable_fields("first-pcr-results-date");
-            enable_fields("second-pcr-results-date");
-            enable_fields("third-pcr-results-date");
-            enable_fields("repeat-pcr-results-date");
-            enable_fields("rapid-pcr-results-date");
-            enable_fields("art-no");
-            enable_fields("transfer-facility");
-            enable_fields("transfer-date");
-        </ifMode>
                 /* add validation rule to ensure that the chart is opened after the birthdate of the child */
                 jq.validator.addMethod("birthBeforeChartOpenedDate", function (value, element) {
                     var birthDate = new Date(jq('#birthDate').text());
@@ -231,46 +133,6 @@
                 beforeSubmit.push(function () {
 
                     var dateValidationErrors = [];
-
-                    /* Repeat PCR can be done after the first PCR results */
-                    if (getValue('first-pcr-results.value') == 703) {
-                        dateValidationErrors.push(dateValidator("repeat-pcr-date", "first-pcr-date", "", "The repeat PCR date must be after the date of the 1st PCR", "", "less_than", true));
-                    }
-
-                    /* Validate the 2nd PCR date if the 1st PCR date is provided */
-                    if (getValue('first-pcr-date.value') != '') {
-                        dateValidationErrors.push(dateValidator("second-pcr-date", "first-pcr-date", "", "The date of the second PCR must be after the date of the 1st PCR", "", "less_than", true));
-                    }
-
-                    /* Repeat PCR can be done after the 2nd PCR results */
-                    if (getValue('second-pcr-results.value') == 703) {
-                        dateValidationErrors.push(dateValidator("repeat-pcr-date", "second-pcr-date", "", "The repeat PCR date must be after the date of the 2nd PCR", "", "less_than", true));
-                    }
-
-                    /* Validate the Rapid Test date if the 2nd PCR date is provided */
-                    if (getValue('second-pcr-date.value') != '') {
-                        dateValidationErrors.push(dateValidator("rapid-pcr-date", "second-pcr-date", "", "The rapid test date must be after the date of the 2nd PCR", "", "less_than", true));
-                    }
-
-                    /* Repeat PCR can be done after the 3rd PCR results */
-                    if (getValue('third-pcr-results.value') == 703) {
-                        dateValidationErrors.push(dateValidator("repeat-pcr-date", "third-pcr-date", "", "The repeat PCR date must be after the date of the 3rd PCR", "", "less_than", true));
-                    }
-
-                    /* Validate the 3rd PCR date if the 1st PCR date is provided */
-                    if (getValue('first-pcr-date.value') != '') {
-                        dateValidationErrors.push(dateValidator("third-pcr-date", "first-pcr-date", "", "The date of the third PCR must be after the date of the 1st PCR", "", "less_than", true));
-                    }
-
-                    /* Validate the 3rd PCR date if the 2nd PCR date is provided */
-                    if (getValue('second-pcr-date.value') != '') {
-                        dateValidationErrors.push(dateValidator("third-pcr-date", "second-pcr-date", "", "The date of the third PCR must be after the date of the 2nd PCR", "", "less_than", true));
-                    }
-
-                    /* Validate the Rapid Test date if the 3rd PCR date is provided */
-                    if (getValue('third-pcr-date.value') != '') {
-                        dateValidationErrors.push(dateValidator("rapid-pcr-date", "third-pcr-date", "", "The rapid test date must be after the date of the 3rd PCR", "", "less_than", true));
-                    }
 
                     /* Validate the 2nd follow up attempt date if the 1st follow up attempt date is provided */
                     if (getValue('first-followup-date.value') != '') {
@@ -603,164 +465,6 @@
                                                 <label>ART Clinic No</label>
                                                 <div class="col-md-3">
                                                     <obs id="art-clinic-no" conceptId="162874"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
-
-                            <div class="tab-pane" id="testing-information">
-                                <section>
-                                    <div class="card">
-                                        <div class="card-header">
-                                            1st PCR
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <label>Test Date</label>
-                                                    <i class="icon-calendar small right-addon-row position-absolute" style="right: 23%; top: 50%;"></i>
-                                                    <obs conceptId="99606" id="first-pcr-date"></obs>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label>Feeding Method</label>
-                                                    <obs conceptId="99434" id="pcr1-feeding-method"/>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <obs conceptId="99435" answerConceptIds="664,703"
-                                                         answerLabels="Negative,Positive" id="first-pcr-results"
-                                                         style="radio" labelText="Result" class="horizontal"/>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label>Date Results given to caregiver</label>
-                                                    <i class="icon-calendar small right-addon-row position-absolute" style="right: 23%; top: 50%;"></i>
-                                                    <obs conceptId="99438" id="first-pcr-results-date"></obs>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header">
-                                            PCR at 9mths
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <label>Test Date</label>
-                                                    <i class="icon-calendar small right-addon-row position-absolute" style="right: 23%; top: 50%;"></i>
-                                                    <obs conceptId="99436" id="second-pcr-date"></obs>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label>Feeding Method</label>
-                                                    <obs conceptId="99794"/>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <obs conceptId="99440" answerConceptIds="664,703"
-                                                         answerLabels="Negative,Positive" id="second-pcr-results"
-                                                         style="radio" labelText="Result" class="horizontal"/>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label>Date Results given to caregiver</label>
-                                                    <i class="icon-calendar small right-addon-row position-absolute" style="right: 23%; top: 50%;"></i>
-                                                    <obs conceptId="99442" id="second-pcr-results-date"></obs>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header">
-                                            PCR at 6wks after stoping breast-feeding
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <label>Test Date</label>
-                                                    <i class="icon-calendar small right-addon-row position-absolute" style="right: 23%; top: 50%;"></i>
-                                                    <obs conceptId="165405" id="third-pcr-date"></obs>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label>Feeding Method</label>
-                                                    <obs conceptId="165407"/>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <obs conceptId="165406" answerConceptIds="664,703"
-                                                         answerLabels="Negative,Positive" id="third-pcr-results"
-                                                         style="radio" labelText="Result" class="horizontal"/>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label>Date Results given to caregiver</label>
-                                                    <i class="icon-calendar small right-addon-row position-absolute" style="right: 23%; top: 50%;"></i>
-                                                    <obs conceptId="165408" id="third-pcr-results-date"></obs>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header">
-                                            Repeat PCR (if necessary)
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <label>Test Date</label>
-                                                    <i class="icon-calendar small right-addon-row position-absolute" style="right: 23%; top: 50%;"></i>
-                                                    <obs conceptId="162876" id="repeat-pcr-date"/>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label>Feeding Method</label>
-                                                    <obs conceptId="162877"/>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <obs conceptId="164980" answerConceptIds="664,703"
-                                                         answerLabels="Negative,Positive" id="repeat-pcr-results"
-                                                         style="radio" labelText="Result" class="horizontal"/>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label>Date Results given to caregiver</label>
-                                                    <i class="icon-calendar small right-addon-row position-absolute" style="right: 23%; top: 50%;"></i>
-                                                    <obs conceptId="162882" id="repeat-pcr-results-date"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header">
-                                            18 Month Rapid Test
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <label>Test Date</label>
-                                                    <i class="icon-calendar small right-addon-row position-absolute" style="right: 23%; top: 50%;"></i>
-                                                    <obs conceptId="162879" id="rapid-pcr-date"/>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label>Feeding Method</label>
-                                                    <obs conceptId="162878"/>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <obs conceptId="162880" answerConceptIds="664,703"
-                                                         answerLabels="Negative,Positive" id="rapid-pcr-results"
-                                                         style="radio" labelText="Result" class="horizontal"/>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label>Date Results given to caregiver</label>
-                                                    <i class="icon-calendar small right-addon-row position-absolute" style="right: 23%; top: 50%;"></i>
-                                                    <obs conceptId="162883" id="rapid-pcr-results-date"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header">
-                                            Final HIV Status
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <obs id="final-hiv-status" conceptId="99797" answerConceptIds="664,703"
-                                                         answerLabels="Negative,Positive" style="radio" class="horizontal"/>
                                                 </div>
                                             </div>
                                         </div>
