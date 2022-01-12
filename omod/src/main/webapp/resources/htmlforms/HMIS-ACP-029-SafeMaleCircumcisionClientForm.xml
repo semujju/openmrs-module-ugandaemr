@@ -7,7 +7,7 @@
           formUILocation="patientDashboard.visitActions"
           formOrder="7"
           formIcon="icon-medkit"
-          formShowIf="(visit.active || !visit.active) &amp;&amp; patient.person.gender=='M' &amp;&amp; patient.person.dead==false &amp;&amp; sessionLocation.uuid=='8f96e239-8586-4ec6-9375-04c6e19628ae'"
+          formShowIf="(visit.active || !visit.active) &amp;&amp; patient.person.gender=='M' &amp;&amp; patient.person.dead==false &amp;&amp; sessionLocation.uuid=='86863db4-6101-4ecf-9a86-5e716d6504e4'"
           formDisplayStyle="Standard"
           formLabel="HMIS ACP 029: Safe Male Circumcision Client Form">
 
@@ -328,6 +328,15 @@
                                                     <obs conceptId="99622" id="99622"/>
                                                 </div>
                                             </obsgroup>
+                                        </div>
+
+                                        <div class="row">                                            
+                                            <div class="col-md-4">
+                                                <obs conceptId="166507" required="false" labelText="Lignocaine Batch Number" />
+                                            </div>
+                                            <div class="col-md-4">
+                                                <obs conceptId="166506" id="90278" labelText="Bupivicaine Batch Number" required="false" />
+                                            </div>
                                         </div>
 
                                     </div>
@@ -857,7 +866,7 @@
                                             <div class="row ">
                                                 <div class="col-md-6 ">
                                                     <label >Severity</label>
-                                                    <obs conceptId="99691" answerConceptIds="99562,99561" answerLabels="Moderate, Severe"
+                                                    <obs conceptId="99691" answerConceptIds="99562,99561,1498" answerLabels="Moderate, Severe, Mild"
                                                          style="radio" class="horizontal col-md-6"/>
                                                 </div>
                                             </div>
