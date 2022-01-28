@@ -21,80 +21,84 @@
                         consentValues[event.target.name] = event.target.value;
                         var consentList =  Object.keys(consentValues).filter(function(data){
                             <!-- add to consent list if yes -->
-                              if(consentValues[data] === '90003'){
+                              if(consentValues[data] === '90003') {
                                   return true;
                               }
                              return false;
                          });
-                         if(consentList.length === 3){
-                             jq('.nav-tabs').find('a:nth-child(2)').removeClass('disabled');
+                         if(consentList.length === 3) {
+                             jq('.nav-tabs').find('#procedure').removeClass('disabled'); 
                          }else{
-                             jq('.nav-tabs').find('a:not(:first-child)').addClass('disabled');
+                             jq('.nav-tabs').find('#procedure').addClass('disabled');
+                             jq('.nav-tabs').find('#followup').addClass('disabled');
+                             <!-- setValue('99628.value')  == "")
+                             setValue('162909.value') == "")
+                             setValue('99678.value')  == "") -->
                          }
                         });
 
                       //Block Multiple encounter entry on same date
-                      blockEncounterOnSameDateEncounter(jq("#encounterDate").find("input[type=hidden]"),"block");
+                      blockEncounterOnSameDateEncounter(jq("#encounterDate").find("input[type=hidden]"),"block");                 
 
                       <!-- disable other field on source of info -->
                       jq('#99612').click(function () {
                           if (getValue('99612.value') == 90002) {
-                            enableContainer('#99613');
+                            enable_fields('99613');
                           } else {
-                            disableContainer('#99613');
+                            disable_fields('99613');
                           }
                       });
 
                       <!-- disable other field on care entry point -->
                       jq('#99619').click(function () {
                           if (getValue('99619.value') == 90002) {
-                            enableContainer('#99622');
+                            enable_fields('99622');
                           } else {
-                            disableContainer('#99622');
+                            disable_fields('99622');
                           }
                       });
 
                       <!-- disable hiv care or referred field if not HIV positive    -->
-                      disableContainer('#162900');
+                      disable_fields('162900');
                       jq('#99628').change(function () {
                           if (getValue('99628.value') == 703) {
-                            enableContainer('#162900');
+                            enable_fields('162900');
                           } else {
-                            disableContainer('#162900');
+                            disable_fields('162900');
                           }
                       });
 
                       <!-- disable other on presence of AE    -->
                       jq('#smc_presence_of_ae').click(function () {
                           if (getValue('smc_presence_of_ae.value') == 90002) {
-                            enableContainer('#smc_presence_of_ae_other');
+                            enable_fields('smc_presence_of_ae_other');
                           } else {
-                            disableContainer('#smc_presence_of_ae_other');
+                            disable_fields('smc_presence_of_ae_other');
                           }
                       });
 
                       <!-- disable ring size field if not shang  -->
-                      disableContainer('#162910'); <!-- shang -->
-                      disableContainer('#99678'); <!-- other procedure -->
+                      disable_fields('162910'); <!-- shang -->
+                      disable_fields('99678'); <!-- other procedure -->
                       jq('#circumcision_procedure').change(function () {
                           if (getValue('circumcision_procedure.value') == 162911) {
-                            enableContainer('#162910');
+                            enable_fields('162910');
                           } else if (getValue('circumcision_procedure.value') == 90002){
-                            enableContainer('#99678');
-                            disableContainer('#162910');
+                            enable_fields('99678');
+                            disable_fields('162910');
                           }
                           else {
-                            disableContainer('#162910');
-                            disableContainer('#99678');
+                            disable_fields('162910');
+                            disable_fields('99678');
                           }
                       });
 
                       <!-- Enable follow up tab if circumcision procedure is selected -->
                           jq('#circumcision_procedure').change(function () {
                           if (getValue('circumcision_procedure.value') > 0) {
-                            jq('.nav-tabs').find('a:nth-child(3)').removeClass('disabled');
+                            jq('.nav-tabs').find('#followup').removeClass('disabled');
                           } else {
-                            jq('.nav-tabs').find('a:nth-child(3)').addClass('disabled');
+                            jq('.nav-tabs').find('#followup').addClass('disabled');
                           }
                           });
 
@@ -102,16 +106,19 @@
                       jq(".adverse-effect-presence-form").find("input[type$='checkbox']").attr("disabled", true);
                       jq(".adverse-effect-presence-form").find("input[type$='radio']").attr("disabled", true);
                       jq(".adverse-effect-presence-form").find("input[type$='text']").attr("disabled", true);
-
+                      disable_fields("treatment-given");
+                      
                       jq('#99684').click(function () {
                           if (getValue('99684.value') == 90003) {
                               jq(".adverse-effect-presence-form").find("input[type$='checkbox']").attr("disabled", false);
                               jq(".adverse-effect-presence-form").find("input[type$='radio']").attr("disabled", false);
                               jq(".adverse-effect-presence-form").find("input[type$='text']").attr("disabled", false);
+                              enable_fields("treatment-given");
                           } else {
                               jq(".adverse-effect-presence-form").find("input[type$='checkbox']").attr("disabled", true);
                               jq(".adverse-effect-presence-form").find("input[type$='radio']").attr("disabled", true);
                               jq(".adverse-effect-presence-form").find("input[type$='text']").attr("disabled", true);
+                              disable_fields("treatment-given");
                           }
                       });
 
@@ -181,19 +188,20 @@
                                 return false;
                               });
 
-                              if(consentList.length === 3){
-                                jq('.nav-tabs').find('a:nth-child(2)').removeClass('disabled');
-                              }else{
-                                jq('.nav-tabs').find('a:not(:first-child)').addClass('disabled');
-                              }
+                            if(consentList.length === 3) {
+                                jq('.nav-tabs').find('#procedure').removeClass('disabled'); 
+                            }else{
+                                jq('.nav-tabs').find('#procedure').addClass('disabled');
+                                jq('.nav-tabs').find('#followup').addClass('disabled');
+                             }
                           });
 
                           /*if circumcision procedure is selected, activate followup */
                           var procedure = jq("#circumcision_procedure").find("select option:selected").val();
                           if (procedure > 0) {
-                            jq('.nav-tabs').find('a:nth-child(3)').removeClass('disabled');
+                            jq('.nav-tabs').find('#followup').removeClass('disabled');
                           } else {
-                            jq('.nav-tabs').find('a:nth-child(3)').addClass('disabled');
+                            jq('.nav-tabs').find('#followup').addClass('disabled');
                           }
 
                           /*Handle loading of existing obs*/
@@ -244,20 +252,20 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header header-success">
-                        <ul class="nav nav-tabs card-header-tabs">
+                    <div class="card-header header-success"> 
+                        <ul class="nav nav-tabs card-header-tabs" id="nav-tab">
                             <li class="nav-item">
-                                <a class="nav-link active" id="care-entry-section-tab" data-toggle="tab" href="#client-info-section">
+                                <a class="nav-link active" data-toggle="tab" href="#client-info-section" role="tab" aria-selected="true">
                                     Client Information
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="art-care-cohort-tab" data-toggle="tab" href="#procedure-section"> 
+                                <a class="nav-link disabled" data-toggle="tab" href="#procedure-section" role="tab" id="procedure"> 
                                     Procedure 
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="prior-art-tab" data-toggle="tab" href="#followup-section">
+                                <a class="nav-link disabled" data-toggle="tab" href="#followup-section" role="tab" id="followup">
                                     Follow up
                                 </a>
                             </li>
@@ -278,6 +286,14 @@
                                             <div class="col-md-2">
                                                 <label>Visit Date</label>
                                                 <encounterDate default="today" disallowMultipleEncountersOnDate="block"/>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label>Lignocaine Batch Number</label>                                       
+                                                <obs conceptId="166518" />
+                                            </div>
+                                            <div class="col-md-3">
+                                            <label>Bupivicaine Batch Number</label>
+                                                <obs conceptId="166519" id="90278" />
                                             </div>
                                         </div>
 
@@ -315,29 +331,7 @@
                                             <label>Specify Other </label>
                                                 <obs id="99613" conceptId="99613"/>
                                             </div>
-                                        </div>
-
-                                        <!-- care entry point -->
-                                        <div class="row">
-                                        <obsgroup groupingConceptId="99618">
-                                                <div class="col-md-3">
-                                                <label>Care Entry Point</label>
-                                                    <obs conceptId="99619" answerConceptIds="162899,99620" answerLabels="SMC,HTS" style="dropdown"/>
-                                                </div>
-                                                <div class="col-md-3">
-                                                <label>Specify Other Entry Point</label>
-                                                    <obs conceptId="99622" id="99622"/>
-                                                </div>
-                                        </obsgroup>
-                                        <div class="col-md-3">
-                                            <label>Lignocaine Batch Number</label>                                       
-                                            <obs conceptId="166518" />
-                                        </div>
-                                        <div class="col-md-3">
-                                        <label>Bupivicaine Batch Number</label>
-                                            <obs conceptId="166519" id="90278" />
-                                        </div>
-                                        </div>
+                                        </div>                                        
                                     </div>
                                 </div>
                                 <!-- Client Medical History cards -->
@@ -417,46 +411,46 @@
                                                 <div class="col-md-4 ">
                                                     <label>Bleeding disorder</label>
                                                     <obs conceptId="99633" answerConceptIds="90003, 90004" answerLabels="Yes, No" style="radio"
-                                                         class="horizontal"/>
+                                                         class="horizontal" id="99633"/>
                                                 </div>
                                                 <div class="col-md-4 ">
                                                     <label>Genital ulcers</label>
                                                     <obs conceptId="99634" answerConceptIds="90003,90004" answerLabels="Yes, No" style="radio"
-                                                         class="horizontal"/>
+                                                         class="horizontal" id="99634"/>
                                                 </div>
                                                 <div class="col-md-4 ">
                                                     <label>Urethra discharge</label>
                                                     <obs conceptId="99635" answerConceptIds="90003,90004" answerLabels="Yes, No" style="radio"
-                                                         class="horizontal"/>
+                                                         class="horizontal" id="99635"/>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <label>Penile warts</label>
                                                     <obs conceptId="99636" answerConceptIds="90003,90004" answerLabels="Yes, No" style="radio"
-                                                         class="horizontal"/>
+                                                         class="horizontal" id="99636"/>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <label>Pain on urination</label>
                                                     <obs conceptId="99637" answerConceptIds="90003,90004" answerLabels="Yes, No" style="radio"
-                                                         class="horizontal"/>
+                                                         class="horizontal" id="99637"/>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <label>Difficulty in retracting foreskin</label>
                                                     <obs conceptId="99638" answerConceptIds="90003,90004" answerLabels="Yes, No" style="radio"
-                                                         class="horizontal"/>
+                                                         class="horizontal" id="99638"/>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-4 ">
                                                     <label>Swelling of scrotum</label>
                                                     <obs conceptId="99639" answerConceptIds="90003,90004" answerLabels="Yes, No" style="radio"
-                                                         class="horizontal"/>
+                                                         class="horizontal" id="99639"/>
                                                 </div>
                                                 <div class="col-md-4 ">
                                                     <label>Erectile Dysfunction</label>
                                                     <obs conceptId="99640" answerConceptIds="90003,90004" answerLabels="Yes, No" style="radio"
-                                                         class="horizontal"/>
+                                                         class="horizontal" id="996340"/>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <label>Other Specify</label>
@@ -505,7 +499,6 @@
                                     <!-- embedded Allergies -->
                                     <div class="card">
                                         <div class="card-header">C4: Allergies</div>
-
                                         <div class="card-body">
                                             <div class="row ">
                                                 <div class="col-md-4">
@@ -567,7 +560,7 @@
                                                         class="horizontal"/>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <label>Anatomical abnormalities</label>
+                                                    <label>Anatomical abnormality</label>
                                                     <obs conceptId="99658" answerConceptIds="90003,90004" answerLabels="Yes, No" style="radio"
                                                         class="horizontal"/>
                                                 </div>
@@ -629,8 +622,7 @@
                                     <!-- Consent -->
                                     <div class="card">
                                         <div class="card-header">D: Eligibility For Circumcision</div>
-
-                                        <div class="card-body">
+                                        <div class="card-body eligibility-for-circumcission">
                                             <div class="row consent">
                                                 <div class="col-md-4">
                                                     <label>Client counseled about SMC</label>
@@ -645,15 +637,12 @@
                                                 <div class="col-md-4">
                                                     <label>Client eligible for circumcision after history/physical exam</label>
                                                     <obs conceptId="99668" answerConceptIds="90003,90004" answerLabels="Yes,No" style="radio"
-                                                         class="horizontal"/>
+                                                         class="horizontal" id="99668"/>
                                                 </div>
-
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
 
                             <!-- Procedure tab-->
@@ -715,7 +704,7 @@
                                                         <obs conceptId="162909" id="162910" labelText="Ring Size"/>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <obs conceptId="99678"  class="horizontal" id="99678" labelText="Other Specify"  required="false" />
+                                                        <obs conceptId="99678"  class="horizontal" id="99678" labelText="Specify other Procedure"  required="false" />
                                                     </div>
                                                 </div>
 
@@ -747,7 +736,7 @@
                                             <!-- AE row -->
                                             <div class="row">
                                                 <div class="col-md-12 ">
-                                                    <label>Type of AE</label>
+                                                    <label>Type of AE</label> 
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -772,13 +761,13 @@
                                             <div class="row ">
                                                 <div class="col-md-3">
                                                     <label >Severity</label>
-                                                    <obs conceptId="99691" answerConceptIds="99562,99561,1498" answerLabels="Moderate, Severe, Mild"
+                                                    <obs conceptId="99691" answerConceptIds="1498,99562,99561" answerLabels="Mild,Moderate,Severe"
                                                          style="radio" class="horizontal"/>
                                                 </div>
                                             <!-- Treatment given -->
                                                 <div class="col-md-9">
                                                     <label>Treatment given</label>
-                                                    <obs conceptId="99692" size="100" style="textarea"/>
+                                                    <obs conceptId="99692" size="100" id="treatment-given"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -838,7 +827,7 @@
                                                     <tbody>
                                                         <repeat>
                                                             <template>
-                                                                <obsgroup groupingConceptId="99075">
+                                                                <obsgroup groupingConceptId="99700">
                                                                     <tr class="FollowupEnableDisable">
                                                                         <td>
                                                                             <div class="accordion col-md-12" id="followUpForm">
@@ -913,7 +902,7 @@
                                                                             <div class="row ">
                                                                                 <div class="col-md-4">
                                                                                     <label >Severity</label>
-                                                                                    <obs conceptId="99691" answerConceptIds="99562,99561" answerLabels="Moderate, Severe" style="radio" class="horizontal"/>
+                                                                                    <obs conceptId="99691" answerConceptIds="1498,99562,99561" answerLabels="Mild,Moderate,Severe" style="radio" class="horizontal"/>
                                                                                 </div>
                                                                             <!-- Treatment given -->
                                                                                 <div class="col-md-4">
