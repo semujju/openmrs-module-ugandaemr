@@ -21,19 +21,20 @@
                         consentValues[event.target.name] = event.target.value;
                         var consentList =  Object.keys(consentValues).filter(function(data){
                             <!-- add to consent list if yes -->
-                              if(consentValues[data] === '90003') {
-                                  return true;
-                              }
-                             return false;
+
+                            if(consentValues[data] === '90003') {
+                                return true;
+                            }
+                            return false;
                          });
                          if(consentList.length === 3) {
                              jq('.nav-tabs').find('#procedure').removeClass('disabled'); 
                          }else{
                              jq('.nav-tabs').find('#procedure').addClass('disabled');
                              jq('.nav-tabs').find('#followup').addClass('disabled');
-                             <!-- setValue('99628.value')  == "")
-                             setValue('162909.value') == "")
-                             setValue('99678.value')  == "") -->
+                             disable_fields('99628');
+                             disable_fields('162909');
+                             disable_fields('99678');
                          }
                         });
 
@@ -172,29 +173,48 @@
                       </ifMode>
 
                       <ifMode mode="EDIT">
-
                           /*
                           * If consent values are pre-ticked, activate procedure tab
                           */
                           var i = 0;
-                          jq('.consent').find("input[type$='radio']").each(function () {
-                              consentValues[i] = this.value;
-                              i++;
-                              var consentList =  Object.keys(consentValues).filter(function(data){
-                              <!-- add to consent list if yes -->
-                              if(consentValues[data] === '90003'){
-                                return true;
-                              }
-                                return false;
-                              });
-
-                            if(consentList.length === 3) {
-                                jq('.nav-tabs').find('#procedure').removeClass('disabled'); 
-                            }else{
+                          jq('.consent').change(function () {
+                          consentValues[0] = jq('.counseled').find("input[type$='radio']:checked").val();
+                          consentValues[1] = jq('.consent').find("input[type$='radio']:checked").val();
+                          consentValues[2] = jq('.eligible').find("input[type$='radio']:checked").val();
+                              
+                            for(i = 0; i &lt; consentValues.length; i++) {
+                              //console.log(consentValues[i]);
+                              if(consentValues[i] === 90004) {
                                 jq('.nav-tabs').find('#procedure').addClass('disabled');
-                                jq('.nav-tabs').find('#followup').addClass('disabled');
+                                break;
+                              }
+                              else
+                              jq('.nav-tabs').find('#procedure').removeClass('disabled');
+                            } 
+                        });
+
+                         <!-- var editConsentValues = {};
+                         jq('.consent').find("input[type$='radio']").change(function (event) {
+                            editConsentValues[event.target.name] = event.target.value;
+                            var consentListt =  Object.keys(editConsentValues).filter(function(data){ -->
+                                <!-- add to consent list if yes -->
+<!-- 
+                                if(editConsentValues[data] === '90003') {
+                                    return true;
+                                }
+                                return false;
+                             });
+                             if(consentListt.length === 3) {
+                                 jq('.nav-tabs').find('#procedure').removeClass('disabled'); 
+                             }else{
+                                 jq('.nav-tabs').find('#procedure').addClass('disabled');
+                                 jq('.nav-tabs').find('#followup').addClass('disabled');
+                                 disable_fields('99628');
+                                 disable_fields('162909');
+                                 disable_fields('99678');
                              }
-                          });
+                            }); -->
+
 
                           /*if circumcision procedure is selected, activate followup */
                           var procedure = jq("#circumcision_procedure").find("select option:selected").val();
@@ -627,17 +647,17 @@
                                                 <div class="col-md-4">
                                                     <label>Client counseled about SMC</label>
                                                     <obs conceptId="99666" answerConceptIds="90003,90004" answerLabels="Yes,No" style="radio"
-                                                         class="horizontal"/>
+                                                         class="horizontal counseled" />
                                                 </div>
                                                 <div class="col-md-4">
                                                     <label>Informed consent/assent for SMC given</label>
                                                     <obs conceptId="99667" answerConceptIds="90003,90004" answerLabels="Yes,No" style="radio"
-                                                         class="horizontal"/>
+                                                         class="horizontal consent" />
                                                 </div>
                                                 <div class="col-md-4">
                                                     <label>Client eligible for circumcision after history/physical exam</label>
                                                     <obs conceptId="99668" answerConceptIds="90003,90004" answerLabels="Yes,No" style="radio"
-                                                         class="horizontal" id="99668"/>
+                                                         class="horizontal eligible" id="99668" />
                                                 </div>
                                             </div>
                                         </div>
