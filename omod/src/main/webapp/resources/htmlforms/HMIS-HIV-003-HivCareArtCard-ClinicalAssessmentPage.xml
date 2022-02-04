@@ -231,9 +231,6 @@
 
         });
 
-
-
-
         jq(document).ready(function () {
                 $allRows = jq(this).find('.multi-drug');
                 $allRows.hide();
@@ -1191,16 +1188,33 @@
                 var appointment = new Date((jq("#returndate").find('input[type=hidden]').val()));
                 var transferOutDate = new Date((getValue('transfer_out_date.value')));
 
-                if(getValue('provider.value')==""){
-                     jq().toastmessage('showErrorToast', "Attending clinician is required");
-                 }
+                if(getValue('returndate.value')==""){
+                    jq().toastmessage('showErrorToast', "The return date is required");
+                    return false;
+                }
 
-                if (encounterDate &gt;= appointment) {
+                if(getValue('provider.value')==""){
+                    jq().toastmessage('showErrorToast', "Attending clinician is required");
+                }
+
+                if(encounterDate &gt;= appointment){
                     getField('returndate.error').html('The return date must be after the date of this visit ' +
                         formatDateForDisplay(encounterDate)).show();
                     jq().toastmessage('showErrorToast', "The return date must be after the date of this visit");
                     return false;
+                }
 
+                if(jq('.transfer_out').find("input[type$='checkbox']:checked").val() == 90003) {
+
+                    if(getValue('transfer_out_date.value')==""){
+                        jq().toastmessage('showErrorToast', "The transfer out date is required");
+                        return false;
+                    }
+
+                    if(getValue('transfer_out_location.value')==""){
+                        jq().toastmessage('showErrorToast', "Transfer out place/facility is required");
+                        return false;
+                    } 
                 }
 
                 if(getValue('transfer_out_date.value') !== "" &amp;&amp; encounterDate.getTime() !== transferOutDate.getTime()){
@@ -1665,12 +1679,12 @@
                                                                             complexExpression="#set($transfer_out_date=($fn.latestObs('99165').valueDatetime)) #set($lost_to_follow_date=$fn.latestObs('99165').valueDatetime) #set($transfer_out=$fn.latestObs('90306').valueCoded.name) $transfer_out_date"/>
                                                                 </span>
                                                                 <includeIf velocityTest="$transfer_out=='YES'">
-                                                                    <label>Return date</label>
+                                                                    <label><span class="required">*</span>Return date</label>
                                                                     <obs id="returndate" conceptId="5096"
-                                                                         allowFutureDates="true"/>
+                                                                         allowFutureDates="true" required="required"/>
                                                                 </includeIf>
                                                                 <includeIf velocityTest="$transfer_out!='YES'">
-                                                                    <label>Return date</label>
+                                                                    <label><span class="required">*</span>Return date</label>
                                                                     <obs id="returndate" conceptId="5096"
                                                                          required="required" allowFutureDates="true"/>
                                                                 </includeIf>
@@ -1681,12 +1695,12 @@
                                                                             complexExpression="#set($transfer_out_date=($fn.latestObs('99165').valueDatetime)) #set($lost_to_follow_date=$fn.latestObs('99165').valueDatetime) #set($transfer_out=$fn.latestObs('90306').valueCoded.name) $transfer_out_date"/>
                                                                 </span>
                                                                 <includeIf velocityTest="$transfer_out=='YES'">
-                                                                    <label>Return date</label>
+                                                                    <label><span class="required">*</span>Return date</label>
                                                                     <obs id="returndate" conceptId="5096"
-                                                                         allowFutureDates="true"/>
+                                                                         allowFutureDates="true" required="required"/>
                                                                 </includeIf>
                                                                 <includeIf velocityTest="$transfer_out!='YES'">
-                                                                    <label>Return date</label>
+                                                                    <label><span class="required">*</span>Return date</label>
                                                                     <obs id="returndate" conceptId="5096"
                                                                          required="required" allowFutureDates="true"/>
                                                                 </includeIf>
@@ -2797,13 +2811,13 @@
                                                 <div class="row">
                                                     <div class="col-md-4" id="final-out-come">
                                                         <obs id="transfer_out" conceptId="90306" answerConceptId="90003"
-                                                             answerLabel="Transfer out"/>
+                                                             answerLabel="Transfer out" class="transfer_out"/>
                                                     </div>
                                                     <div class="col-md-4" id="disabled">
-                                                        <obs id="transfer_out_date" conceptId="99165" labelText="Date of Transfer"/>
+                                                        <obs id="transfer_out_date" conceptId="99165" labelText="Date of Transfer" class="transfer_out_date"/>
                                                     </div>
                                                     <div class="col-md-4" id="disabled">
-                                                        <obs id="transfer_out_location" conceptId="90211" labelText="Where"/>
+                                                        <obs id="transfer_out_location" conceptId="90211" labelText="Where" class="transfer_out_location"/>
                                                     </div>
                                                 </div>
                                                 </obsgroup>
@@ -2876,7 +2890,12 @@
                         <div class="card-header">
                             <ul class="nav nav-tabs card-header-tabs nav-fill">
                                 <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#patient-vitals">
+                                    <a class="nav-link active" data-toggle="tab" href="#return-date">
+                                        Return Date
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#patient-vitals">
                                         Triage Information
                                     </a>
                                 </li>
@@ -2896,10 +2915,32 @@
                             </ul>
                         </div>
 
-                        <div class="card-body">
-                            <div class="tab-content">
+                            <div class="card-body">
+                                <div class="tab-content">
+                                <div class="tab-pane fade show active" id="return-date" >
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <excludeIf velocityTest="$patient.person.dead ==true">
+                                                <lookup complexExpression="#set($transfer_out_date = '')"/>
+                                                <span id="transfer_out_date_id" class="hidden">
+                                                    <lookup
+                                                            complexExpression="#set($transfer_out_date=($fn.latestObs('99165').valueDatetime)) #set($lost_to_follow_date=$fn.latestObs('99165').valueDatetime) #set($transfer_out=$fn.latestObs('90306').valueCoded.name) $transfer_out_date"/>
+                                                </span>
+                                                <includeIf velocityTest="$transfer_out=='YES'">
+                                                    <label><span class="required">*</span>Return date</label>
+                                                        <obs id="returndate" conceptId="5096"
+                                                        required="required" allowFutureDates="true"/>
+                                                </includeIf>
 
-                                <div class="tab-pane fade show active" id="patient-vitals" >
+                                                <includeIf velocityTest="$transfer_out!='YES'">
+                                                    <label><span class="required">*</span>Return date</label>
+                                                        <obs id="returndate" conceptId="5096"                                                                required="required" allowFutureDates="true"/>
+                                                </includeIf>
+                                            </excludeIf>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade show" id="patient-vitals" >
                                     <uiInclude provider="ugandaemr" fragment="vitals"/>
                                 </div>
                                 <div class="tab-pane fade" id="nav-family-planning" role="tabpanel" >
@@ -3927,38 +3968,18 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <excludeIf velocityTest="$patient.person.dead ==true">
-                                            <lookup complexExpression="#set($transfer_out_date = '')"/>
-                                            <span id="transfer_out_date_id" class="hidden">
-                                                <lookup
-                                                        complexExpression="#set($transfer_out_date=($fn.latestObs('99165').valueDatetime)) #set($lost_to_follow_date=$fn.latestObs('99165').valueDatetime) #set($transfer_out=$fn.latestObs('90306').valueCoded.name) $transfer_out_date"/>
-                                            </span>
-                                            <includeIf velocityTest="$transfer_out=='YES'">
-                                                <obs id="returndate" conceptId="5096" allowFutureDates="true"
-                                                     labelText="Return date"/>
-                                            </includeIf>
-
-                                            <includeIf velocityTest="$transfer_out!='YES'">
-                                                <obs id="returndate" conceptId="5096" required="required"
-                                                     allowFutureDates="true"
-                                                     labelText="Return date"/>
-                                            </includeIf>
-                                        </excludeIf>
-                                    </div>
-                                </div>
+                                
                                 <obsgroup groupingConceptId="99166">
                                     <div class="row">
                                         <div class="col-md-4" id="final-out-come">
                                             <obs id="transfer_out" conceptId="90306" answerConceptId="90003"
-                                                 answerLabel="Transfer out"/>
+                                                 answerLabel="Transfer out" class="transfer_out"/>
                                         </div>
                                         <div class="col-md-4" id="disabled">
-                                            <obs id="transfer_out_date" conceptId="99165" labelText="Date of Transfer"/>
+                                            <obs id="transfer_out_date" conceptId="99165" labelText="Date of Transfer" class="transfer_date"/>
                                         </div>
                                         <div class="col-md-4" id="disabled">
-                                            <obs id="transfer_out_location" conceptId="90211" labelText="Where"/>
+                                            <obs id="transfer_out_location" conceptId="90211" labelText="Where" class="transfer_out_location"/>
                                         </div>
                                     </div>
                                 </obsgroup>
