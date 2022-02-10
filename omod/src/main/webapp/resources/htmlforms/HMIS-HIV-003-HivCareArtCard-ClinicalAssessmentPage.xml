@@ -161,35 +161,6 @@
                 });
             }
 
-            //Return visit date is required if there is no transfer out
-            <!-- jq(document).ready(function () { 
-
-                jq(".transfer_out").change(function () {
-
-                    if(jq(this).find("input[type$='checkbox']:checked").val() =="90003") {
-                        returnVisitDateIsRequired = 'false';
-                    }
-                    else 
-                        returnVisitDateIsRequired = 'true';
-                });
-            }); -->
-
-
-            //Non POC mode: Return visit date is required if there is no transfer out
-            <!-- jq(document).ready(function () { 
-
-                jq(".transfer_out").change(function () {
-
-                    if(jq(this).find("input[type$='checkbox']:checked").val() =="90003") {
-                        
-                        jq(".returndate span").removeClass("required");
-                        //jq(".returndate span span error field-error").css("display", "none");
-                    }
-                    else 
-                        jq(".returndate span").addClass("required");
-                });
-            }); -->
-
             //Check if any prescription is made, if so that return date will be mandatory
             jq(document).ready(function () { 
 
@@ -252,8 +223,7 @@
                 jq(contentAddId).toggle(false);
                 jq(':input:not(:button)', contentAddId).val([]);
                 jq('#' + correctedRemoveButtonId + '-addEntry-other').toggle(true);
-                jq('#' + correctedRemoveButtonId + '-removeEntry-other').toggle(true);prescription-poc
-
+                jq('#' + correctedRemoveButtonId + '-removeEntry-other').toggle(true);
                 return false;
                 });
 
@@ -1038,8 +1008,6 @@
 
                 /*enable disable Hepatitis B status*/
 
-
-
                 jq(".hepB-status").change(function () {
                     var hepStatus = jq(this).find("input[type='radio']:checked").val();
                     if (hepStatus == 159971) {
@@ -1264,7 +1232,7 @@
                     return false;
                 }
 
-                //Return visit date is mandatory if any prescription is made
+                //Return visit date is required if any prescription is made
                 if(prescription=="true" &amp;&amp; returnDate=="") {
                     jq().toastmessage('showErrorToast', "The return visit date is required");
                     return false;
@@ -1283,6 +1251,7 @@
                     } 
                 }
 
+                //Return visit date is required if there is no transfer out in non POC mode
                 if(transferOut !==90003 &amp;&amp; returnDatePoc =="") {
                     jq().toastmessage('showErrorToast', "The return visit date is required");
                     return false;
