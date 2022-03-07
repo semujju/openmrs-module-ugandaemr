@@ -5,9 +5,9 @@
           formVersion="3.0.0"
           formAddMetadata="yes"
           formUILocation="patientDashboard.visitActions"
-          formOrder="7"
+          formOrder="9"
           formIcon="icon-medkit"
-          formShowIf="(visit.active || !visit.active) &amp;&amp; patient.person.gender=='M' &amp;&amp; patient.person.dead==false &amp;&amp; sessionLocation.uuid=='86863db4-6101-4ecf-9a86-5e716d6504e4'"
+          formShowIf="(visit.active || !visit.active) &amp;&amp; patient.person.gender=='M' &amp;&amp; patient.person.dead==false &amp;&amp; (sessionLocation.uuid=='86863db4-6101-4ecf-9a86-5e716d6504e4' || sessionLocation.uuid=='e9bc61b5-69ff-414b-9cf0-0c22d6dfca2b')"
           formDisplayStyle="Standard"
           formLabel="HMIS ACP 029: Safe Male Circumcision Client Form">
 
@@ -284,11 +284,6 @@
                                     Procedure 
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link disabled" data-toggle="tab" href="#followup-section" role="tab" id="followup">
-                                    Follow up
-                                </a>
-                            </li>
                         </ul>
                     </div>
                     <div class="card-body">
@@ -299,7 +294,6 @@
                                 <!-- Client Info card -->
                                 <div class="card">
                                     <div class="card-header">B: CLIENT INFORMATION</div>
-
                                     <div class="card-body">
                                         <!-- next of kin    -->
                                         <div class="row">
@@ -793,7 +787,6 @@
                                         </div>
                                     </div>
 
-
                                     <!-- Adverse event form-->
                                     <div class="card">
                                         <div class="card-header">Post Operation Management (After 30 minutes)</div>
@@ -834,154 +827,11 @@
 
                                 </obsgroup>
                             </div>
-
-                            <!-- follow up tab-->
-                            <div class="tab-pane" role="tabpanel" aria-labelledby="nav-profile-tab" id="followup-section">
-                                <!-- follow up information     -->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="card">
-                                            <div class="card-header">Follow Up Information</div>
-                                            <div class="card-body">
-                                                <table class="table table-striped multi table-borderless">
-                                                    <tbody>
-                                                        <repeat>
-                                                            <template>
-                                                                <obsgroup groupingConceptId="99700">
-                                                                    <tr class="FollowupEnableDisable">
-                                                                        <td>
-                                                                            <div class="accordion col-md-12" id="followUpForm">
-                                                                                <div class="card">
-                                                                                <div class="card-header" id="{anchorId}" data-target="#{tag}" data-toggle="collapse" aria-controls="{tag}" aria-expanded="true">
-                                                                                    <span class="mb-0">
-                                                                                        {heading}
-                                                                                    </span>
-                                                                                </div>
-
-                                                                                <div id="{tag}" class="collapse show" aria-labelledby="{anchorId}" data-parent="#followUpForm">
-                                                                                <div class="card-body">
-
-                                                                            <!--   Date  -->
-                                                                            <div class="row">
-                                                                                <div class="col-md-4 ">
-                                                                                    <label>Date</label>
-                                                                                    <!-- TODO: fix Calendar icon style -->
-                                                                                    <i class=" icon-calendar small family-date-icon position-absolute" style="right: 25%; top: 50%;" ></i>
-                                                                                    <obs conceptId="{followupDate}" class="hasDatepicker" allowFutureDates="false" />
-                                                                                </div>
-                                                                                <div class="col-md-4">
-                                                                                    <label>Wound Status</label>
-                                                                                    <obs conceptId="162912" />
-                                                                                </div>
-                                                                                <div class="col-md-4">
-                                                                                    <label>Type of Visit</label>
-                                                                                    <obs conceptId="99702" answerConceptIds="99703,99704,99705" answerLabels="1 - Routine, 2 - Client initiated/unscheduled,3 - Recommended by Physician"
-                                                                                         id="99702"
-                                                                                         style="dropdown" />
-                                                                                </div>
-                                                                            </div>
-
-                                                                            <!-- Presence of AE -->
-                                                                            <div class="row">
-                                                                                <div class="col-md-12 ">
-                                                                                    <label>Presence of AE </label>
-                                                                                </div>
-                                                                                <div class="col-md-4">
-                                                                                    <obs conceptId="99706" answerConceptId="99687" answerLabel="1 - Damage to penis"/>
-                                                                                </div>
-                                                                                <div class="col-md-4">
-                                                                                    <obs conceptId="99706" answerConceptId="99688" answerLabel="2 - Excessive bleeding"/>
-                                                                                </div>
-                                                                                <div class="col-md-4">
-                                                                                    <obs conceptId="99706" answerConceptId="99707" answerLabel="3 - Pus discharge"/>
-                                                                                </div>
-                                                                                <div class="col-md-4">
-                                                                                    <obs conceptId="99706" answerConceptId="99708" answerLabel="4 - Excessive Swelling"/>
-                                                                                </div>
-                                                                                <div class="col-md-4">
-                                                                                    <obs conceptId="99706" answerConceptId="99709" answerLabel="5 - Infection"/>
-                                                                                </div>
-                                                                                <div class="col-md-4">
-                                                                                    <obs conceptId="99706" answerConceptId="162913" answerLabel="6 - Smell"/>
-                                                                                </div>
-                                                                                <div class="col-md-4">
-                                                                                    <obs conceptId="99706" answerConceptId="162914" answerLabel="7 - Device displacement"/>
-                                                                                </div>
-                                                                                <div class="col-md-4">
-                                                                                    <obs conceptId="99706" answerConceptId="162915" answerLabel="8 - Failure to pass urine"/>
-                                                                                </div>
-                                                                                <div class="col-md-4">
-                                                                                    <obs conceptId="99706" answerConceptId="162914" answerLabel="9 - Early Ring Removal"/>
-                                                                                </div>
-                                                                                <div class="col-md-4">
-                                                                                    <label>Other Specify</label>
-                                                                                    <obs conceptId="99710" id="smc_presence_of_ae_other"/>
-                                                                                </div>
-                                                                            </div>
-                                                                            <!-- severity -->
-                                                                            <div class="row ">
-                                                                                <div class="col-md-4">
-                                                                                    <label >Severity</label>
-                                                                                    <obs conceptId="99691" answerConceptIds="1498,99562,99561" answerLabels="Mild,Moderate,Severe" style="radio" class="horizontal"/>
-                                                                                </div>
-                                                                            <!-- Treatment given -->
-                                                                                <div class="col-md-4">
-                                                                                    <label>Treatment given</label>
-                                                                                    <obs conceptId="99692" size="60" style="textarea"/>
-                                                                                </div>
-                                                                            <!-- health worker -->
-                                                                                <div class="col-md-4">
-                                                                                    <label>Attending Health Worker</label>
-                                                                                    <encounterProviderAndRole 
-                                                                                    encounterRole="240b26f9-dd88-4172-823d-4a8bfeb7841f"
-                                                                                    required="required"/>
-                                                                                </div>
-                                                                            </div>
-                                                                            </div>
-                                                                            </div>
-                                                                            </div>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td class="text-nowrap">
-                                                                            <a href="#" class="add  add-more-link" title="Add Follow up Visit"><i class= "icon-plus-sign"></i></a>
-                                                                            <a href="#" class="remove remove-more-link required" title="Remove Follow up Visit"> <i class="icon-minus"></i></a>
-                                                                        </td>
-                                                                    </tr>
-                                                                </obsgroup>
-                                                            </template>
-                                                            <render followupDate="99701" tag="followUp1" anchorId="followUpHeading1" heading="Follow Up 1"/>
-                                                            <render followupDate="99713" tag="followUp2" anchorId="followUpHeading2" heading="Follow Up 2"/>
-                                                            <render followupDate="99719" tag="followUp3" anchorId="followUpHeading3" heading="Follow Up 3"/>
-                                                        </repeat>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-        <div class="row" style="height:100px;"></div>
     </div>
     <!-- End of HTML Form -->
-    <ifMode mode="EDIT" include="false">
-        <lookup complexExpression="
-            #set( $encounter = 0 )
-            #set( $encounter = $fn.latestEncounter('244da86d-f80e-48fe-aba9-067f241905ee'))
-            #if( $encounter != 0 )
-                &lt;script type=&quot;text/javascript&quot;>
-                        if (window.location.href.indexOf('/module/htmlformentry/htmlForm.form') == -1) {
-                           window.location.href = window.location.protocol + &quot;//&quot; + window.location.host + &quot;/&quot;+ OPENMRS_CONTEXT_PATH + &quot;/htmlformentryui/htmlform/editHtmlFormWithStandardUi.page?patientId=$encounter.patientId&amp;visitId=$encounter.visit.visitId&amp;formUuid=9d9193e7-b038-4c44-a7a3-830baa288565&amp;encounterId=$encounter.encounterId&amp;returnUrl=%2F&quot; + OPENMRS_CONTEXT_PATH + &quot;%2Fcoreapps%2Fclinicianfacing%2Fpatient.page%3FpatientId%3D$encounter.patientId&quot;;
-                        }
-                &lt;/script>
-            #end"/>
-    </ifMode>
 </htmlform>
