@@ -742,10 +742,8 @@
                                     </div>
 
                                     <!-- Adverse event form-->
-    <!--                                <span id="ae_presence_form">-->
                                     <div class="card adverse-effect-presence-form">
                                         <div class="card-header">Adverse Event Form</div>
-
                                         <div class="card-body">
                                             <!-- AE row -->
                                             <div class="row">
@@ -770,7 +768,6 @@
                                                     <obs conceptId="99685" answerConceptId="90002" answerLabel="5 - Other" style="checkbox"/>
                                                 </div>
                                             </div>
-
                                             <!-- severity row -->
                                             <div class="row ">
                                                 <div class="col-md-3">

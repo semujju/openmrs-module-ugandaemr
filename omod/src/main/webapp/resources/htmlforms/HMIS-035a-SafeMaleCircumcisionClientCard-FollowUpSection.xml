@@ -40,6 +40,7 @@
                             '/' + OPENMRS_CONTEXT_PATH + '/coreapps/clinicianfacing/patient.page?patientId='
                             + queryParameters['patientId']; // Causes page to reload
                 });
+
             </script>
         </includeIf>
     </ifMode>
@@ -50,6 +51,16 @@
             jq(document).ready(function () {
                 //Block Multiple encounter entry on same date
                 blockEncounterOnSameDateEncounter(jq("#encounterDate").find("input[type=hidden]"),"block");
+
+                disable_fields('referral-place'); 
+
+                jq('#referred').click(function () {
+                    if (getValue('referred.value') == 90003) {
+                        enable_fields('referral-place');
+                    } else {
+                        disable_fields('referral-place');
+                    }
+                });
 
                 jq('#smc_presence_of_ae').click(function () {
                     if (getValue('smc_presence_of_ae.value') == 90002) {
@@ -88,7 +99,7 @@
                         <div class="row">
                             <div class="col-md-4 ">
                                 <label>Date</label>
-                                <i class=" icon-calendar small family-date-icon position-absolute" style="right: 23%; top: 50%;" ></i>
+                                <i class=" icon-calendar small family-date-icon position-absolute" style="right: 23%; top: 40%;" ></i>
                                 <encounterDate default="today" disallowMultipleEncountersOnDate="block"/>
                             </div>
                            <div class="col-md-4">
@@ -151,18 +162,24 @@
                                 <obs conceptId="99710" id="smc_presence_of_ae_other"/>
                             </div>
                         </div>
-                        <!-- severity -->
                         <div class="row ">
                             <div class="col-md-4">
                                 <label >Severity</label>
                                 <obs conceptId="99691" answerConceptIds="1498,99562,99561" answerLabels="Mild,Moderate,Severe" style="radio" class="horizontal"/>
                             </div>
-                        <!-- Treatment given -->
+                            <div class="col-md-4">
+                                <label>Referred</label>
+                                <obs conceptId="90306" id="referred" answerConceptIds="90003,90004" answerLabels="Yes,No" 
+                                     style="radio" class="horizontal"/>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Place referred to</label>
+                                <obs conceptId="90211" id="referral-place"/>
+                            </div>
                             <div class="col-md-4">
                                 <label>Treatment given</label>
-                                <obs conceptId="99692" size="60" style="textarea"/>
+                                <obs conceptId="99692" size="60" style="textarea" id="treatment-given"/>
                             </div>
-                        <!-- health worker -->
                             <div class="col-md-4">
                                 <label>Attending Health Worker</label>
                                 <encounterProviderAndRole 
