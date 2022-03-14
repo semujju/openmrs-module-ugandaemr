@@ -15,29 +15,6 @@
              if (jQuery) {
                 jq(document).ready(function () {
 
-                     <!-- activate tabs if consent conditions are met -->
-                     var consentValues = {};
-                     jq('.consent').find("input[type$='radio']").change(function (event) {
-                        consentValues[event.target.name] = event.target.value;
-                        var consentList =  Object.keys(consentValues).filter(function(data){
-                            <!-- add to consent list if yes -->
-
-                            if(consentValues[data] === '90003') {
-                                return true;
-                            }
-                            return false;
-                         });
-                         if(consentList.length === 3) {
-                             jq('.nav-tabs').find('#procedure').removeClass('disabled'); 
-                         }else{
-                             jq('.nav-tabs').find('#procedure').addClass('disabled');
-                             jq('.nav-tabs').find('#followup').addClass('disabled');
-                             disable_fields('99628');
-                             disable_fields('162909');
-                             disable_fields('99678');
-                         }
-                        });
-
                       //Block Multiple encounter entry on same date
                       blockEncounterOnSameDateEncounter(jq("#encounterDate").find("input[type=hidden]"),"block");                 
 
@@ -167,8 +144,28 @@
                       });
 
                       <ifMode mode="ENTER">
-                          $otherRows.hide(); //Hide all rows apart from first row if adding new form
-                          $firstRow.find('.remove').hide(); //Hide the remove button from the first row
+                         
+                        <!-- activate tabs if consent conditions are met -->
+                         var consentValues = {};
+                         jq('.eligibility-for-circumcission').find("input[type$='radio']").change(function (event) {
+                            consentValues[event.target.name] = event.target.value;
+                            var consentList =  Object.keys(consentValues).filter(function(data){
+                                <!-- add to consent list if yes -->
+
+                                if(consentValues[data] === '90003') {
+                                    return true;
+                                }
+                                return false;
+                             });
+                             if(consentList.length === 3) {
+                                 jq('.nav-tabs').find('#procedure').removeClass('disabled'); 
+                             }else{
+                                 jq('.nav-tabs').find('#procedure').addClass('disabled');
+                                 disable_fields('99628');
+                                 disable_fields('162909');
+                                 disable_fields('99678');
+                             }
+                            });
 
                       </ifMode>
 
@@ -177,44 +174,45 @@
                           * If consent values are pre-ticked, activate procedure tab
                           */
                           var i = 0;
-                          jq('.consent').change(function () {
-                          consentValues[0] = jq('.counseled').find("input[type$='radio']:checked").val();
-                          consentValues[1] = jq('.consent').find("input[type$='radio']:checked").val();
-                          consentValues[2] = jq('.eligible').find("input[type$='radio']:checked").val();
-                              
+                          var x = 0;
+                          var consentValues = [];
+                          consentValues[0] = jq(this).find('.counseled').find("input[type$='radio']:checked").val();
+                          consentValues[1] = jq(this).find('.consent').find("input[type$='radio']:checked").val();
+                          consentValues[2] = jq(this).find('.eligible').find("input[type$='radio']:checked").val();
                             for(i = 0; i &lt; consentValues.length; i++) {
-                              //console.log(consentValues[i]);
-                              if(consentValues[i] === 90004) {
-                                jq('.nav-tabs').find('#procedure').addClass('disabled');
-                                break;
+                              if(consentValues[i] == 90003) {
+                                x++;
                               }
-                              else
-                              jq('.nav-tabs').find('#procedure').removeClass('disabled');
                             } 
-                        });
 
-                         <!-- var editConsentValues = {};
-                         jq('.consent').find("input[type$='radio']").change(function (event) {
-                            editConsentValues[event.target.name] = event.target.value;
-                            var consentListt =  Object.keys(editConsentValues).filter(function(data){ -->
-                                <!-- add to consent list if yes -->
-<!-- 
-                                if(editConsentValues[data] === '90003') {
-                                    return true;
+                            if(x == 3) {
+                                jq('.nav-tabs').find('#procedure').removeClass('disabled'); 
+                            }
+                            
+                            var consentValues = [];
+                            jq('.eligibility-for-circumcission').change(function (event) {
+                                consentValues[0] = jq(this).find('.counseled').find("input[type$='radio']:checked").val();
+                                consentValues[1] = jq(this).find('.consent').find("input[type$='radio']:checked").val();
+                                consentValues[2] = jq(this).find('.eligible').find("input[type$='radio']:checked").val();
+
+                                var x = 0;
+
+                                for(i = 0; i &lt; consentValues.length; i++) {
+                                   if(consentValues[i] == 90003) {
+                                     x++;
+                                   }
+                                } 
+                                console.log(x);
+
+                                if(x == 3) {
+                                     jq('.nav-tabs').find('#procedure').removeClass('disabled'); 
+                                 }else{
+                                     jq('.nav-tabs').find('#procedure').addClass('disabled');
+                                     disable_fields('99628');
+                                     disable_fields('162909');
+                                     disable_fields('99678');
                                 }
-                                return false;
-                             });
-                             if(consentListt.length === 3) {
-                                 jq('.nav-tabs').find('#procedure').removeClass('disabled'); 
-                             }else{
-                                 jq('.nav-tabs').find('#procedure').addClass('disabled');
-                                 jq('.nav-tabs').find('#followup').addClass('disabled');
-                                 disable_fields('99628');
-                                 disable_fields('162909');
-                                 disable_fields('99678');
-                             }
-                            }); -->
-
+                            });
 
                           /*if circumcision procedure is selected, activate followup */
                           var procedure = jq("#circumcision_procedure").find("select option:selected").val();
@@ -303,11 +301,11 @@
                                             </div>
                                             <div class="col-md-3">
                                                 <label>Lignocaine Batch Number</label>                                       
-                                                <obs conceptId="166518" />
+                                                <obs conceptId="166507" />
                                             </div>
                                             <div class="col-md-3">
                                             <label>Bupivicaine Batch Number</label>
-                                                <obs conceptId="166519" id="90278" />
+                                                <obs conceptId="166506" />
                                             </div>
                                         </div>
 
@@ -637,21 +635,18 @@
                                     <div class="card">
                                         <div class="card-header">D: Eligibility For Circumcision</div>
                                         <div class="card-body eligibility-for-circumcission">
-                                            <div class="row consent">
+                                            <div class="row" id="eligibility">
                                                 <div class="col-md-4">
                                                     <label>Client counseled about SMC</label>
-                                                    <obs conceptId="99666" answerConceptIds="90003,90004" answerLabels="Yes,No" style="radio"
-                                                         class="horizontal counseled" />
+                                                    <obs conceptId="99666" answerConceptIds="90003,90004" answerLabels="Yes,No" style="radio" class="horizontal counseled" />
                                                 </div>
                                                 <div class="col-md-4">
                                                     <label>Informed consent/assent for SMC given</label>
-                                                    <obs conceptId="99667" answerConceptIds="90003,90004" answerLabels="Yes,No" style="radio"
-                                                         class="horizontal consent" />
+                                                    <obs conceptId="99667" answerConceptIds="90003,90004" answerLabels="Yes,No" style="radio" class="horizontal consent" />
                                                 </div>
                                                 <div class="col-md-4">
                                                     <label>Client eligible for circumcision after history/physical exam</label>
-                                                    <obs conceptId="99668" answerConceptIds="90003,90004" answerLabels="Yes,No" style="radio"
-                                                         class="horizontal eligible" id="99668" />
+                                                    <obs conceptId="99668" answerConceptIds="90003,90004" answerLabels="Yes,No" style="radio" class="horizontal eligible" id="99668" />
                                                 </div>
                                             </div>
                                         </div>
