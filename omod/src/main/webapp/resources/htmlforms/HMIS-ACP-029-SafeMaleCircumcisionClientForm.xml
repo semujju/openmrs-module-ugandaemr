@@ -668,7 +668,7 @@
                                                         <div>
                                                             <!-- TODO: fix Calendar icon style -->
                                                             <i class=" icon-calendar small family-date-icon position-absolute" style="right: 25%; top: 50%;" ></i>
-                                                             <obs conceptId="165390" class="hasDatepicker" allowFutureDates="false" />
+                                                             <obs conceptId="165390" class="hasDatepicker" allowFutureDates="true" />
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
