@@ -1,6 +1,6 @@
 <htmlform formName="Covid-19 Vaccination Tracking Form"
 formDescription="Covid-19: Vaccination Tracking Form"
-formEncounterType="afcdfcd8-defe-11eb-ba80-0242ac130004"
+formEncounterType="c392cf0e-5024-4f47-9ed9-e10e307e942f"
 formUuid="00580bff-a366-4a5a-9f6b-99e23ec1b65b"
 formVersion="3.0.0" formAddMetadata="yes"
 formUILocation="patientDashboard.visitActions"
@@ -9,23 +9,142 @@ formShowIf="(visit.active || !visit.active) &amp;&amp; patient.person.dead==fals
 formDisplayStyle="Standard"
 formLabel="Covid-19 Vaccination Tracking Form">
 
+    <ifMode mode = "ENTER" >
+        <script type="text/javascript">
+            if (jQuery) {
+                jq(document).ready(function () {
+                    jq("#other-category-container").hide();
+                    jq("#yes-contacted-container").hide();
+                    jq("#not-contacted-container").hide();
+                    jq("#reason-for-refusing-referral-container").hide();
+                    jq("#dose-2-container").hide();
+                    jq("#booster-container").hide();
+                    disable_fields("type-of-dose-1");
+                    disable_fields("type-of-dose-2");
+                    disable_fields("type-of-booster");
+                });
+            }
+        </script>
+    </ifMode>
 
-<script type="text/javascript">
+    <ifMode mode="EDIT">
+        <script type="text/javascript">
+            if (jQuery) {
+                jq(document).ready(function () {
+                    if(!jq('.ARTSpecialCateogryEnableDisable1').find('#other-category-checkbox').find(':checkbox').prop('checked')) {
+                        jq("#other-category-container").hide();
+                    }
 
-    if (jQuery) {
+                    if (jq("#client-contacted").find("input[type='radio']:checked").val() == "90003") {
+                        jq("#not-contacted-container").hide();
+                    } else if (jq("#client-contacted").find("input[type='radio']:checked").val() == "90004") {
+                        jq("#yes-contacted-container").hide();
+                    } else {
+                        jq("#yes-contacted-container").hide();
+                        jq("#not-contacted-container").hide();
+                    }
 
-      jq(document).ready(function () {
+                    if (jq("#referred-for-vaccination").find("input[type='radio']:checked").val() != "90004") {
+                        jq("#reason-for-refusing-referral-container").hide();
+                    }
 
-      });
-         
+                    if(jq("#type-of-dose-1").find("select").find(":selected").val() == "166681") {
+                        jq("#dose-2-container").hide();
+                    } else {
+                        jq("#booster-container").hide();
+                    }
+                });
+            }
+        </script>
+    </ifMode>
 
-<ifMode mode = "EDIT" >
-    
-</ifMode>
+    <script type="text/javascript">
+        if (jQuery) {
+          jq(document).ready(function () {
+            jq("#client-contacted").click(function () {
+                if (jq(this).find("input[type='radio']:checked").val() == "90003") {
+                    enable_fields("yes-contacted");
+                    jq("#yes-contacted-container").show();
 
-</script>
+                    disable_fields("not-contacted");
+                    jq("#not-contacted-container").hide();
+                } else if (jq(this).find("input[type='radio']:checked").val() == "90004") {
+                    enable_fields("not-contacted");
+                    jq("#not-contacted-container").show();
+
+                    disable_fields("yes-contacted");
+                    jq("#yes-contacted-container").hide();
+                } else {
+                    disable_fields("not-contacted");
+                    disable_fields("yes-contacted");
+                    jq("#not-contacted-container").hide();
+                    jq("#yes-contacted-container").hide();
+                }
+            });
+
+            jq("#referred-for-vaccination").click(function () {
+                if (jq(this).find("input[type='radio']:checked").val() == "90004") {
+                    enable_fields("reason-for-refusing-referral");
+                    jq("#reason-for-refusing-referral-container").show();
+                } else {
+                    disable_fields("reason-for-refusing-referral");
+                    jq("#reason-for-refusing-referral-container").hide();
+                }
+            });
+
+            jq("#type-of-dose-1").change(function () {
+                if(jq(this).find("select").find(":selected").val() == "166681") {
+                    jq("#booster-container").show();
+                    jq("#dose-2-container").hide();
+                    disable_fields('type-of-dose-2');
+                    disable_fields('date-of-dose-2');
+                    enable_fields('date-of-booster');
+                } else {
+                    disable_fields('date-of-dose-2');
+                    enable_fields('date-of-dose-2');
+                    disable_fields('type-of-dose-2');
+                    jq("#dose-2-container").show();
+                    disable_fields('type-of-booster');
+                    disable_fields('date-of-booster');
+                    jq("#booster-container").hide();
+
+                }
+            });
+
+            jq("#date-of-dose-1").change(function () {
+                if (jq(this).find("input[type='text']").val() == '') {
+                    disable_fields("type-of-dose-1");
+                } else {
+                    enable_fields("type-of-dose-1");
+                }
+            });
+
+            jq("#date-of-dose-2").change(function () {
+                if (jq(this).find("input[type='text']").val() == '') {
+                    disable_fields("type-of-dose-2");
+                } else {
+                    enable_fields("type-of-dose-2");
+                }
+            });
+
+            jq("#date-of-booster").change(function () {
+                if (jq(this).find("input[type='text']").val() == '') {
+                    disable_fields("type-of-booster");
+                } else {
+                    enable_fields("type-of-booster");
+                }
+            });
+
+          });
+        }
+    </script>
 
   <div>
+      <div class="row">
+          <span style="display: none;">
+              <encounterDate default="today" disallowMultipleEncountersOnDate="block"/>
+          </span>
+      </div>
     <div class="row">
         <div class="col-md-6">
             <h1>Covid-19: Vaccination Tracking Form</h1>
@@ -56,13 +175,12 @@ formLabel="Covid-19 Vaccination Tracking Form">
               <div class="tab-pane active" id="referral-details">
                 <div class="card">
                   <div class="card-header">
-                    Follow up details
+                    Patient Information
                   </div>
                   <div class="card-body">
                     <div class="row">
                       <div class="col-md-3">
-                        <label>ART No.</label>
-                        <obs conceptId="159395" />
+                        <label>ART No: <lookup expression="patient.getPatientIdentifier(9)"/></label>
                       </div>
                     </div>
                     <div class="row">
@@ -109,10 +227,15 @@ formLabel="Covid-19 Vaccination Tracking Form">
                         <obs conceptId="165169" answerConceptId="162558" answerLabel="11 - People with Disabilities" style="checkbox"/>
                       </div>
                       <div class="col-md-3">
-                        <obs conceptId="165169" id="165169" answerConceptId="90002" answerLabel="12 - Others (specify)" style="checkbox"/>
-                        <obs id="165184" conceptId="165184" class="ARTSpecialCateogryEnableDisableChild1"/>
+                        <obs conceptId="165169" id="other-category-checkbox" answerConceptId="90002" answerLabel="12 - Others (specify)" style="checkbox"/>
                       </div>
                     </div>
+                      <div id="other-category-container" class="row ARTSpecialCateogryEnableDisable1">
+                          <div class="col-3">
+                              <label>Other category</label>
+                              <obs id="other-category" conceptId="165184" class="ARTSpecialCateogryEnableDisableChild1"/>
+                          </div>
+                      </div>
                   </div>
                 </div>
               </div>
@@ -120,151 +243,100 @@ formLabel="Covid-19 Vaccination Tracking Form">
               <div class="tab-pane" id="vaccination-tracking">
                 <div class="card">
                     <div class="card-header">
-                      Doses
+                      Follow up Details
                     </div>
                     <div class="card-body">
                       <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-3">
                           <label>Client Contacted</label>
-                          <obs id="covid-status" conceptId="166285" answerConceptIds="90003,90004" answerLabels="Yes, No" style="radio" class="horizontal" />
+                          <obs id="client-contacted" conceptId="166706" answerConceptIds="90003,90004" answerLabels="Yes, No" style="radio" class="horizontal" />
                         </div>
-                        <div class="col-md-6">
+                          <div id="yes-contacted-container" class="col-3">
+                              <label>How was the information obtained</label>
+                              <obs id="yes-contacted" conceptId="166706" answerConceptIds="165102,165103,166703,166704" answerLabels="PhoneCall, Visited Health Facility,Home Vist,Community Models"  />
+                          </div>
+                          <div id="not-contacted-container" class="col-3">
+                              <label>Reason for not contacting</label>
+                              <obs id="not-contacted" conceptId="166706" answerConceptIds="166704,166705" answerLabels="Not Contacted, Not contacted and not found"  />
+                          </div>
+                        <div class="col-3">
                           <label>Self Report Date</label>
-                          <obs id="covid-severity" conceptId="1542" answerConceptIds="90003,90004,90003,90004" answerLabels="Asympomatic, Mild, Moderate, Severe, Critical" />
-                        </div>                                            
-                      </div>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <label>Date of 1st dose</label>
-                          <obs id="covid-severity" conceptId="1542" answerConceptIds="90003,90004,90003,90004" answerLabels="Asympomatic, Mild, Moderate, Severe, Critical" />
-                        </div>
-                        <div class="col-md-6">
-                          <label>Type of vaccination for 1st dose</label>
-                          <encounterProviderAndRole encounterRole="240b26f9-dd88-4172-823d-4a8bfeb7841f" required="required" />
+                          <obs id="self-report-date" conceptId="166677" />
                         </div>                                            
                       </div>
                     </div>
                   </div>
                   <div class="card">
                     <div class="card-header">
-                      Doses
+                      Vaccines And Boosters
                     </div>
                     <div class="card-body">
-                      <div class="row">
+                        <div id="dose-1-container" class="row">
+                            <div class="col-3">
+                                <label>Date of 1st dose</label>
+                                <obs id="date-of-dose-1" conceptId="166678" />
+                            </div>
+                            <div class="col-md-4">
+                                <label>Type of vaccination for 1st dose</label>
+                                <obs id="type-of-dose-1" conceptId="166687" answerConceptIds="166681,166682,166683,166684,166685,166686"
+                                     answerLabels="Janseen / J&amp;J, Pfizer-BioNTech, Moderna, AstraZeneca, Sinopham, Sinovac" />
+                            </div>
+                        </div>
+                      <div id="dose-2-container" class="row">
                           <div class="col-md-3">
                               <label>Date of 2nd dose</label>
-                              <obs conceptId="159395" />
+                              <obs id="date-of-dose-2" conceptId="166679" />
                           </div>
                           <div class="col-md-4">
                               <label>Type of vaccination for 2nd dose</label>
-                              <obs conceptId="159395" />
+                              <obs id="type-of-dose-2" conceptId="166688" answerConceptIds="166682,166683,166684,166685,166686"
+                                   answerLabels="Pfizer-BioNTech, Moderna, AstraZeneca, Sinopham, Sinovac" />
                           </div>                                            
                       </div>
-                      <div class="row">
+                      <div id="booster-container" class="row">
                           <div class="col-md-3">
                               <label>Date of booster</label>
-                              <obs conceptId="159395" />
+                              <obs id="date-of-booster" conceptId="166680" />
                           </div>
                           <div class="col-md-4">
                               <label>Type of vaccination for booster</label>
-                              <obs conceptId="159395" />
+                              <obs id="type-of-booster" conceptId="166689" answerConceptIds="166681,166682,166683,166684,166685,166686"
+                                   answerLabels="Janseen / J&amp;J, Pfizer-BioNTech, Moderna, AstraZeneca, Sinopham, Sinovac" />
                           </div>
                       </div>
                     </div>
                   </div>
-
-                  <div class="card">
-                    <div class="card-header">
-                      Comments
-                    </div>
-                    <div class="card-body">
-                      <div class="row">
-                          <div class="col-md-3">
-                              <label>Comment why the client is not/ fully vaccinated</label>
-                              <obs conceptId="159395" />
-                          </div>
-                          <div class="col-md-4">
-                              <label>Referred for vaccination</label>
-                              <obs conceptId="159395" />
-                          </div>                                            
-                      </div>
-                      <div class="row">
-                          <div class="col-md-3">
-                              <label>Reason client does not want to be reffered</label>
-                              <obs conceptId="159395" />
-                          </div>
-                          <div class="col-md-4">
-                              <label>Validation Date</label>
-                              <obs conceptId="159395" />
-                          </div>
-                          <div class="col-md-4">
-                              <label>Recieving Clinician</label>
-                              <encounterProviderAndRole encounterRole="240b26f9-dd88-4172-823d-4a8bfeb7841f" required="required" />
-                          </div>                                            
-                      </div>
-                    </div>
-                </div>
               </div>
 
               <div class="tab-pane" id="referral-information">
                 <div class="card">
-                    <div class="card-header">
-                      Referral
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="card-header">
-                      Doses
-                    </div>
-                    <div class="card-body">
-                      <div class="row">
-                          <div class="col-md-3">
-                              <label>Date of 2nd dose</label>
-                              <obs conceptId="159395" />
-                          </div>
-                          <div class="col-md-4">
-                              <label>Type of vaccination for 2nd dose</label>
-                              <obs conceptId="159395" />
-                          </div>                                            
-                      </div>
-                      <div class="row">
-                          <div class="col-md-3">
-                              <label>Date of booster</label>
-                              <obs conceptId="159395" />
-                          </div>
-                          <div class="col-md-4">
-                              <label>Type of vaccination for booster</label>
-                              <obs conceptId="159395" />
-                          </div>
-                      </div>
-                    </div>
-                </div>
-                <div class="card">
                   <div class="card-header">
-                    Comments
+                      Referral Details
                   </div>
                   <div class="card-body">
                     <div class="row">
-                      <div class="col-md-3">
+                      <div class="col-md-4">
                           <label>Comment why the client is not/ fully vaccinated</label>
-                          <obs conceptId="159395"/>
+                          <obs id="not-fully-vaccinated" conceptId="166700" answerConceptIds="166699,166692,166693,166694,166695,166696,166697,166698"
+                               answerLabels="Vaccine out of stock, Does not trust the vaccine, Not eligible for the vaccine, Not aware of Covid-19 vaccine, Very long lines, Not Accessible,
+                                Does not know where to get the Covid-19 vaccine, Does not want to get the Covid-19 vaccine" />
                       </div>
                       <div class="col-md-4">
                           <label>Referred for vaccination</label>
-                          <obs conceptId="159395"/>
-                      </div>                                            
+                          <obs id="referred-for-vaccination" conceptId="166691" answerConceptIds="90003,90004" answerLabels="Yes, No" style="radio" class="horizontal" />
+                      </div>
+                        <div id="reason-for-refusing-referral-container" class="col-md-4">
+                            <label>Reason client does not want to be referred</label>
+                            <obs id="reason-for-refusing-referral" conceptId="166690"/>
+                        </div>
                     </div>
                     <div class="row">
-                      <div class="col-md-3">
-                          <label>Reason client does not want to be reffered</label>
-                          <obs conceptId="159395"/>
-                      </div>
                       <div class="col-md-4">
                           <label>Validation Date</label>
-                          <obs conceptId="159395"/>
+                          <obs conceptId="166701"/>
                       </div>
                       <div class="col-md-4">
-                          <label>Recieving Clinician</label>
+                          <label>Receiving Clinician</label>
                           <encounterProviderAndRole encounterRole="240b26f9-dd88-4172-823d-4a8bfeb7841f" required="required" />
                       </div>                                            
                     </div>
