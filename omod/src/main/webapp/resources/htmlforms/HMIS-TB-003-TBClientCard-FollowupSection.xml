@@ -243,7 +243,6 @@
                     disable_fields("90211");  //health facility
                     disable_fields("165853"); //District
                     disable_fields("159635"); //Phone Contact of receiving Health Unit
-                    disable_fields("99113");  //other signs and symptoms
                     disable_fields("99413");  //CPT/Dapson
                     disable_fields("165871"); // ARV drugs
                     disable_fields("159368"); // number of days
@@ -281,15 +280,6 @@
                         enable_fields("159635"); 
                     } else {
                         disable_fields("159635");
-                    }
-                });
-
-                //enable or disable other symptoms
-                jq('#90002').click(function () {
-                    if (getValue('90002.value') == 90002) {
-                      enable_fields('99113');
-                    } else {
-                      disable_fields('99113');
                     }
                 });
 
@@ -524,7 +514,7 @@
                                 <a class="nav-link active" data-toggle="tab" href="#treatmeant-phase-section">Treatment Phase</a>
                             </li>
 							<li class="nav-item">
-								<a class="nav-link" data-toggle="tab" href="#symptoms-nutrition-assesment-section">Symptoms and Nutrition Assesment</a>
+								<a class="nav-link" data-toggle="tab" href="#nutrition-assesment-section">Nutrition Assesment</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" data-toggle="tab" href="#treatmeant-hiv-status-section">Treatment and HIV Status</a>
@@ -562,69 +552,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="symptoms-nutrition-assesment-section">
-								<div class="card">
-                                    <div class="card-header">Symptoms</div>
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <span class="signs-and-symptoms">
-                                                    <obs conceptId="90251" answerConceptId="90139"
-                                                         answerLabel="1 - Oral or anal ulcers"/>
-                                                    <obs conceptId="90251" answerConceptId="16"
-                                                         answerLabel="5 - Diarrhea > 1 week"/>
-                                                    <obs conceptId="90251" answerConceptId="5953"
-                                                         answerLabel="9 - Double or Blurry vision"/>
-                                                    <obs conceptId="90251" answerConceptId="90132"
-                                                         answerLabel="13 - Cough or shortness of breath > 1 week"/>
-                                                </span>
-                                                <span id="enable-disable-signs-and-symptoms">
-                                                    <obs conceptId="90251" answerConceptId="90002"
-                                                         id="90002" answerLabel="17 - Other specify" />
-                                                </span>
-                                                <span id="99113">
-                                                    <obs conceptId="99113"/>
-                                                </span>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <span class="signs-and-symptoms">
-                                                    <obs conceptId="90251" answerConceptId="206"
-                                                         answerLabel="2 - New seizure"/>
-                                                    <obs conceptId="90251" answerConceptId="165286"
-                                                         answerLabel="6 - Acting unusual"/>
-                                                    <obs conceptId="90251" answerConceptId="861"
-                                                         answerLabel="10 - Decreased hearing"/>
-                                                    <obs conceptId="90251" answerConceptId="90116"
-                                                         answerLabel="14 - Fever, chills or night sweats > 1 week"/>
-                                                </span>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <span class="signs-and-symptoms">
-                                                    <obs conceptId="90251" answerConceptId="165285"
-                                                         answerLabel="3 - Weak arms or legs"/>
-                                                    <obs conceptId="90251" answerConceptId="90135"
-                                                         answerLabel="7 - Weight loss in last month"/>
-                                                    <obs conceptId="90251" answerConceptId="90130"
-                                                         answerLabel="11 - Whites spots/thrush in mouth"/>
-                                                    <obs conceptId="90251" answerConceptId="79"
-                                                         answerLabel="15 - Red/purple or dark spots on skin"/>
-                                                </span>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <span class="signs-and-symptoms">
-                                                    <obs conceptId="90251" answerConceptId="90094"
-                                                         answerLabel="4 - Headache"/>
-                                                    <obs conceptId="90251" answerConceptId="165287"
-                                                         answerLabel="8 - Difficulty walking"/>
-                                                    <obs conceptId="90251" answerConceptId="118789"
-                                                         answerLabel="12 - Difficulty or painful swallowing"/>
-                                                    <obs conceptId="90251" answerConceptId="122936"
-                                                         answerLabel="16 - Unable to walk without assisstance"/>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="tab-pane" id="nutrition-assesment-section">
 								<div class="card">
                                     <div class="card-header">Nutrition Assessment</div>
                                     <div class="card-body">
@@ -688,24 +616,6 @@
                                                          answerLabels="&#60;-3,-3_&#60;-1,-1_1,&#62;1_3,&#62;3" />
                                                 </div>
                                             </excludeIf>
-                                            <div class="col-md-2">
-                                                <label>Nutrition Status</label>
-                                                <obs conceptId="165050" class="long-value-select"
-                                                     answerConceptIds="1115, 99271, 99272, 99273, 5277"
-                                                     answerLabels="N - Normal, MAM - Moderate Acute Malnutrition, SAM - Severe Acute Malnutrition,
-                                                 SAMO - Severe Acute Malnutrition with Oedema, O - Overweight/Obese"/>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <label>Nutrition Support</label>
-                                                <obs conceptId="99054" class="long-value-select"
-                                                     answerConceptIds="99053,99050,99051,99052"
-                                                     answerLabels="TF - Therapeutic Feeding (F75 F100 RUTF), SF - Supplementary Feeding,
-                                                 IYCF - Infant and Young Child Feeding Counselling ( &lt; 2yrs), NC - Nutrition Counselling only (if &gt; 2yrs)"/>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <label>INR No.</label>
-                                                <obs conceptId="99733"/>
-                                            </div>
                                         </div>
                                     </div>
     							</div>
@@ -713,7 +623,20 @@
 							<div class="tab-pane" id="treatmeant-hiv-status-section">
                                 <div class="card">
                                     <div class="card-header">
-                                        Treatment
+                                        Treatment Model
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label>Model</label>
+                                                <obs conceptId="165869" class="long-value-select"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        Drugs Given
                                     </div>
                                     <div class="card-body">
                                         <repeat>
@@ -756,16 +679,6 @@
                                         </repeat>
                                     </div>
                                 </div>
-								<div class="card">
-									<div class="card-body">
-										<div class="row">
-											<div class="col-md-3">
-												<label>Treatment Model</label>
-												<obs conceptId="165869" class="long-value-select"/>
-											</div>
-										</div>
-									</div>
-								</div>
 
                                 <div class="card">
                                     <div class="card-header">
@@ -933,26 +846,6 @@
                             <div class="tab-pane" id="iec-referal-transfers-and-outcomes-section">
                                 <div class="card">
                                     <div class="card-header">
-                                        IEC
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <obs conceptId="165864" answerConceptId="165859" answerLabel="TB/HIV relationship" style="checkbox"     class="col-md-4" />
-                                            <obs conceptId="165864" answerConceptId="165862" answerLabel="TB transmission" style="checkbox" 
-                                                 class="col-md-4" /> 
-                                            <obs conceptId="165864" answerConceptId="165860" answerLabel="TB Prevention" style="checkbox" 
-                                                 class="col-md-4" />
-                                        </div>
-                                        <div class="row">
-                                            <obs conceptId="165864" answerConceptId="6077" answerLabel="Treatment and Adherence" style="checkbox" class="col-md-4" />
-                                            <obs conceptId="165864" answerConceptId="165863" answerLabel="Importance of DOTS" style="checkbox"     class="col-md-4" />
-                                            <obs conceptId="165864" answerConceptId="165861" answerLabel="Pre-treatment counselling" 
-                                                 style="checkbox" class="col-md-4"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
                                         Appointment
                                     </div>
                                     <div class="card-body">
@@ -978,8 +871,8 @@
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <label>Outcome</label>
-                                                <obs conceptId="99423" answerConceptIds="159791,99421,159874,5240,160737,90306,160034" 
-                                                     answerLabels="Cured, Treatment completed, Treatment failure, Lost to follow up, Not evaluated, Transfered Out, Died" id="99423"/>
+                                                <obs conceptId="99423" answerConceptIds="159791,99421,159874,5240,160737,160034" 
+                                                     answerLabels="Cured, Treatment completed, Treatment failure, Lost to follow up, Not evaluated, Died" id="99423"/>
                                             </div>
                                             <div class="col-md-4">
                                                 <label>Date</label>
