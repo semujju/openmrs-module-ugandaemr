@@ -813,11 +813,11 @@
 											</div>
                                         </div>
                                         <div class="row">
-											<div class="col-md-3">
+											<div class="col-md-4">
 												<label>Indicate Site</label>
 												<obs id="165832" conceptId="165832" />
 											</div>
-											<div class="col-md-3">
+											<div class="col-md-4">
 												<label>Patient Type</label>
 												<obs conceptId="99386" answerConceptIds="99380,99381,165833,165834,165835" 
 													 answerLabels="New, Relapse, Treament after lost to follow up, Treament after failure, Treament history unknown" style="checkbox"/>
@@ -831,29 +831,31 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-md-2">
-                                                <label>Date (mising)</label>
-                                                <obs conceptId="165854" allowTime="false"/>
+                                            <div class="col-md-4">
+                                                <label>Referral Date</label>
+                                                <obs conceptId="166774" allowTime="false"/>
                                             </div>
-                                            <div class="col-md-2">
+                                            <div class="col-md-4">
                                                 <label>Referral Source</label>
                                                 <obs conceptId="165855" answerConceptIds="165235,165331" answerLabels="Facility, Community"/>
                                             </div>
-                                            <div class="col-md-2">
+                                            <div class="col-md-4">
                                                 <label>Referring Health Facility</label>
-                                                <obs conceptId="90211"/>
+                                                <obs conceptId="166758"/>
                                             </div>
-                                            <div class="col-md-2">
-                                                <label>Referring Community</label>
-                                                <obs conceptId="165853"/>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label>Referring Community Name</label>
+                                                <obs conceptId="166776"/>
                                             </div>
-                                            <div class="col-md-2">
-                                                <label>District</label>
-                                                <obs conceptId="165853"/>
+                                            <div class="col-md-4">
+                                                <label>Referring District</label>
+                                                <obs conceptId="166775"/>
                                             </div>
                                             <div class="col-md-3">
                                                 <label>Phone no. of Referring Health Worker</label>
-                                                <obs conceptId="159635"/>
+                                                <obs conceptId="166777"/>
                                             </div>
                                         </div>
                                     </div>
