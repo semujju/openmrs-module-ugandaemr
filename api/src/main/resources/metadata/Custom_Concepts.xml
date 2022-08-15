@@ -2987,6 +2987,10 @@
 
     <concept_description concept_description_id="18548" concept_id="166506" description="Social Network Strategy (SNS) is an evidence-supported approach to engage and motivate a person to accept HIV testing. This approach is based on the underlying principle that persons within the same social network who know, trust, and can exert influence on each other share similar HIV risk behaviors. SNS is particularly useful to recruit marginalized and/or hidden persons at risk for HIV." locale="en" creator="1" date_created="2021-10-20 13:16:42" uuid="d1a35025-895b-4be3-b5e1-b4292ba900e6"/>
 
+    <concept_description  concept_description_id="18710"  concept_id="166794"  description="Total household contacts above or equal to 5 years old"  locale="en"  creator="1"  date_created="2022-08-13 17:47:48"  changed_by="1"  date_changed="2022-08-13 17:50:07"  uuid="de842073-596a-4463-b82b-4b762442b2ed"/>
+
+
+
     <!--CONCEPT NAME-->
     <!--ART-->
     <concept_name concept_id="163150" name="Date viral load results received at health center" locale="en" creator="1" date_created="2016-10-17 19:36:28" concept_name_id="135969" voided="false"  uuid="1135969BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" concept_name_type="FULLY_SPECIFIED" locale_preferred="true"/>
