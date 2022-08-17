@@ -547,11 +547,6 @@
                                                 <label>Encounter Date (Create Visit Date Concept and change to visit date)</label>
                                                 <encounterDate default="today" disallowMultipleEncountersOnDate="block"/>
                                             </div>
-                                            <!-- <div class="col-md-4">
-                                                <workflowState workflowId="1" labelText="TB Treatment Phase" stateIds="1,2,3" 
-                                                               stateLabels="Initial Phase,Continuation Phase, Retreatment Phase" 
-                                                               style="radio" />
-                                            </div> -->
                                             <div class="col-md-4">   
                                                 <label>Next Date of Appointment</label>
                                                 <obs id="5096" conceptId="5096" allowFutureDates="true"/>
@@ -642,7 +637,7 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <label>Treatment Model</label>
+                                                <label>Treatment model</label>
                                                 <obs conceptId="165869" answerConceptIds="165866,165867,165868" answerLabels="Facility DOTS,Digital Community DOTS,Non-Digital Community DOTS" class="long-value-select"/>
                                             </div>
                                         </div>
@@ -652,11 +647,11 @@
                                                 <obs conceptId="166780" answerConceptIds="90003,90004" 
                                                          answerLabels="Yes, No" style="radio" class="horizontal"/>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <label>RHZE(150/75/400/275 mg) blisters given</label>
                                                 <obs conceptId="166781" class="long-value-select"/>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <label>RH (150/75mg) given</label>
                                                 <obs conceptId="166782" answerConceptIds="90003,90004" 
                                                          answerLabels="Yes, No" style="radio" class="horizontal"/>
@@ -672,11 +667,11 @@
                                                 <obs conceptId="166784" answerConceptIds="90003,90004" 
                                                          answerLabels="Yes, No" style="radio" class="horizontal"/>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <label>RHZ (75/50/150mg) blisters given</label>
                                                 <obs conceptId="166785" class="long-value-select"/>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <label>RH (75/50 mg) given</label>
                                                 <obs conceptId="166786" answerConceptIds="90003,90004" 
                                                          answerLabels="Yes, No" style="radio" class="horizontal"/>
@@ -692,7 +687,7 @@
                                                 <obs conceptId="166788" answerConceptIds="90003,90004" 
                                                          answerLabels="Yes, No" style="radio" class="horizontal"/>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <label>Ethambutol (100mg) blisters given</label>
                                                 <obs conceptId="166789" class="long-value-select"/>
                                             </div>
@@ -706,7 +701,7 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-3">
-                                                <label>HIV Status</label>
+                                                <label>HIV dtatus</label>
                                                 <obs conceptId="165396" answerConceptIds="90167,165397,165350,90001"
                                                      answerLabels="Negative, Newly Tested Positive, Known Positive, Unknown" 
                                                      class="long-value-select" id="165396"/>
@@ -717,7 +712,7 @@
                                                 <obs id="99413" conceptId="99413" answerConceptIds="1065,1066" class="horizontal" style="radio"/>
                                             </div>
                                             <div class="col-md-3">
-                                                <label>ARV Drugs</label>
+                                                <label>ARV drugs</label>
                                                 <obs id="165871" conceptId="165871" style="checkbox"/>
                                             </div>
                                         </div>
@@ -725,7 +720,7 @@
                                 </div>
                                 <div class="card">
                                     <div class="card-header">
-                                        Drug Side Effects (needs alignment)
+                                        Drug Side Effects
                                     </div>
                                     <div class="card-body">
                                         <repeat>
@@ -738,7 +733,7 @@
                                                                  class="long-value-select"/>
                                                         </div>
                                                         <div class="col-md-2">
-                                                            <label>Side Effects</label>
+                                                            <label>Side effects</label>
                                                             <obs id="drug_{n}" conceptId="90227"  
                                                                  class="long-value-select"/>
                                                         </div>
@@ -747,7 +742,7 @@
                                                             <obs id="99423" conceptId="99423" answerConceptIds="166088,99384" class="horizontal" style="radio"/>
                                                         </div>
                                                         <div class="col-md-3" >
-                                                            <label>Doctor's Review</label>
+                                                            <label>Doctor's review</label>
                                                             <obs conceptId="166130" style="textarea" />
                                                         </div>
                                                         <div class="col-md-1">
@@ -771,27 +766,27 @@
 							<div class="tab-pane" role="tabpanel" aria-leballebdy="nav-profile-tab" id="lab-xray-investigation-section">
                                 <div class="card">
                                     <div class="card-header">
-                                        Laboratory Investigations(new section/card)
+                                        Laboratory Investigations
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-3">
-                                                <label>Sample referred from community?</label>
+                                                <label>Sample referred from community</label>
                                                 <obs conceptId="166790" answerConceptIds="90003,90004" 
                                                          answerLabels="Yes,No" style="radio" class="horizontal"/>
                                             </div>
                                             <div class="col-md-6">
-                                                <label>Name of Facility/ Unit if sample is referred from outside the Facility</label>
+                                                <label>Name of facility/ Unit if sample is referred from outside the facility</label>
                                                 <obs conceptId="166791" />
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-3">
-                                                <label>Examination Type</label>
+                                                <label>Examination type</label>
                                                 <obs conceptId="166792" />
                                             </div>
                                             <div class="col-md-4">
-                                                <label>Month of Follow-up</label>
+                                                <label>Month of follow-up</label>
                                                 <obs conceptId="166773" answerConceptIds="166759,166760,166761,166762,166763,166764,166765,166766,166767,166768,166769,166770,166771,166772" answerLabels="1-2 Weeks,3-4 Weeks,5-6 Weeks,7-8 Weeks,Month 3,Month 4,Month 5,Month 6,Month 7,Month 8,Month 9,Month 10,Month 11,Month 12" required="required"/>
                                             </div>
                                         </div>
@@ -807,20 +802,20 @@
                                                 <obsgroup groupingConceptId="99292">
                                                     <span class="row add-remove-section">
                                                         <div class="col-md-3">
-                                                            <label>Date Sample Taken</label>
+                                                            <label>Date sample taken</label>
                                                             <obs conceptId="164431" allowTime="false" id="164431_{n}"/>
                                                         </div>
                                                         <div class="col-md-2">
-                                                            <label>Test (add culture)</label>
-                                                            <obs conceptId="165844" answerConceptIds="90225,165413,165416,12,166141,166828" 
-                                                                 answerLabels="Smear, GeneXpert, LAM, X-ray, " id="165844_{n}"/>
+                                                            <label>Test</label>
+                                                            <obs conceptId="165844" answerConceptIds="90225,165413,165416,12,166839,166141,166828" 
+                                                                 answerLabels="Smear, GeneXpert, LAM, X-ray, Culture, SL LPA, FL LPA" id="165844_{n}"/>
                                                         </div>
                                                         <div class="col-md-2 hidden" id="other-test-div_{n}">
-                                                            <label>Other Test</label>
+                                                            <label>Other test</label>
                                                             <obs conceptId="99114" id="99114_{n}" />
                                                         </div>
                                                         <div class="col-md-2 hidden" id="other-results-div_{n}">
-                                                            <label>Other Results</label>
+                                                            <label>Other results</label>
                                                             <obs conceptId="99291" id="99291_{n}" />
                                                         </div>
                                                         <div class="col-md-2" id="results-div_{n}">
@@ -860,7 +855,7 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-6">   
-                                                <label>Date of Report</label>
+                                                <label>Date of report</label>
                                                 <obs id="166793" conceptId="166793" allowFutureDates="false" required="required"/>
                                             </div>
                                         </div>
@@ -916,23 +911,26 @@
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-md-3">
-                                                    <label>Transfer Date</label>
+                                                    <label>Transfer date</label>
                                                     <obs conceptId="165854" allowTime="false"/>
                                                 </div>
                                                 <div class="col-md-3">
-                                                    <label>Transfer Type (create new and add answers)</label>
+                                                    <label>Transfer type</label>
+                                                    <obs conceptId="166837" id="166837" answerConceptIds="99110,90306" 
+                                                         answerLabels="Transfer in, Transfer out" style="radio" class="horizontal"/>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <label>Transfer health facility</label>
+                                                    <obs conceptId="166840" id="166840"/>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label>Transfer district</label>
                                                     <obs conceptId="166801" id="166801"/>
                                                 </div>
                                                 <div class="col-md-3">
-                                                    <label>Transfer Health Facility (create new one/confirm exisiting)</label>
-                                                    <obs conceptId="90211" id="90211"/>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label>Transfer District</label>
-                                                    <obs conceptId="166801" id="166801"/>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label>Phone No. of receiving Health unit</label>
+                                                    <label>Phone No. of receiving health unit</label>
                                                     <obs conceptId="166802" id="166802"/>
                                                 </div>
                                             </div>
@@ -980,14 +978,14 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-6">   
-                                                <label>Physical visit (home visit concepts needs answers yes/no)</label>
-                                                <!-- <obs id="165103" conceptId="165103" answerConceptIds="90003,90004" 
-                                                         answerLabels="Yes, No" style="radio" class="horizontal"/> -->
+                                                <label>Physical visit</label>
+                                                <obs id="165103" conceptId="165103" answerConceptIds="90003,90004" 
+                                                         answerLabels="Yes, No" style="radio" class="horizontal"/>
                                             </div>
                                             <div class="col-md-6">
-                                                <label>Phone call (needs answers yes/no)</label>
-                                                <!-- <obs id="165102" conceptId="165102" answerConceptIds="90003,90004" 
-                                                         answerLabels="Yes, No" style="radio" class="horizontal"/> -->
+                                                <label>Phone call</label>
+                                                <obs id="165102" conceptId="165102" answerConceptIds="90003,90004" 
+                                                         answerLabels="Yes, No" style="radio" class="horizontal"/>
                                             </div>
                                         </div>
                                     </div>
@@ -1050,9 +1048,9 @@
                                                          answerLabels="Yes, No" style="radio" class="horizontal"/>
                                             </div>
                                             <div class="col-md-4">   
-                                                <label>Patient transfered out (needs answers yes/no)</label>
-                                                <!-- <obs id="160036" conceptId="160036" answerConceptIds="90003,90004" 
-                                                         answerLabels="Yes, No" style="radio" class="horizontal"/> -->
+                                                <label>Patient transfered out</label>
+                                                <obs id="90306" conceptId="90306" answerConceptIds="90003,90004" 
+                                                         answerLabels="Yes, No" style="radio" class="horizontal"/>
                                             </div>
                                         </div>
                                         <div class="row">
