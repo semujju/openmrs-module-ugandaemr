@@ -2237,8 +2237,19 @@
     <concept  concept_id="166838"  retired="0" datatype_id="2"  class_id="7"  is_set="0"  creator="1"  date_created="2022-08-16 16:12:05" changed_by="1"  date_changed="2022-08-16 16:12:05"  uuid="83fdf990-c9b3-4add-8830-c736d185c294"/>
     <concept  concept_id="166839"  retired="0" datatype_id="4"  class_id="1"  is_set="0"  creator="1"  date_created="2022-08-16 16:18:39" changed_by="1"  date_changed="2022-08-16 16:18:39"  uuid="cdae1477-338d-4dab-b95d-8d337a20fdad"/>
     <concept  concept_id="166840"  retired="0" datatype_id="3"  class_id="7"  is_set="0"  creator="1"  date_created="2022-08-16 16:20:59" changed_by="1"  date_changed="2022-08-16 16:20:59"  uuid="bc58b30e-2edf-4e60-98ba-dc54249f8ed0"/>
-    
 
+    <concept  concept_id="166841"  retired="0" datatype_id="4"  class_id="11" is_set="0"  creator="1"  date_created="2022-08-18 10:55:40" changed_by="1"  date_changed="2022-08-18 10:55:40"  uuid="75b582d9-85db-4635-9d84-2c427d22e209"/>
+    <concept  concept_id="166842"  retired="0" datatype_id="6"  class_id="5"  is_set="0"  creator="1"  date_created="2022-08-18 10:56:52" changed_by="1"  date_changed="2022-08-18 10:56:52"  uuid="a6903fa4-3085-4070-baa2-0f811235c535"/>
+    <concept  concept_id="166843"  retired="0" datatype_id="3"  class_id="7"  is_set="0"  creator="1"  date_created="2022-08-18 11:16:41" changed_by="1"  date_changed="2022-08-18 11:16:41"  uuid="fc0d65c3-71e2-4a4c-a0b8-a4865788c6f9"/>
+    <concept  concept_id="166844"  retired="0" datatype_id="6"  class_id="7"  is_set="0"  creator="1"  date_created="2022-08-18 11:18:29" changed_by="1"  date_changed="2022-08-18 11:18:29"  uuid="d7824376-36fc-4537-87cd-b699631e2662"/>
+    <concept  concept_id="166845"  retired="0" datatype_id="3"  class_id="5"  is_set="0"  creator="1"  date_created="2022-08-18 11:19:12" changed_by="1"  date_changed="2022-08-18 11:19:12"  uuid="03ccad5b-0b51-4463-9f91-84297df53c10"/>
+    <concept  concept_id="166846"  retired="0" datatype_id="3"  class_id="5"  is_set="0"  creator="1"  date_created="2022-08-18 11:20:25" changed_by="1"  date_changed="2022-08-18 11:20:25"  uuid="a88e9552-8746-4dce-8190-0b179f008186"/>
+    <concept  concept_id="166847"  retired="0" datatype_id="3"  class_id="7"  is_set="0"  creator="1"  date_created="2022-08-18 11:23:23" changed_by="1"  date_changed="2022-08-18 11:23:23"  uuid="7f30f44c-b2c6-41ee-ae4b-01e705bd5e1c"/>
+    <concept  concept_id="166848"  retired="0" datatype_id="3"  class_id="7"  is_set="0"  creator="1"  date_created="2022-08-18 11:27:00" changed_by="1"  date_changed="2022-08-18 11:27:20"  uuid="7416aea6-ee14-45cd-ad5e-7c758a6b92d7"/>
+    <concept  concept_id="166849"  retired="0" datatype_id="3"  class_id="11"  is_set="0"  creator="1"  date_created="2022-08-18 11:28:32" changed_by="1"  date_changed="2022-08-18 11:28:32"  uuid="15abf084-d84b-454d-b03f-8a3c52bef005"/>
+    <concept  concept_id="166850"  retired="0" datatype_id="3"  class_id="5"  is_set="0"  creator="1"  date_created="2022-08-18 11:30:51" changed_by="1"  date_changed="2022-08-18 11:30:51"  uuid="3fc523d5-e1d1-4f3d-b147-d83208e73301"/>
+    <concept  concept_id="166851"  retired="0" datatype_id="3"  class_id="5"  is_set="0"  creator="1"  date_created="2022-08-18 11:32:10" changed_by="1"  date_changed="2022-08-18 11:32:10"  uuid="d3c856bb-a332-4d32-b08d-6951701cdcff"/>
+    
 
     <!--CONCEPT NUMERIC-->
     <!--MCH-->
@@ -6840,10 +6851,20 @@
     <concept_name  concept_name_id="163101"  concept_id="166838"  name="Reasons for follow up"  locale="en"  locale_preferred="1"  creator="1"  date_created="2022-08-16 16:12:05"  concept_name_type="FULLY_SPECIFIED"  voided="0"  uuid="03727cbe-519e-43ae-9acf-482d8c378afe"/>
     <concept_name  concept_name_id="163102"  concept_id="166839"  name="Culture"  locale="en"  locale_preferred="1"  creator="1"  date_created="2022-08-16 16:18:39"  concept_name_type="FULLY_SPECIFIED"  voided="0"  uuid="f02f9169-cf5e-4e05-8d9a-1296e4adb2c5"/>
     <concept_name  concept_name_id="163103"  concept_id="166840"  name="Transfer Health Facility"  locale="en"  locale_preferred="1"  creator="1"  date_created="2022-08-16 16:20:59"  concept_name_type="FULLY_SPECIFIED"  voided="0"  uuid="0f7ae564-bb08-485d-9e12-7c1ea592e03d"/>
+    <concept_name  concept_name_id="163104"  concept_id="166841"  name="Burning sensation in the feet"  locale="en"  locale_preferred="1"  creator="1"  date_created="2022-08-18 10:55:40"  concept_name_type="FULLY_SPECIFIED"  voided="0" uuid="96ea515f-47fc-4e05-aa4a-ae9ab016eda4"/>
+    <concept_name  concept_name_id="163105"  concept_id="166842"  name="Date of DOT report"  locale="en"  locale_preferred="1"  creator="1"  date_created="2022-08-18 10:56:52"  concept_name_type="FULLY_SPECIFIED"  voided="0" uuid="fb87b114-c049-42da-b512-f4d7fdb37662"/>
+    <concept_name  concept_name_id="163106"  concept_id="166843"  name="Level of health facility"  locale="en"  locale_preferred="1"  creator="1"  date_created="2022-08-18 11:16:41"  concept_name_type="FULLY_SPECIFIED"  voided="0" uuid="0dd4ffd0-be3c-46ff-87d0-e61d389f4adb"/>
+    <concept_name  concept_name_id="163107"  concept_id="166844"  name="Date of first visit"  locale="en"  locale_preferred="1"  creator="1"  date_created="2022-08-18 11:18:29"  concept_name_type="FULLY_SPECIFIED"  voided="0" uuid="97658707-4fc6-473b-b380-14b6fc920ef7"/>
+    <concept_name  concept_name_id="163108"  concept_id="166845"  name="History and symptoms"  locale="en"  locale_preferred="1"  creator="1"  date_created="2022-08-18 11:19:12"  concept_name_type="FULLY_SPECIFIED"  voided="0" uuid="edfe2dd2-b851-4b63-9eb4-6ee17bfc9f24"/>
+    <concept_name  concept_name_id="163109"  concept_id="166846"  name="Investigations done"  locale="en"  locale_preferred="1"  creator="1"  date_created="2022-08-18 11:20:25"  concept_name_type="FULLY_SPECIFIED"  voided="0" uuid="b096d78a-1b25-4122-8211-276aa13eee25"/>
+    <concept_name  concept_name_id="163110"  concept_id="166847"  name="Reasons for referral"  locale="en"  locale_preferred="1"  creator="1"  date_created="2022-08-18 11:23:23"  concept_name_type="FULLY_SPECIFIED"  voided="0" uuid="616e105f-a986-4a68-83c2-809b0cdaf38a"/>
+    <concept_name  concept_name_id="163111"  concept_id="166848"  name="Clinician lelephone number"  locale="en"  locale_preferred="0"  creator="1"  date_created="2022-08-18 11:27:00"  concept_name_type="NULL"  voided="1"  voided_by="1"  date_voided="2022-08-18 11:27:20"  void_reason="Deleted due to change of name"  uuid="a83abe97-2b4a-44ee-8e80-29848834af7b"  date_changed="2022-08-18 11:27:20"  changed_by="1"/>
+    <concept_name  concept_name_id="163112"  concept_id="166848"  name="Clinician telephone number"  locale="en"  locale_preferred="1"  creator="1"  date_created="2022-08-18 11:27:20"  concept_name_type="FULLY_SPECIFIED"  voided="0" uuid="87585329-aa8e-4f60-81d9-4af43eeaefb3"  date_changed="2022-08-18 11:27:20"  changed_by="1"/>
+    <concept_name  concept_name_id="163113"  concept_id="166849"  name="Signature/Initials"  locale="en"  locale_preferred="1"  creator="1"  date_created="2022-08-18 11:28:32"  concept_name_type="FULLY_SPECIFIED"  voided="0" uuid="229fa0a7-3d07-4f38-a69e-478ee5360fca"/>
+    <concept_name  concept_name_id="163114"  concept_id="166850"  name="Further investigations done"  locale="en"  locale_preferred="1"  creator="1"  date_created="2022-08-18 11:30:51"  concept_name_type="FULLY_SPECIFIED"  voided="0" uuid="f100210b-ce24-465e-bb45-530e7d93bcc2"/>
+    <concept_name  concept_name_id="163115"  concept_id="166851"  name="Treatment or surveillance"  locale="en"  locale_preferred="1"  creator="1"  date_created="2022-08-18 11:32:10"  concept_name_type="FULLY_SPECIFIED"  voided="0" uuid="5db2bd4f-60dc-433c-8ee3-ac64c355e875"/>
+
     
-
-
-
     <!--CONCEPT ANSWERS-->
     <!--MCH-->
     <concept_answer  concept_answer_id="780"  concept_id="5282"  answer_concept="1143" creator="1" date_created="2006-04-15 09:35:11"  uuid="780CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC"  sort_weight="780"/>
