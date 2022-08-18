@@ -496,7 +496,7 @@
 	<div>
 		<div class="row">
 			<div class="col-md-8">
-				<H1>DS TB: HMIS TB 003 TB Client Card - Followup Section</H1>
+				<H1>DS TB: HMIS TB 003 TB Client Card - Follow Up Section</H1>
 			</div>
 			<div class="col-md-3"></div>
 			<div>
@@ -544,7 +544,7 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-4 html-form-entry-disabled-field">
-                                                <label>Encounter Date (Create Visit Date Concept and change to visit date)</label>
+                                                <label>Encounter Date</label>
                                                 <encounterDate default="today" disallowMultipleEncountersOnDate="block"/>
                                             </div>
                                             <div class="col-md-4">   
@@ -552,7 +552,7 @@
                                                 <obs id="5096" conceptId="5096" allowFutureDates="true"/>
                                             </div>
                                             <div class="col-md-4">
-                                                <label>Month of Follow-up</label>
+                                                <label>Month of Follow up</label>
                                                 <obs conceptId="166773" answerConceptIds="166759,166760,166761,166762,166763,166764,166765,166766,166767,166768,166769,166770,166771,166772" answerLabels="1-2 Weeks,3-4 Weeks,5-6 Weeks,7-8 Weeks,Month 3,Month 4,Month 5,Month 6,Month 7,Month 8,Month 9,Month 10,Month 11,Month 12" required="required"/>
                                             </div>
                                         </div>
@@ -701,17 +701,17 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-3">
-                                                <label>HIV dtatus</label>
+                                                <label>HIV status</label>
                                                 <obs conceptId="165396" answerConceptIds="90167,165397,165350,90001"
                                                      answerLabels="Negative, Newly Tested Positive, Known Positive, Unknown" 
                                                      class="long-value-select" id="165396"/>
                                             </div>
-                                            <div class="col-md-2"></div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-1"></div>
+                                            <div class="col-md-2">
                                                 <label>CPT/Dapson</label>
                                                 <obs id="99413" conceptId="99413" answerConceptIds="1065,1066" class="horizontal" style="radio"/>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <label>ARV drugs</label>
                                                 <obs id="165871" conceptId="165871" style="checkbox"/>
                                             </div>
@@ -725,25 +725,21 @@
                                     <div class="card-body">
                                         <repeat>
                                             <template>
+                                                              
+
                                                 <obsgroup groupingConceptId="165305">
                                                     <span class="row add-remove-section">
                                                         <div class="col-md-3">
-                                                            <label>Drug</label>
-                                                            <obs id="drug_{n}" conceptId="1282" answerConceptSetIds="160021" 
-                                                                 class="long-value-select"/>
-                                                        </div>
-                                                        <div class="col-md-2">
                                                             <label>Side effects</label>
-                                                            <obs id="drug_{n}" conceptId="90227"  
-                                                                 class="long-value-select"/>
+                                                            <obs id="side_effects_{n}" conceptId="90227" answerLabels="Deafness,Skin rash,Burning sensation in the feet,Joint pains,Mental confusion,Visual impairment,Hepatitis,Peripheral neuropathy,Flu syndrome,Low appetite, nausea, abdominal pain,Dermatitis,reddish-brown coloration of urine" class="long-value-select"/>  
                                                         </div>
                                                         <div class="col-md-3">
-                                                            <label>Outcome</label>
-                                                            <obs id="99423" conceptId="99423" answerConceptIds="166088,99384" class="horizontal" style="radio"/>
+                                                            <label>Severity of side effect</label>
+                                                            <obs id="severity_{n}" conceptId="90250" answerConceptIds="90123,90124,90125,1368,90122" answerLabels="Mild,Moderate,Severe,Life threatening,No side effects" class="long-value-select"/>
                                                         </div>
-                                                        <div class="col-md-3" >
-                                                            <label>Doctor's review</label>
-                                                            <obs conceptId="166130" style="textarea" />
+                                                        <div class="col-md-3">
+                                                            <label>Drug causing (add actual drugs to concept)</label>
+                                                            <obs id="drug_{n}" conceptId="1282" answerConceptSetIds="160021" class="long-value-select"/>
                                                         </div>
                                                         <div class="col-md-1">
                                                             <br/>
@@ -758,6 +754,8 @@
                                             <render n="3"/>
                                             <render n="4"/>
                                             <render n="5"/>
+                                            <render n="6"/>
+                                            <render n="7"/>
                                         </repeat>
                                     </div>
                                 </div>
@@ -786,7 +784,7 @@
                                                 <obs conceptId="166792" />
                                             </div>
                                             <div class="col-md-4">
-                                                <label>Month of follow-up</label>
+                                                <label>Month of follow up</label>
                                                 <obs conceptId="166773" answerConceptIds="166759,166760,166761,166762,166763,166764,166765,166766,166767,166768,166769,166770,166771,166772" answerLabels="1-2 Weeks,3-4 Weeks,5-6 Weeks,7-8 Weeks,Month 3,Month 4,Month 5,Month 6,Month 7,Month 8,Month 9,Month 10,Month 11,Month 12" required="required"/>
                                             </div>
                                         </div>
@@ -941,11 +939,11 @@
                             <div class="tab-pane" id="community-followup-section">
                                 <div class="card">
                                     <div class="card-header">
-                                        Follow up Date
+                                        Follow up date
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-md-6">   
+                                            <div class="col-md-4">   
                                                 <label>Date of follow up</label>
                                                 <obs id="166803" conceptId="166803" allowFutureDates="true"/>
                                             </div>
@@ -958,12 +956,12 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-md-6">   
+                                            <div class="col-md-4">   
                                                 <label>Patient missed appointment</label>
                                                 <obs id="166817" conceptId="166817" answerConceptIds="90003,90004" 
                                                          answerLabels="Yes, No" style="radio" class="horizontal"/>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-4">
                                                 <label>Side effects (Patient active)</label>
                                                 <obs id="166818" conceptId="166818" answerConceptIds="90003,90004" 
                                                          answerLabels="Yes, No" style="radio" class="horizontal"/>
@@ -977,12 +975,12 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-md-6">   
+                                            <div class="col-md-4">   
                                                 <label>Physical visit</label>
                                                 <obs id="165103" conceptId="165103" answerConceptIds="90003,90004" 
                                                          answerLabels="Yes, No" style="radio" class="horizontal"/>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-4">
                                                 <label>Phone call</label>
                                                 <obs id="165102" conceptId="165102" answerConceptIds="90003,90004" 
                                                          answerLabels="Yes, No" style="radio" class="horizontal"/>
@@ -1055,7 +1053,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <label>Outcome of followup</label>
+                                                <label>Outcome of follow up</label>
                                                 <obs id="165104" conceptId="165104" answerConceptIds="165334,160034,165335,1363,165368" answerLabels="  Linked back into care,Died,Self transferred,Refused to return,Unreached"/>
                                             </div>
                                         </div>
@@ -1159,10 +1157,13 @@
                             </div>
                             <div class="tab-pane" id="comment-section">
                                 <div class="card">
+                                    <div class="card-header">
+                                        Comments
+                                    </div>
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <label>Reviews</label>
+                                                <label>Doctor`s Reviews</label>
                                                 <obs conceptId="165873" class="commenttextarea" style="textarea"/>
                                             </div>
                                         </div>
