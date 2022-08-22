@@ -720,21 +720,25 @@
                                 </div>
                                 <div class="card">
                                     <div class="card-header">
-                                        Drug Side Effects
+                                        Adverse Event
                                     </div>
                                     <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label>Adverse event reported during the visit</label>
+                                                <obs conceptId="166816" answerConceptIds="90003,90004" answerLabels="Yes,No" />
+                                            </div>
+                                        </div>
                                         <repeat>
                                             <template>
-                                                              
-
                                                 <obsgroup groupingConceptId="165305">
                                                     <span class="row add-remove-section">
                                                         <div class="col-md-3">
-                                                            <label>Side effects</label>
+                                                            <label>Adverse event</label>
                                                             <obs id="side_effects_{n}" conceptId="90227" answerLabels="Deafness,Skin rash,Burning sensation in the feet,Joint pains,Mental confusion,Visual impairment,Hepatitis,Peripheral neuropathy,Flu syndrome,Low appetite, nausea, abdominal pain,Dermatitis,reddish-brown coloration of urine" class="long-value-select"/>  
                                                         </div>
                                                         <div class="col-md-3">
-                                                            <label>Severity of side effect</label>
+                                                            <label>Severity of adverse event</label>
                                                             <obs id="severity_{n}" conceptId="90250" answerConceptIds="90123,90124,90125,1368,90122" answerLabels="Mild,Moderate,Severe,Life threatening,No side effects" class="long-value-select"/>
                                                         </div>
                                                         <div class="col-md-3">
@@ -1068,8 +1072,8 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-6">   
-                                                <label>Date of DOT report (create new concept)</label>
-                                                <obs id="5096" conceptId="5096" allowFutureDates="true"/>
+                                                <label>Date of DOT report</label>
+                                                <obs id="166842" conceptId="166842" allowFutureDates="true"/>
                                             </div>
                                             <div class="col-md-6">   
                                                 <label>Next date of DOT appointment</label>
