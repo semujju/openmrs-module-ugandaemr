@@ -866,19 +866,23 @@
 									<div class="card-header">First Line Treatment</div>
 									<div class="card-body">
 										<div class="row">
-												<div class="col-md-3">
-													<br/>
-													<obs conceptId="165837" style="checkbox" labelText="Started on First Line Treament"/>
-												</div>
-												<div class="col-md-3">
-													<label>Date Started</label>
-													<obs conceptId="165838" allowTime="false" allowFutureDates="false"/>
-												</div>
+											<div class="col-md-3">
+												<br/>
+												<obs conceptId="165837" style="checkbox" labelText="Started on First Line Treament"/>
+											</div>
+											<div class="col-md-3">
+												<label>Date Started</label>
+												<obs conceptId="165838" allowTime="false" allowFutureDates="false"/>
+											</div>
 											<div class="col-md-3">
 												<label>DS TB Regimen</label>
 												<obs conceptId="159958" answerConceptIds="99372,164960"
                                                  	 answerLabels="2RHZE/10RH,2RHZ/4RH" class="long-value-select" id="159958"/>
 											</div>
+                                            <div class="col-md-4">
+                                                <label>Specify Other DS TB Regimen</label>
+                                                <!-- <obs conceptId="99431" id="99431" /> -->
+                                            </div>
 										</div>
 									</div>
 								</div>
@@ -955,10 +959,10 @@
 											<obs conceptId="165169" answerConceptId="165882" answerLabel="TB Contact" style="checkbox" class="col-md-2" />
 											<obs conceptId="165169" answerConceptId="162277" answerLabel="Prisoner" style="checkbox" class="col-md-2" />
                                             <obs conceptId="165169" answerConceptId="90041" answerLabel="Pregnant" style="checkbox" class="col-md-2" />
-											<obs conceptId="165169" answerConceptId="165127" answerLabel="Refugee" style="checkbox" class="col-md-2" />
 											<obs conceptId="165169" answerConceptId="165125" answerLabel="Uniformed/Armed Personnel" style="checkbox" class="col-md-3" />
 										</div>
 										<div class="row">
+											<obs conceptId="165169" answerConceptId="165127" answerLabel="Refugee" style="checkbox" class="col-md-2" />
 											<obs conceptId="165169" answerConceptId="159674" answerLabel="Fisher Folk" style="checkbox" class="col-md-2" />
                                             <obs conceptId="165169" answerConceptId="119481" answerLabel="Diabetic Patient" style="checkbox" class="col-md-2" />
 											<obs conceptId="165169" answerConceptId="165883" answerLabel="Miner" style="checkbox" class="col-md-2" />
@@ -966,7 +970,7 @@
 											<obs conceptId="165169" answerConceptId="134337" answerLabel="Mentally Ill" style="checkbox" class="col-md-2" />
 	                                	</div>
                                         <div class="row">
-                                            <div class="col-md-12">
+                                            <div class="col-md-4">
                                             <label>Other Risk Group</label>
                                                 <obs conceptId="165184"/>
                                             </div>

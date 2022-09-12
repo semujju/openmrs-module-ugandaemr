@@ -726,7 +726,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <label>Adverse event reported during the visit</label>
-                                                <obs conceptId="166816" answerConceptIds="90003,90004" answerLabels="Yes,No" />
+                                                <obs conceptId="166816" answerConceptIds="90003,90004" answerLabels="Yes,No" style="radio" class="horizontal"/>
                                             </div>
                                         </div>
                                         <repeat>
@@ -742,8 +742,8 @@
                                                             <obs id="severity_{n}" conceptId="90250" answerConceptIds="90123,90124,90125,1368,90122" answerLabels="Mild,Moderate,Severe,Life threatening,No side effects" class="long-value-select"/>
                                                         </div>
                                                         <div class="col-md-3">
-                                                            <label>Drug causing (add actual drugs to concept)</label>
-                                                            <obs id="drug_{n}" conceptId="1282" answerConceptSetIds="160021" class="long-value-select"/>
+                                                            <label>Drug causing</label>
+                                                            <obs id="drug_causing_{n}" conceptId="166836"/>
                                                         </div>
                                                         <div class="col-md-1">
                                                             <br/>
@@ -863,7 +863,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Total # of contacts >= 5 years</label>
+                                                <label>Total # of contacts ≥ 5 years</label>
                                                 <obs conceptId="166794"/>
                                             </div>
                                             <div class="col-md-6">
@@ -877,7 +877,7 @@
                                                 <obs conceptId="166795"/>
                                             </div>
                                             <div class="col-md-6">
-                                                <label>Total # of &lt; 5 years old Contacts screened for TB</label>
+                                                <label>Total # of &lt; 5 years old contacts screened for TB</label>
                                                 <obs conceptId="166796"/>
                                             </div>
                                         </div>
@@ -981,13 +981,13 @@
                                         <div class="row">
                                             <div class="col-md-4">   
                                                 <label>Physical visit</label>
-                                                <obs id="165103" conceptId="165103" answerConceptIds="90003,90004" 
-                                                         answerLabels="Yes, No" style="radio" class="horizontal"/>
+                                                <!-- <obs id="165103" conceptId="165103" answerConceptIds="90003,90004" 
+                                                         answerLabels="Yes, No" style="radio" class="horizontal"/> -->
                                             </div>
                                             <div class="col-md-4">
                                                 <label>Phone call</label>
-                                                <obs id="165102" conceptId="165102" answerConceptIds="90003,90004" 
-                                                         answerLabels="Yes, No" style="radio" class="horizontal"/>
+                                                <!-- <obs id="165102" conceptId="165102" answerConceptIds="90003,90004" 
+                                                         answerLabels="Yes, No" style="radio" class="horizontal"/> -->
                                             </div>
                                         </div>
                                     </div>
