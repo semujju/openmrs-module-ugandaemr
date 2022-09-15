@@ -90,6 +90,7 @@
                 disable_fields(165167);
                 disable_fields(141520);
                 disable_fields(165184);
+                disable_fields(165182);
                 jq("#99477").find("input[type$='radio']").attr("disabled",true);
                 jq("#99481").find("input[type$='radio']").attr("disabled",true);
                 jq("#165178").find("input[type$='radio']").attr("disabled",true);
@@ -98,8 +99,6 @@
                 jq("#165170").find("input[type$='text']").attr("disabled",true);
                 jq("#162965").find("input[type$='text']").attr("disabled",true);
                 jq("#165181").find("input[type$='radio']").attr("disabled",true);
-                jq("#165182").find("input[type$='radio']").attr("disabled",true);
-
             </ifMode>
 
                 <!--         Enable HTC Delivery Model-->
@@ -126,8 +125,6 @@
                     }
                 });
 
-
-
                 <!--         Enable HIV Test date-->
                 jq('#165180').change(function () {
                     enable_disable('165180', '165170', '90004');
@@ -139,7 +136,6 @@
                 jq('#99472').change(function () {
                     enable_disable('99472', '99477', '1065');
                 });
-
 
                 jq('#162982').change(function () {
                     enable_disable('162982', '90211', '1065');
@@ -193,8 +189,8 @@
 
                 jq('#form-id').change(function () {
                     if(getValue('99493' + '.value')== 90166 ){
-                        enable_disable('99493', '165182', '90166');
-
+                        enable_fields('99493');
+                        enable_fields('165182');
                         if( getValue('99481' + '.value')== 1065){
                             enable_fields(141520);
                         }
@@ -205,9 +201,9 @@
                         }
                     }else{
                         disable_fields(141520);
+                        disable_fields('165182');
                     }
                 });
-
 
                 jq('#other-prevention-services').change(function(){
                     if(!jq('#other-prevention-services').find(':checkbox').prop('checked')){
@@ -216,8 +212,6 @@
                     }else{
                         jq("#165175").find("input[type$='text']").attr("disabled",false); }
                 });
-
-
 
                 jq('#other-special-category').change(function(){
                     if(!jq('#other-special-category').find(':checkbox').prop('checked')){
@@ -269,7 +263,6 @@
                 }
             }
 
-
             function enable_disable(triggerId, enabledDisabledId, conditionValue) {
                 if (getValue(triggerId + '.value') == conditionValue){
 
@@ -320,7 +313,7 @@
 
     </script>
 
-<div>
+<div id="form-id">
     <div class="row">
         <div class="col-md-6">
             <h1>HMIS ACP 018: HTS CLIENT CARD</h1>
@@ -547,7 +540,7 @@
                                             <obs id="165180" conceptId="165180" answerConceptIds="90003,90004" answerLabels="1 - Yes,2 - No" style="radio" class="horizontal"/>
                                         </div>
                                         <div class="col-md-4">
-                                            <label>Last hiv visit date</label>
+                                            <label>Last HIV visit date</label>
                                             <obs id="165170" conceptId="165170"/>
                                         </div>
                                         <div class="col-md-4">
