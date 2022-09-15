@@ -660,14 +660,6 @@
                                             <obs id="165178" conceptId="165178" answerConceptIds="90003,90004" answerLabels="1 - Yes,2 - No" style="radio" class="horizontal"/>
 
                                         </div>
-                                        <div class="col-md-4">
-                                            <label>Client has been referred for HIV care or other prevention services </label>
-                                            <obs id="162982" conceptId="162982" answerConceptIds="1065,1066" answerLabels="1 - Yes,2 - No"  style="radio" class="horizontal"/>
-                                            <span>
-                                                <label class="horizontal-layout-options">Place of referral </label>
-                                                <obs id="90211" conceptId="90211" />
-                                            </span>
-                                        </div>
                                     </div>
 
                                 </div>
@@ -675,7 +667,7 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    Prevetion Services
+                                    Prevention Services and Referral
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
@@ -700,11 +692,21 @@
                                         </div>
                                     </div>
                                     <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Client has been referred for HIV care or other prevention services </label>
+                                            <obs id="162982" conceptId="162982" answerConceptIds="1065,1066" answerLabels="1 - Yes,2 - No"  style="radio" class="horizontal"/>
+                                        </div>
                                         <div class="col-md-4">
-                                        <label><span class="required">*</span>Counsellor</label>
-                                            <encounterProvider required="true"/>
+                                            <label class="horizontal-layout-options">Place of referral</label>
+                                            <obs id="90211" conceptId="90211" />
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label><span class="required">*</span>Counselor</label>
+                                    <encounterProvider required="true"/>
                                 </div>
                             </div>
 
