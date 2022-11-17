@@ -387,4 +387,20 @@ public class EncounterTypes {
             return "05fa932f-4203-43c9-8985-60f2bea8a773";
         }
     };
+
+    public static EncounterTypeDescriptor SMC_FOLLOWUP = new EncounterTypeDescriptor() {
+        @Override
+        public String name() {
+            return "SMC Follow up Encounter";
+        }
+
+        @Override
+        public String description() {
+            return "SMS Follow up Encounter";
+        }
+
+        public String uuid() {
+            return "d0f9e0b7-f336-43bd-bf50-0a7243857fa6";
+        }
+    };
 }
