@@ -1,0 +1,253 @@
+<htmlform formName="CACx Screening Form"
+          formDescription="CACx Screening Form"
+          formEncounterType="4bb73d84-a43f-47e2-8c07-969ba4e0a1ed"
+          formUuid="7e3217dd-7e21-47b3-a167-1f28b53adb91"
+          formVersion="1.0"
+          formAddMetadata="yes"
+          formUILocation="patientDashboard.visitActions"
+          formOrder="15"
+          formIcon="icon-medkit"
+          formShowIf="patient.person.dead==false"
+          formDisplayStyle="Standard"
+          formLabel="CACx Screening Form">
+    <script type="text/javascript">
+        if (jQuery) {
+
+        jq(document).ready(function () {
+            var encounterDate = new Date((getValue('encounterDate.value')));
+            var patientUUID      = '<lookup complexExpression="$patient.uuid"/>';
+
+            jq('#encounterDate').change(function(){
+                encounterDate= new Date((getValue('encounterDate.value')));
+            });
+
+            function savePatientToCohort(cohortuuid){
+                var cohort = cohortuuid;
+                var date = encounterDate.getFullYear()+'-'+(encounterDate.getMonth()+1)+'-'+encounterDate.getDate();
+                var DSDCategory = getValue('cddp_category.value');
+                var dataToPost = "{\"patient\": \"" +  patientUUID + "\", \"cohort\": \"" + cohort + "\",\"startDate\": \"" + date+ "\"}";
+                jq.ajax({
+                    type: "POST",
+                    url: '/' + OPENMRS_CONTEXT_PATH + "/ws/rest/v1/cohortm/cohortmember/",
+                    dataType: "json",
+                    contentType: "application/json",
+                    accept: "application/json",
+                    data: dataToPost,
+                    success: function (data) {
+                        jq().toastmessage('showSuccessToast', "Client Added to a SMS Group Successfully");
+                    },
+                    error: function (response) {
+                        if (cohort !== ""){
+                            var errorMessage = response.responseJSON.error.message;
+                            if(errorMessage.indexOf("already exists") > 0){
+                                jq().toastmessage('showSuccessToast', response.responseJSON.error.message);
+                            }else{
+                            jq().toastmessage('showErrorToast', response.responseJSON.error.message);
+                            }
+                        }
+                    }
+                    });
+            }
+
+            disable_fields("166567");
+
+            jq("#166566").click(function () {
+            if (jq(this).find("input[type='radio']:checked").val() == "90003") {
+                enable_fields("166567");
+            } else {
+                disable_fields("166567");
+            }
+            });
+
+            beforeSubmit.push(function () {
+                <!-- verify that phone number is valid     -->
+                var phone_number = getValue('166561.value');
+                var cohortUuid="";
+                if(phone_number!==""){
+                    phone_number = phone_number.replace(/\(|\)|\s+|-/g, "");
+                    if(!(phone_number.length == 12 &amp;&amp; phone_number.match(/^[2]{1}[5]{1}[6]{1}[0-9]{9}$/g))){
+                        jq().toastmessage('showErrorToast', "Please specify a valid mobile number without any spaces like 256712345678");
+                        return false;
+                    }
+                }else if( getValue('166566' + '.value')!== 90003){
+                    jq().toastmessage('showErrorToast', "Phone number is required");
+                    return false;
+                }
+
+<!--  assign cohorts to client depending on the types of reminders they have chosen  -->
+                if (jq("#appointmentReminder").find(':checkbox').prop('checked')) {
+<!--                    assign SMS appointment reminder cohort-->
+                    cohortUuid="c418984c-fe55-431a-90be-134da0a5ec67";
+                    savePatientToCohort(cohortUuid);
+                }
+
+                if (jq("#nonsuppressedReminder").find(':checkbox').prop('checked')) {
+                <!--   assign SMS appointment reminder cohort-->
+                    cohortUuid="f538f903-0258-4151-a4f6-f8ceb8046017";
+                    savePatientToCohort(cohortUuid);
+                }
+                return true;
+            });
+
+
+        });
+        }
+
+
+    </script>
+
+
+    <div class="ai-page-frame" id="CACx-Screening-form">
+
+        <div class="row">
+            <div class="col-md-6">
+                <h1 style="padding: 10px;">CACx Screening Form</h1>
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-2">
+                <submit class="confirm" submitLabel="Save" submitStyle="customSubmit"/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        Client Information
+                    </div>
+                    <div id="enrollment" class="card-body">
+                        <div class="row">
+                            <div class="col-md-3" id="visit-date">
+                                <label>Date</label>
+                                <encounterDate default="today"
+                                               disallowMultipleEncountersOnDate="block"/>
+                            </div>
+                            <div class="col-md-3">
+                                <label>Serial Number</label>
+                                <obs conceptId="1646" id="1646"/>
+                            </div>
+                            <div class="col-md-3">
+                                <label>Reg. No.</label>
+                                <obs id="164985" conceptId="164985"/>
+                            </div>
+                            <div class="col-md-3">
+                                <label>Referred In</label>
+                                <obs id="99110" conceptId="99110" answerConceptIds="90003,90004" answerLabels="Yes,No" style="radio"/>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>Entry point Code</label>
+                                <obs conceptId="90200"
+                                     answerConceptIds="160542,165048,165046,164984,90015,90018,90002"
+                                     answerLabels="Out Patient Department(OPD),TB Clinic,Postnatal Clinic,Family Planning Clinic,STI Clinic,In patient ward,Other Specify"
+                                     id="90200"/>
+                            </div>
+                            <div class="col-md-3">
+                                <obs id="165398" conceptId="165398"
+                                     labelText="Other Testing Point"/>
+                            </div>
+                            <div class="col-md-3">
+                                <label>Entry Point Clinic No.</label>
+                                <obs conceptId="1646" id="1646"/>
+                            </div>
+                            <div class="col-md-3">
+                                <label>HIV Status</label>
+                                <obs conceptId="90253" id="90253"
+                                     answerConceptIds="90166,90001"
+                                     answerLabels="HIV Positive, HIV Negative, Unknown"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>ART Status</label>
+                                <obs conceptId="1358" id="1538"
+                                     answerConceptIds="1367, 1175"
+                                     answerLabels="On ART, Not Applicable"/>
+                            </div>
+                            <div class="col-md-3">
+                                <obs id="99431" conceptId="99431"
+                                     labelText="ART Number"/>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="exit" class="card">
+                    <div class="card-header">
+                        Eligibility Criteria
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Ever been screened for cervical cancer</label>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Given Pre-Test Counselling?</label>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Are you menstruating now?</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <obs id="165315" conceptId="165315" answerConceptIds="90003,90004,90001" answerLabels="Yes,No,Unknown" style="radio"/>
+                            </div>
+                            <div class="col-md-4">
+                                <obs id="162891" conceptId="162891" answerConceptIds="90003,90004,90001" answerLabels="Yes,No,Unknown" style="radio"/>
+                            </div>
+                            <div class="col-md-4">
+                                <obs id="162891" conceptId="162891" answerConceptIds="90003,90004,90001" answerLabels="Yes,No,Unknown" style="radio"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Are you pregnant?</label>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Have you been pregnant in the last 3 months?</label>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Have you had a total hysterectomy?</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <obs id="165315" conceptId="165315" answerConceptIds="90003,90004,90001" answerLabels="Yes,No,Unknown" style="radio"/>
+                            </div>
+                            <div class="col-md-4">
+                                <obs id="165315" conceptId="165315" answerConceptIds="90003,90004,90001" answerLabels="Yes,No,Unknown" style="radio"/>
+                            </div>
+                            <div class="col-md-4">
+                                <obs id="165315" conceptId="165315" answerConceptIds="90003,90004,90001" answerLabels="Yes,No,Unknown" style="radio"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Have you previously been on Cervical Cancer treatment?</label>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Eligible for Cervical Cancer Screening</label>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Ready to receive service</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <obs id="165315" conceptId="165315" answerConceptIds="90003,90004,90001" answerLabels="Yes,No,Unknown" style="radio"/>
+                            </div>
+                            <div class="col-md-4">
+                                <obs id="165315" conceptId="165315" answerConceptIds="90003,90004,90001" answerLabels="Yes,No,Unknown" style="radio"/>
+                            </div>
+                            <div class="col-md-4">
+                                <obs id="165315" conceptId="165315" answerConceptIds="90003,90004,90001" answerLabels="Yes,No,Unknown" style="radio"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</htmlform>
