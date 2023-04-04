@@ -1,15 +1,16 @@
 <htmlform formName="CACx Screening Form"
           formDescription="CACx Screening Form"
-          formEncounterType="4bb73d84-a43f-47e2-8c07-969ba4e0a1ed"
-          formUuid="7e3217dd-7e21-47b3-a167-1f28b53adb91"
-          formVersion="1.0"
+          formEncounterType="91725548-2d90-4b28-be6d-0509ba37bb0f"
+          formUuid="e4c98c45-f01e-4737-a62a-baf981ae7b14"
+          formVersion="3.0.0"
           formAddMetadata="yes"
           formUILocation="patientDashboard.visitActions"
-          formOrder="15"
+          formOrder="16"
           formIcon="icon-medkit"
-          formShowIf="patient.person.dead==false"
+          formShowIf="(visit.active || !visit.active) &amp;&amp; patient.person.dead==false&amp;&amp; (sessionLocation.uuid=='86863db4-6101-4ecf-9a86-5e716d6504e4' || sessionLocation.uuid=='7c231e1a-1db5-11ea-978f-2e728ce88125' || sessionLocation.uuid=='e9bc61b5-69ff-414b-9cf0-0c22d6dfca2b')"
           formDisplayStyle="Standard"
-          formLabel="CACx Screening Form">
+          formLabel="Cervical Cancer Screening Form">
+
     <script type="text/javascript">
         if (jQuery) {
 
@@ -132,16 +133,15 @@
                             </div>
                             <div class="col-md-3">
                                 <label>Referred In</label>
-                                <obs id="99110" conceptId="99110" answerConceptIds="90003,90004" answerLabels="Yes,No" style="radio"/>
+                                <obs id="99110" conceptId="99110" answerConceptIds="1065,1066" answerLabels="Yes, No" style="radio"/>
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col-md-3">
-                                <label>Entry point Code</label>
-                                <obs conceptId="90200"
-                                     answerConceptIds="160542,165048,165046,164984,90015,90018,90002"
-                                     answerLabels="Out Patient Department(OPD),TB Clinic,Postnatal Clinic,Family Planning Clinic,STI Clinic,In patient ward,Other Specify"
+                                <label>Entry point Code (concepts missing from cancer unit, stopped at 90015)</label>
+                                <obs conceptId="164993"
+                                     answerConceptIds="160542,165047,165048,165046,165348,164984,90015,  90018,99456,90002" 
+                                     answerLabels="OPD, ART Clinic, TB Clinic,Postnatal Clinic, Mother Baby Care Point, Family Planning Clinic,STI Clinic, Cancer Unit, In patient ward, Community/Outreach, Other Specify"
                                      id="90200"/>
                             </div>
                             <div class="col-md-3">
@@ -149,22 +149,22 @@
                                      labelText="Other Testing Point"/>
                             </div>
                             <div class="col-md-3">
-                                <label>Entry Point Clinic No.</label>
-                                <obs conceptId="1646" id="1646"/>
+                                <label>Entry Point Clinic No. (emr different concept for each point)</label>
+                                
                             </div>
                             <div class="col-md-3">
                                 <label>HIV Status</label>
                                 <obs conceptId="90253" id="90253"
-                                     answerConceptIds="90166,90001"
-                                     answerLabels="HIV Positive, HIV Negative, Unknown"/>
+                                     answerConceptIds="90167,90166,90001"
+                                     answerLabels="NEG- HIV-, POS- HIV+, UK- Unknown"/>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-3">
                                 <label>ART Status</label>
-                                <obs conceptId="1358" id="1538"
-                                     answerConceptIds="1367, 1175"
-                                     answerLabels="On ART, Not Applicable"/>
+                                <obs conceptId="1358" id="1358"
+                                     answerConceptIds="1367, 165904, 1175"
+                                     answerLabels="On ART, Not On ART, Not Applicable"/>
                             </div>
                             <div class="col-md-3">
                                 <obs id="99431" conceptId="99431"
@@ -182,67 +182,43 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <label>Ever been screened for cervical cancer</label>
+                                <obs id="166905" conceptId="166905" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
                             </div>
                             <div class="col-md-4">
-                                <label>Given Pre-Test Counselling?</label>
+                                 <label>Given Pre-Test Counselling?</label>
+                                <obs id="162891" conceptId="162891" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
                             </div>
                             <div class="col-md-4">
-                                <label>Are you menstruating now?</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <obs id="165315" conceptId="165315" answerConceptIds="90003,90004,90001" answerLabels="Yes,No,Unknown" style="radio"/>
-                            </div>
-                            <div class="col-md-4">
-                                <obs id="162891" conceptId="162891" answerConceptIds="90003,90004,90001" answerLabels="Yes,No,Unknown" style="radio"/>
-                            </div>
-                            <div class="col-md-4">
-                                <obs id="162891" conceptId="162891" answerConceptIds="90003,90004,90001" answerLabels="Yes,No,Unknown" style="radio"/>
+                                <label>Are you menstruating now? Missing</label>
+                                <obs id="162891" conceptId="162891" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4">
                                 <label>Are you pregnant?</label>
+                                <obs id="90041" conceptId="90041" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
                             </div>
                             <div class="col-md-4">
-                                <label>Have you been pregnant in the last 3 months?</label>
+                                <label>Have you been pregnant in the last 3 months? Missing
+                                <obs id="165315" conceptId="165315" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
                             </div>
                             <div class="col-md-4">
-                                <label>Have you had a total hysterectomy?</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <obs id="165315" conceptId="165315" answerConceptIds="90003,90004,90001" answerLabels="Yes,No,Unknown" style="radio"/>
-                            </div>
-                            <div class="col-md-4">
-                                <obs id="165315" conceptId="165315" answerConceptIds="90003,90004,90001" answerLabels="Yes,No,Unknown" style="radio"/>
-                            </div>
-                            <div class="col-md-4">
-                                <obs id="165315" conceptId="165315" answerConceptIds="90003,90004,90001" answerLabels="Yes,No,Unknown" style="radio"/>
+                                <label>Have you had a total hysterectomy? Missing
+                                <obs id="165315" conceptId="165315" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4">
-                                <label>Have you previously been on Cervical Cancer treatment?</label>
+                                <label>Have you previously been on Cervical Cancer treatment? Missing</label>
+                                <obs id="165315" conceptId="165315" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
                             </div>
                             <div class="col-md-4">
-                                <label>Eligible for Cervical Cancer Screening</label>
+                                <label>Eligible for Cervical Cancer Screening Missing</label>
+                                <obs id="165315" conceptId="165315" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
                             </div>
                             <div class="col-md-4">
-                                <label>Ready to receive service</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <obs id="165315" conceptId="165315" answerConceptIds="90003,90004,90001" answerLabels="Yes,No,Unknown" style="radio"/>
-                            </div>
-                            <div class="col-md-4">
-                                <obs id="165315" conceptId="165315" answerConceptIds="90003,90004,90001" answerLabels="Yes,No,Unknown" style="radio"/>
-                            </div>
-                            <div class="col-md-4">
-                                <obs id="165315" conceptId="165315" answerConceptIds="90003,90004,90001" answerLabels="Yes,No,Unknown" style="radio"/>
+                                <label>Ready to receive service Missing</label>
+                                <obs id="165315" conceptId="165315" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
                             </div>
                         </div>
                     </div>
