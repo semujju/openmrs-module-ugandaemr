@@ -516,7 +516,7 @@
                                          </div>
                                         <div class="col-3">
                                             <label>Treatment Provided</label>
-                                            <obs conceptId="166736" answerConceptIds="168722,168723,168724,168725,5276"
+                                            <obs conceptId="168759" answerConceptIds="168722,168723,168724,168725,5276"
                                                  answerLabels="1.Thermocoagulation/Thermoablation,2.Cryotherapy,3.LEEP,4.Cold knife conization,5.Hysterectomy,6.Other recommended treatment (specify)"
                                                  style="checkbox"/>
                                         </div>
@@ -566,12 +566,14 @@
                                             </div>
                                         </div>
                                         <div class="col-3">
-                                            <label>Other Treatment (Add)</label>
+                                            <label>Other Treatment</label>
+                                            <obs conceptId="99648" class="commenttextarea" style="textarea"/>
                                         </div>
                                     </div>
                                     <div class="row col-12">
                                         <div class="col-3">
-                                            <label>Reffered (yes/no)(Add)</label>
+                                            <label>Reffered Out</label>
+                                            <obs id="168758" conceptId="168758" answerConceptIds="1065,1066" answerLabels="Yes, No" style="radio"/>
                                         </div>
                                         <div class="col-3">
                                             <label>Reasons for Referral</label>
@@ -580,17 +582,18 @@
                                                  style="checkbox"/>
                                         </div>
                                         <div class="col-md-3">
-                                            <label>Other Reasons for Referral<label/>
-                                            <obs id="168736" conceptId="168736">
+                                            <label>Other Reasons for Referral<label/> 
+                                            <obs id="168736" conceptId="168736" class="commenttextarea" style="textarea"/>
                                         </div>
                                          <div class="col-6">
-                                            <label>Health Facility Reffered To(Add)</label>
+                                            <label>Health Facility Reffered To</label>
+                                            <obs id="165428" conceptId="165428">
                                             
                                          </div>
                                         <div class="col-3">
                                             <div id="other-therapy-container" class="col-3">
-                                                <label>Linkage for Cancer Suspects - service offered (make card)</label>
-                                                <obs conceptId="168741" answerConceptIds="168737,168738,168739,168740"
+                                                <label>Service offered</label>
+                                                <obs conceptId="168760" answerConceptIds="168737,168738,168739,168740"
                                                  answerLabels="1.Diagnosed and treated for pre-Cancer, 2.Diagnosed and linked for invasive cancer treatment,3.Diagnosed and treated for other gynecological conditions,4.Diagnosed and not linked"
                                                  style="checkbox"/>
                                             </div>
@@ -606,7 +609,7 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <label>Comments</label>
-                                            <obs conceptId="165855" />
+                                            <obs conceptId="99256" class="commenttextarea" style="textarea"/>
                                         </div>
                                         <div class="col-md-4">
                                             <label><span class="required">*</span>Name and Title of provider</label>
