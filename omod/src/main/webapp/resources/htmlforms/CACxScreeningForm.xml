@@ -129,7 +129,7 @@
                             </div>
                             <div class="col-md-3">
                                 <label>Reg. No.</label>
-                                <obs id="164985" conceptId="164985"/>
+                                <obs id="168696" conceptId="168696"/>
                             </div>
                             <div class="col-md-3">
                                 <label>Referred In</label>
@@ -138,15 +138,15 @@
                         </div>
                         <div class="row">
                             <div class="col-md-3">
-                                <label>Entry point Code (concepts missing from cancer unit, stopped at 90015)</label>
+                                <label>Entry point Code</label>
                                 <obs conceptId="164993"
-                                     answerConceptIds="160542,165047,165048,165046,165348,164984,90015,  90018,99456,90002" 
+                                     answerConceptIds="160542,165047,165048,165046,165348,164984,90015,168695,  90018,99456,90002" 
                                      answerLabels="OPD, ART Clinic, TB Clinic,Postnatal Clinic, Mother Baby Care Point, Family Planning Clinic,STI Clinic, Cancer Unit, In patient ward, Community/Outreach, Other Specify"
                                      id="90200"/>
                             </div>
                             <div class="col-md-3">
-                                <obs id="165398" conceptId="165398"
-                                     labelText="Other Testing Point"/>
+                                <label>Other Testing Point<label/>
+                                <obs id="165398" conceptId="165398">
                             </div>
                             <div class="col-md-3">
                                 <label>Entry Point Clinic No. (emr different concept for each point)</label>
@@ -185,40 +185,40 @@
                                 <obs id="166905" conceptId="166905" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
                             </div>
                             <div class="col-md-4">
-                                 <label>Given Pre-Test Counselling?</label>
+                                 <label>Given Pre-Test Counselling</label>
                                 <obs id="162891" conceptId="162891" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
                             </div>
                             <div class="col-md-4">
                                 <label>Are you menstruating now? Missing</label>
-                                <obs id="162891" conceptId="162891" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
+                                <obs id="168697" conceptId="168697" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4">
-                                <label>Are you pregnant?</label>
+                                <label>Are you pregnant</label>
                                 <obs id="90041" conceptId="90041" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
                             </div>
                             <div class="col-md-4">
-                                <label>Have you been pregnant in the last 3 months? Missing
-                                <obs id="165315" conceptId="165315" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
+                                <label>Have you been pregnant in the last 3 months</label>
+                                <obs id="168698" conceptId="168698" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
                             </div>
                             <div class="col-md-4">
-                                <label>Have you had a total hysterectomy? Missing
-                                <obs id="165315" conceptId="165315" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
+                                <label>Have you had a total hysterectomy</label>
+                                <obs id="168699" conceptId="168699" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4">
-                                <label>Have you previously been on Cervical Cancer treatment? Missing</label>
-                                <obs id="165315" conceptId="165315" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
+                                <label>Have you previously been on Cervical Cancer treatment</label>
+                                <obs id="168700" conceptId="168700" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
                             </div>
                             <div class="col-md-4">
-                                <label>Eligible for Cervical Cancer Screening Missing</label>
-                                <obs id="165315" conceptId="165315" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
+                                <label>Eligible for Cervical Cancer Screening</label>
+                                <obs id="168701" conceptId="168701" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
                             </div>
                             <div class="col-md-4">
                                 <label>Ready to receive service Missing</label>
-                                <obs id="165315" conceptId="165315" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
+                                <obs id="168702" conceptId="168702" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
                             </div>
                         </div>
                     </div>
