@@ -1,5 +1,5 @@
-<htmlform formName="CACx Screening Form"
-          formDescription="CACx Screening Form"
+<htmlform formName="Cervical Cancer Screening Form"
+          formDescription="Cervical Cancer Screening Form"
           formEncounterType="91725548-2d90-4b28-be6d-0509ba37bb0f"
           formUuid="e4c98c45-f01e-4737-a62a-baf981ae7b14"
           formVersion="3.0.0"
@@ -9,91 +9,17 @@
           formIcon="icon-medkit"
           formShowIf="(visit.active || !visit.active) &amp;&amp; patient.person.dead==false&amp;&amp; (sessionLocation.uuid=='86863db4-6101-4ecf-9a86-5e716d6504e4' || sessionLocation.uuid=='7c231e1a-1db5-11ea-978f-2e728ce88125' || sessionLocation.uuid=='e9bc61b5-69ff-414b-9cf0-0c22d6dfca2b')"
           formDisplayStyle="Standard"
-          formLabel="Cervical Cancer Screening Form">
+          formLabel="HMIS ACP XXX: Cervical Cancer Screening Form">
 
     <script type="text/javascript">
         if (jQuery) {
 
-        jq(document).ready(function () {
-            var encounterDate = new Date((getValue('encounterDate.value')));
-            var patientUUID      = '<lookup complexExpression="$patient.uuid"/>';
+            jq(document).ready(function () {
+                
 
-            jq('#encounterDate').change(function(){
-                encounterDate= new Date((getValue('encounterDate.value')));
+
             });
-
-            function savePatientToCohort(cohortuuid){
-                var cohort = cohortuuid;
-                var date = encounterDate.getFullYear()+'-'+(encounterDate.getMonth()+1)+'-'+encounterDate.getDate();
-                var DSDCategory = getValue('cddp_category.value');
-                var dataToPost = "{\"patient\": \"" +  patientUUID + "\", \"cohort\": \"" + cohort + "\",\"startDate\": \"" + date+ "\"}";
-                jq.ajax({
-                    type: "POST",
-                    url: '/' + OPENMRS_CONTEXT_PATH + "/ws/rest/v1/cohortm/cohortmember/",
-                    dataType: "json",
-                    contentType: "application/json",
-                    accept: "application/json",
-                    data: dataToPost,
-                    success: function (data) {
-                        jq().toastmessage('showSuccessToast', "Client Added to a SMS Group Successfully");
-                    },
-                    error: function (response) {
-                        if (cohort !== ""){
-                            var errorMessage = response.responseJSON.error.message;
-                            if(errorMessage.indexOf("already exists") > 0){
-                                jq().toastmessage('showSuccessToast', response.responseJSON.error.message);
-                            }else{
-                            jq().toastmessage('showErrorToast', response.responseJSON.error.message);
-                            }
-                        }
-                    }
-                    });
-            }
-
-            disable_fields("166567");
-
-            jq("#166566").click(function () {
-            if (jq(this).find("input[type='radio']:checked").val() == "90003") {
-                enable_fields("166567");
-            } else {
-                disable_fields("166567");
-            }
-            });
-
-            beforeSubmit.push(function () {
-                <!-- verify that phone number is valid     -->
-                var phone_number = getValue('166561.value');
-                var cohortUuid="";
-                if(phone_number!==""){
-                    phone_number = phone_number.replace(/\(|\)|\s+|-/g, "");
-                    if(!(phone_number.length == 12 &amp;&amp; phone_number.match(/^[2]{1}[5]{1}[6]{1}[0-9]{9}$/g))){
-                        jq().toastmessage('showErrorToast', "Please specify a valid mobile number without any spaces like 256712345678");
-                        return false;
-                    }
-                }else if( getValue('166566' + '.value')!== 90003){
-                    jq().toastmessage('showErrorToast', "Phone number is required");
-                    return false;
-                }
-
-<!--  assign cohorts to client depending on the types of reminders they have chosen  -->
-                if (jq("#appointmentReminder").find(':checkbox').prop('checked')) {
-<!--                    assign SMS appointment reminder cohort-->
-                    cohortUuid="c418984c-fe55-431a-90be-134da0a5ec67";
-                    savePatientToCohort(cohortUuid);
-                }
-
-                if (jq("#nonsuppressedReminder").find(':checkbox').prop('checked')) {
-                <!--   assign SMS appointment reminder cohort-->
-                    cohortUuid="f538f903-0258-4151-a4f6-f8ceb8046017";
-                    savePatientToCohort(cohortUuid);
-                }
-                return true;
-            });
-
-
-        });
         }
-
 
     </script>
 
@@ -102,10 +28,10 @@
 
         <div class="row">
             <div class="col-md-6">
-                <h1 style="padding: 10px;">CACx Screening Form</h1>
+                <h1>HMIS ACP XXX: Cervical Cancer Screening Form</h1>
             </div>
-            <div class="col-md-4"></div>
-            <div class="col-md-2">
+            <div class="col-md-5"></div>
+            <div class="col-md-1">
                 <submit class="confirm" submitLabel="Save" submitStyle="customSubmit"/>
             </div>
         </div>
