@@ -1,15 +1,15 @@
-<htmlform formName="Cervical Cancer Screening Form"
+<htmlform formName="HMIS ACP: Cervical Cancer Screening Form"
           formDescription="Cervical Cancer Screening Form"
           formEncounterType="91725548-2d90-4b28-be6d-0509ba37bb0f"
           formUuid="e4c98c45-f01e-4737-a62a-baf981ae7b14"
-          formVersion="3.2.0"
+          formVersion="3.1.0"
           formAddMetadata="yes"
           formUILocation="patientDashboard.visitActions"
-          formOrder="6"
+          formOrder="16"
           formIcon="icon-medkit"
           formShowIf="(visit.active || !visit.active) &amp;&amp; patient.person.dead==false&amp;&amp; (sessionLocation.uuid=='86863db4-6101-4ecf-9a86-5e716d6504e4' || sessionLocation.uuid=='7c231e1a-1db5-11ea-978f-2e728ce88125' || sessionLocation.uuid=='e9bc61b5-69ff-414b-9cf0-0c22d6dfca2b')"
           formDisplayStyle="Standard"
-          formLabel="HMIS ACP XXX: Cervical Cancer Screening Form">
+          formLabel="HMIS ACP: Cervical Cancer Screening Form">
 
     <script type="text/javascript">
         if (jQuery) {
@@ -24,11 +24,10 @@
     </script>
 
 
-    <div class="ai-page-frame" id="CACx-Screening-form">
-
+    <div>
         <div class="row">
             <div class="col-md-6">
-                <h1>HMIS ACP XXX: Cervical Cancer Screening Form</h1>
+                <h1>HMIS ACP: Cervical Cancer Screening Form</h1>
             </div>
             <div class="col-md-5"></div>
             <div class="col-md-1">
@@ -44,55 +43,55 @@
                     </div>
                     <div id="enrollment" class="card-body">
                         <div class="row">
-                            <div class="col-md-3" id="visit-date">
+                            <div class="col-4" id="visit-date">
                                 <label>Date</label>
                                 <encounterDate default="today"
                                                disallowMultipleEncountersOnDate="block"/>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-4">
                                 <label>Serial Number</label>
                                 <obs conceptId="1646" id="1646"/>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-4">
                                 <label>Reg. No.</label>
                                 <obs id="168696" conceptId="168696"/>
                             </div>
-                            <div class="col-md-3">
-                                <label>Referred In</label>
-                                <obs id="168757" conceptId="168757" answerConceptIds="1065,1066" answerLabels="Yes, No" style="radio"/>
-                            </div>
+                            
                         </div>
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-4">
+                                <label>Referred In</label>
+                                <obs id="168757" conceptId="168757" answerConceptIds="1065,1066" answerLabels="Yes, No" style="radio" class="horizontal"/>
+                            </div>
+                            <div class="col-4">
                                 <label>Entry point Code</label>
                                 <obs conceptId="164993"
                                      answerConceptIds="160542,165047,165048,165046,165348,164984,90015,168695,  90018,99456,90002" 
                                      answerLabels="OPD, ART Clinic, TB Clinic,Postnatal Clinic, Mother Baby Care Point, Family Planning Clinic,STI Clinic, Cancer Unit, In patient ward, Community/Outreach, Other Specify"
-                                     id="90200"/>
+                                     id="164993"/>
                             </div>
-                            <div class="col-md-3">
-                                <label>Other Testing Point<label/>
-                                <obs id="165398" conceptId="165398">
+                            <div class="col-2">
+                                <label>Other Testing Point</label>
+                                <obs id="165398" conceptId="165398"/>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-2">
                                 <label>Entry Point Clinic No. (emr different concept for each point)</label>
-                                
                             </div>
-                            <div class="col-md-3">
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
                                 <label>HIV Status</label>
                                 <obs conceptId="90253" id="90253"
                                      answerConceptIds="90167,90166,90001"
                                      answerLabels="NEG- HIV-, POS- HIV+, UK- Unknown"/>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-4">
                                 <label>ART Status</label>
                                 <obs conceptId="1358" id="1358"
                                      answerConceptIds="1367, 165904, 1175"
                                      answerLabels="On ART, Not On ART, Not Applicable"/>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <obs id="99431" conceptId="99431"
                                      labelText="ART Number"/>
                             </div>
@@ -108,43 +107,43 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <label>Ever been screened for cervical cancer</label>
-                                <obs id="166905" conceptId="166905" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
+                                <obs id="166905" conceptId="166905" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio" class="horizontal"/>
                             </div>
                             <div class="col-md-4">
                                  <label>Given Pre-Test Counselling</label>
-                                <obs id="162891" conceptId="162891" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
+                                <obs id="162891" conceptId="162891" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio" class="horizontal"/>
                             </div>
                             <div class="col-md-4">
                                 <label>Are you menstruating now? Missing</label>
-                                <obs id="168697" conceptId="168697" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
+                                <obs id="168697" conceptId="168697" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio" class="horizontal"/>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4">
                                 <label>Are you pregnant</label>
-                                <obs id="90041" conceptId="90041" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
+                                <obs id="90041" conceptId="90041" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio" class="horizontal"/>
                             </div>
                             <div class="col-md-4">
                                 <label>Have you been pregnant in the last 3 months</label>
-                                <obs id="168698" conceptId="168698" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
+                                <obs id="168698" conceptId="168698" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio" class="horizontal"/>
                             </div>
                             <div class="col-md-4">
                                 <label>Have you had a total hysterectomy</label>
-                                <obs id="168699" conceptId="168699" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
+                                <obs id="168699" conceptId="168699" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio" class="horizontal"/>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4">
                                 <label>Have you previously been on Cervical Cancer treatment</label>
-                                <obs id="168700" conceptId="168700" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
+                                <obs id="168700" conceptId="168700" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio" class="horizontal"/>
                             </div>
                             <div class="col-md-4">
                                 <label>Eligible for Cervical Cancer Screening</label>
-                                <obs id="168701" conceptId="168701" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
+                                <obs id="168701" conceptId="168701" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio" class="horizontal"/>
                             </div>
                             <div class="col-md-4">
                                 <label>Ready to receive service Missing</label>
-                                <obs id="168702" conceptId="168702" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio"/>
+                                <obs id="168702" conceptId="168702" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio" class="horizontal"/>
                             </div>
                         </div>
                     </div>

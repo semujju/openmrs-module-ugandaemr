@@ -1,15 +1,15 @@
-<htmlform formName="Cervical Cancer Pre-Treatment Form"
+<htmlform formName="HMIS ACP: Cervical Cancer Pre-Treatment Form"
           formDescription="Cervical Cancer Treatment Form"
           formEncounterType="6d647bd4-33d6-4d04-a04a-595d2159b456"
           formUuid="9bc7f745-b61f-4553-ad77-7208238a7068"
-          formVersion="3.2.0"
+          formVersion="3.1.0"
           formAddMetadata="yes"
           formUILocation="patientDashboard.visitActions"
-          formOrder="7"
+          formOrder="17"
           formIcon="icon-medkit"
-          formShowIf="(visit.active || !visit.active) &amp;&amp; patient.person.dead==false&amp;&amp; (sessionLocation.uuid=='86863db4-6101-4ecf-9a86-5e716d6504e4' || sessionLocation.uuid=='7c231e1a-1db5-11ea-978f-2e728ce88125' || sessionLocation.uuid=='e9bc61b5-69ff-414b-9cf0-0c22d6dfca2b')"
+          formShowIf="(visit.active || !visit.active) &amp;&amp; patient.person.dead==false &amp;&amp; (sessionLocation.uuid=='86863db4-6101-4ecf-9a86-5e716d6504e4' || sessionLocation.uuid=='7c231e1a-1db5-11ea-978f-2e728ce88125' || sessionLocation.uuid=='e9bc61b5-69ff-414b-9cf0-0c22d6dfca2b')"
           formDisplayStyle="Standard"
-          formLabel="HMIS ACP XXX: Cervical Cancer Pre-Treatment Form">
+          formLabel="HMIS ACP: Cervical Cancer Pre-Treatment Form">
 
         <script type="text/javascript">
 
@@ -26,7 +26,7 @@
     <div>
         <div class="row">
             <div class="col-md-6">
-                <h1>HMIS ACP XXX: Cervical Cancer Pre-Treatment Register</h1>
+                <h1>HMIS ACP: Cervical Cancer Pre-Treatment Register</h1>
             </div>
             <div class="col-md-5"></div>
             <div class="col-md-1">
@@ -43,6 +43,12 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#complications-section">Observations and Treatment</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#referral-services-section">Services and Referral</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#comments-section">Comments</a>
                             </li>
                         </ul>
                     </div>
@@ -141,7 +147,7 @@
                                 </div>
                             </div>
 
-                            <div class="tab-pane" id="complications-section" >
+                            <div class="tab-pane" id="complications-section">
                                 <div class="card">
                                     <div class="card-header">
                                         Management of Test Positive
@@ -165,29 +171,32 @@
                                             <obs id="168731" conceptId="168731"/>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        Observations and Complications
                                     </div>
-                                    <div class="card-body">
-                                         <div class="row">
-                                             <div class="col-4">
-                                                <div id="other-therapy-container" class="col-6">
-                                                    <label>Other Services</label>
-                                                    <obs conceptId="168744" answerConceptIds="168742,165049,5271,166897,168743"
-                                                     answerLabels="1.HIV Testing Services, 2.ART services,3.Family planning,4.Breast Cancer Screening,5.NCDs (Hypertension, Diabetes, Mental Health etc)"
-                                                     style="checkbox"/>
+                                </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            Observations and Complications
+                                        </div>
+                                        <div class="card-body">
+                                             <div class="row">
+                                                 <div class="col-4">
+                                                    <div id="other-therapy-container" class="col-6">
+                                                        <label>Other Services</label>
+                                                        <obs conceptId="168744" answerConceptIds="168742,165049,5271,166897,168743"
+                                                         answerLabels="1.HIV Testing Services, 2.ART services,3.Family planning,4.Breast Cancer Screening,5.NCDs (Hypertension, Diabetes, Mental Health etc)"
+                                                         style="checkbox"/>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-8">
-                                                <label>Other Treatment</label>
-                                                <obs conceptId="99648" class="commenttextarea" style="textarea"/>
+                                                <div class="col-8">
+                                                    <label>Other Treatment</label>
+                                                    <obs conceptId="99648" class="commenttextarea" style="textarea"/>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-
+                                
+                            </div>
+                            <div class="tab-pane" id="referral-services-section">
                                 <div class="card">
                                     <div class="card-header">
                                         Referral
@@ -218,7 +227,7 @@
                                              </div>
                                         </div>
                                     </div></div>
-                                </div>
+                               
                                     <div class="card">
                                         <div class="card-header">
                                             Services Offered
@@ -242,7 +251,8 @@
                                             </div>
                                         </div>
                                     </div>
-
+                            </div>
+                            <div class="tab-pane" id="comments-section" >
                                     <div class="card">
                                         <div class="card-header">
                                             Comments
@@ -257,17 +267,16 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <label><span class="required">*</span>Name and Title of provider</label>
+                                            <label><span class="required">*</span>Provider</label>
                                             <encounterProvider role="Provider" required="true" id="provider" />
 
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
-
                         </div>
-                    </div></div>
+                    </div>
+                </div>
             </div>
         </div>
   
