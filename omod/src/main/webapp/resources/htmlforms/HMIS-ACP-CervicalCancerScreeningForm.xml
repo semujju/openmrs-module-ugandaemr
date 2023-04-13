@@ -75,7 +75,8 @@
                                 <obs id="165398" conceptId="165398"/>
                             </div>
                             <div class="col-2">
-                                <label>Entry Point Clinic No. (emr different concept for each point)</label>
+                                <label>Entry Point Clinic No.</label> 
+                                <obs id="168761" conceptId="168761"/>
                             </div>
                         </div>
                         <div class="row">
