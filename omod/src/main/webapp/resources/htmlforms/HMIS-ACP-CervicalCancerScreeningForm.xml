@@ -114,7 +114,7 @@
                                 <obs id="168757" conceptId="168757" answerConceptIds="1065,1066" answerLabels="Yes, No" style="radio" class="horizontal"/>
                             </div>
                             <div class="col-4">
-                                <label>Entry point</label>
+                                <label>Entry Point</label>
                                 <obs id="entry-point" conceptId="164993"
                                      answerConceptIds="160542,165047,165048,165046,165348,164984,90015,168695,  90018,99456,90002" 
                                      answerLabels="OPD, ART Clinic, TB Clinic,Postnatal Clinic, Mother Baby Care Point, Family Planning Clinic,STI Clinic, Cancer Unit, In patient ward, Community/Outreach, Other Specify"
@@ -161,7 +161,7 @@
                                 <obs id="screened-for-cacx" conceptId="166905" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio" class="horizontal"/>
                             </div>
                             <div class="col-md-4">
-                                 <label>Given Pre-Test Counselling</label>
+                                 <label>Given Pre-Test counselling</label>
                                 <obs id="pre-test-counselling-done" conceptId="162891" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio" class="horizontal"/>
                             </div>
                             <div class="col-md-4">
@@ -185,11 +185,11 @@
                         </div>
                         <div class="row">
                             <div class="col-md-4">
-                                <label>Have you previously been on Cervical Cancer treatment</label>
+                                <label>Have you previously been on cervical cancer treatment</label>
                                 <obs id="previous-cacx-treatment" conceptId="168700" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio" class="horizontal"/>
                             </div>
                             <div class="col-md-4">
-                                <label>Eligible for Cervical Cancer Screening</label>
+                                <label>Eligible for cervical cancer screening</label>
                                 <obs id="eligible-for-cacx-screening" conceptId="168701" answerConceptIds="1065,1066,1175" answerLabels="Yes,No,NA" style="radio" class="horizontal"/>
                             </div>
                             <div class="col-md-4">

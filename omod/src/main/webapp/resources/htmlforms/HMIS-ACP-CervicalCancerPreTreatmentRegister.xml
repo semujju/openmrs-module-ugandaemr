@@ -25,7 +25,8 @@
                     disable_fields("other-reason-for-postponing");        
                     disable_fields("reasons-for-referral")          
                     disable_fields("other-reasons-for-referral");        
-                    disable_fields("refferal-facility")          
+                    disable_fields("refferal-facility")   
+                    disable_fields('date-service-offered');       
 
                     jq('#visit-type').change(function () {
                         if (getValue('visit-type.value') == 90002) {
@@ -93,6 +94,14 @@
                         }
                     });
 
+                    jq('#service-offered').change(function () {
+                        if(getValue('service-offered') !== "") {
+                            enable_fields('date-service-offered');
+                        } else {
+                            disable_fields('date-service-offered');
+                        }
+                    });
+
                 });
             }
 
@@ -135,6 +144,11 @@
                                     </div>
                                     <div class="card-body complications">
                                     <div class="row">
+                                        <div class="col-4" id="visit-date">
+                                            <label>Date</label>
+                                            <encounterDate default="today"
+                                            disallowMultipleEncountersOnDate="block"/>
+                                        </div>
                                         <div class="col-4">
                                             <label>Visit Type</label>
                                             <obs id="visit-type" conceptId="168750" answerConceptIds="168745,168746,168747,168748,168749,90002"
@@ -145,14 +159,14 @@
                                             <label>Other Visit Type</label>
                                             <obs id="other-visit-type" conceptId="168751"/>
                                         </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col-4">
                                             <label>HPV Test Done</label>
                                             <obs id="hpv-test" conceptId="168703" answerConceptIds="1065,1066" 
                                                  answerLabels="Yes, No"
                                                  style="radio" class="horizontal" />
                                         </div>
-                                    </div>
-                                    <div class="row">
                                         <div class="col-4">
                                             <label>HPV Result</label>
                                             <obs id="hpv-result" conceptId="168704" answerConceptIds="664,703,1118"
@@ -317,7 +331,7 @@
                                                 <div class="col-6">
                                                     <div id="other-therapy-container" class="col-6">
                                                         <label>Date Service offered</label>
-                                                        <obs id="date-service-offered" conceptId="166447" />
+                                                        <obs id="date-service-offered" conceptId="168762" />
                                                     </div>
                                                 </div>
                                             </div>
