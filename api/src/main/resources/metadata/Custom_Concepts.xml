@@ -2543,6 +2543,8 @@
     <concept  concept_id="168758"  retired="0"  datatype_id="2"  class_id="7"  is_set="0"  creator="1"  date_created="2023-04-06 12:15:29"  changed_by="1"  date_changed="2023-04-06 12:15:29" uuid="7b246acf-d518-4b51-828c-d69593f3d66b"/>
     <concept  concept_id="168759"  retired="0"  datatype_id="2"  class_id="2"  is_set="0"  creator="1"  date_created="2023-04-06 12:23:05"  changed_by="1"  date_changed="2023-04-06 12:23:05" uuid="6f1baf4c-1cdd-44a5-a48e-909391ed05f2"/>
     <concept  concept_id="168760"  retired="0"  datatype_id="2"  class_id="11"  is_set="0"  creator="1"  date_created="2023-04-06 12:33:43"  changed_by="1"  date_changed="2023-04-06 12:33:43" uuid="f0c8856d-7955-4f18-a9a4-cc4fcf7a363a"/>
+    <concept  concept_id="168761"  retired="0"  datatype_id="3"  class_id="11"  is_set="0"  creator="1"  date_created="2023-04-13 13:31:22"  changed_by="1"  date_changed="2023-04-13 13:31:22" uuid="ae9d66a4-e9f5-43f1-ba4a-e275d0c9f611"/>
+
 
     <!--CONCEPT NUMERIC-->
     <!--MCH-->
@@ -7544,7 +7546,8 @@
     <concept_name  concept_name_id="181174"  concept_id="168758"  name="Referred Out"  locale="en"  locale_preferred="1"  creator="1"  date_created="2023-04-06 12:15:29"  concept_name_type="FULLY_SPECIFIED"  voided="0"  uuid="fb9a982b-018c-4353-84c7-2367c0b7e70b"/>
     <concept_name  concept_name_id="181176"  concept_id="168759"  name="Cervical Cancer Treatment Given"  locale="en"  locale_preferred="1"  creator="1"  date_created="2023-04-06 12:23:05"  concept_name_type="FULLY_SPECIFIED"  voided="0"  uuid="2cf1e2b5-4608-4a9d-a8b5-a6fce2236398"/>
     <concept_name  concept_name_id="181177"  concept_id="168760"  name="Cervical Cancer Service Offered"  locale="en"  locale_preferred="1"  creator="1"  date_created="2023-04-06 12:33:43"  concept_name_type="FULLY_SPECIFIED"  voided="0"  uuid="9ab3ad3f-23b0-4a8b-af99-997b340cb93b"/>
-   
+    <concept_name  concept_name_id="181178"  concept_id="168761"  name="Entry Point Clinic Number"  locale="en"  locale_preferred="1"  creator="1"  date_created="2023-04-13 13:31:22"  concept_name_type="FULLY_SPECIFIED"  voided="0" uuid="372b222e-3f98-4967-a857-0e9a76ba016d"/>
+
 
 
     <!--CONCEPT ANSWERS-->
