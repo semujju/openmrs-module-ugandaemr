@@ -2563,7 +2563,23 @@
     <concept  concept_id="168774"  retired="0" datatype_id="4"  class_id="11"  is_set="0"  creator="1"  date_created="2023-05-18 13:00:25"   changed_by="1"  date_changed="2023-05-18 13:00:25"   uuid="e7ea5133-b80f-4dcc-815e-847e4d767c15"/>
     <concept  concept_id="168775"  retired="0" datatype_id="2"  class_id="11"  is_set="0"  creator="1"  date_created="2023-05-18 13:00:54"   changed_by="1"  date_changed="2023-05-18 13:00:54"   uuid="19e6e8c7-aeba-43ce-bc37-f1429dc1bac5"/>
     <concept  concept_id="168776"  retired="0" datatype_id="1"  class_id="7"  is_set="0"  creator="1"  date_created="2023-05-18 13:06:52"   changed_by="1"  date_changed="2023-05-18 13:06:52"   uuid="d9e2021a-dd1f-4a8c-88b2-7d343fdae554"/>
-    
+
+    <!-- MASAKA CONCEPTS -->
+    <concept  concept_id="168777"  retired="0"  datatype_id="4"  class_id="5"  is_set="0"  creator="1"  date_created="2023-06-07 11:33:02"  version="1.0.0"  changed_by="1"  date_changed="2023-06-07 11:33:02"  uuid="3270fc85-1612-4177-a5e7-89ceca6d2556"/>
+    <concept  concept_id="168778"  retired="0"  datatype_id="4"  class_id="3"  is_set="0"  creator="1"  date_created="2023-06-07 11:34:01"  version="1.0.0"  changed_by="1"  date_changed="2023-06-07 11:34:01"  uuid="10932846-9eb0-4ab3-84fd-8babd74f7f72"/>
+    <concept  concept_id="168779"  retired="0"  datatype_id="4"  class_id="3"  is_set="0"  creator="1"  date_created="2023-06-07 11:34:22"  version="1.0.0"  changed_by="1"  date_changed="2023-06-07 11:34:22"  uuid="b9d19c12-90e7-4629-8819-8cdd62bb6044"/>
+    <concept  concept_id="168780"  retired="0"  datatype_id="4"  class_id="3"  is_set="0"  creator="1"  date_created="2023-06-07 11:36:02"  version="1.0.0"  changed_by="1"  date_changed="2023-06-07 11:36:02"  uuid="1fcd49ed-9b56-4205-a566-af6a5fef483a"/>
+    <concept  concept_id="168781"  retired="0"  datatype_id="4"  class_id="3"  is_set="0"  creator="1"  date_created="2023-06-07 11:36:21"  version="1.0.0"  changed_by="1"  date_changed="2023-06-07 11:36:21"  uuid="a7edb073-dc3f-40ff-840a-eff65fedce88"/>
+    <concept  concept_id="168782"  retired="0"  datatype_id="4"  class_id="11"  is_set="0"  creator="1"  date_created="2023-06-07 11:37:42"  version="1.0.0"  changed_by="1"  date_changed="2023-06-07 11:37:42"  uuid="c8350f6b-aaa4-48df-a99c-960a4bf7cbdc"/>
+    <concept  concept_id="168783"  retired="0"  datatype_id="4"  class_id="11"  is_set="0"  creator="1"  date_created="2023-06-07 11:38:10"  version="1.0.0"  changed_by="1"  date_changed="2023-06-07 11:38:10"  uuid="3ca7e791-a9d8-410e-a6f9-1c4652cc8adc"/>
+    <concept  concept_id="168784"  retired="0"  datatype_id="4"  class_id="11"  is_set="0"  creator="1"  date_created="2023-06-07 11:39:46"  version="1.0.0"  changed_by="1"  date_changed="2023-06-07 11:39:46"  uuid="a89da896-80fa-460f-8209-abdd58140a39"/>
+    <concept  concept_id="168785"  retired="0"  datatype_id="4"  class_id="11"  is_set="0"  creator="1"  date_created="2023-06-07 11:40:01"  version="1.0.0"  changed_by="1"  date_changed="2023-06-07 11:40:01"  uuid="c93ccee3-1f52-442f-8681-b4b2e09e8459"/>
+    <concept  concept_id="168786"  retired="0"  datatype_id="4"  class_id="11"  is_set="0"  creator="1"  date_created="2023-06-07 11:40:16"  version="1.0.0"  changed_by="1"  date_changed="2023-06-07 11:40:16"  uuid="a9e4b4d0-d40b-4770-956d-d154ad2a2ed8"/>
+    <concept  concept_id="168787"  retired="0"  datatype_id="4"  class_id="11"  is_set="0"  creator="1"  date_created="2023-06-07 11:40:52"  version="1.0.0"  changed_by="1"  date_changed="2023-06-07 11:40:52"  uuid="2419c945-8b89-4106-8a7e-037b034b5886"/>
+    <concept  concept_id="168788"  retired="0"  datatype_id="4"  class_id="11"  is_set="0"  creator="1"  date_created="2023-06-07 11:41:04"  version="1.0.0"  changed_by="1"  date_changed="2023-06-07 11:41:04"  uuid="54a2f0c3-7487-4861-b4f7-958f86232ff2"/>
+    <concept  concept_id="168789"  retired="0"  datatype_id="4"  class_id="11"  is_set="0"  creator="1"  date_created="2023-06-07 11:41:20"  version="1.0.0"  changed_by="1"  date_changed="2023-06-07 11:41:20"  uuid="0fda7b2c-c8e0-403b-be55-8388499ed7f8"/>
+    <concept  concept_id="168790"  retired="0"  datatype_id="4"  class_id="3"  is_set="0"  creator="1"  date_created="2023-06-07 11:41:51"  version="1.0.0"  changed_by="1"  date_changed="2023-06-07 11:41:51"  uuid="41f6f467-118d-4da7-afdf-1ca3f8e7f817"/>
+
 
     <!--CONCEPT NUMERIC-->
     <!--MCH-->
@@ -7733,6 +7749,21 @@
     <concept_name  concept_name_id="7368448"  concept_id="168775"  name="Referral recommendations"  locale="en"  locale_preferred="1"  creator="1"  date_created="2023-05-18 13:00:54"  concept_name_type="FULLY_SPECIFIED"  voided="0" uuid="33b6ffdd-0ecc-4271-801f-995e949c5067"/>
     <concept_name  concept_name_id="7368449"  concept_id="168776"  name="Number of months since last tested"  locale="en"  locale_preferred="1"  creator="1"  date_created="2023-05-18 13:06:52"  concept_name_type="FULLY_SPECIFIED"  voided="0" uuid="f7d87f0a-6335-4d2a-a556-192a87e106d4"/>
 
+    <!--MASAKA CONCEPTS -->
+    <concept_name  concept_name_id="7368450"  concept_id="168777"  name="Seizure History"  locale="en"  locale_preferred="1"  creator="1"  date_created="2023-06-07 11:33:02"  concept_name_type="FULLY_SPECIFIED"  voided="0"  uuid="dbc42c5f-6047-4a57-a945-a32dc5634067"/>
+    <concept_name  concept_name_id="7368451"  concept_id="168778"  name="D4T Syrup"  locale="en"  locale_preferred="1"  creator="1"  date_created="2023-06-07 11:34:01"  concept_name_type="FULLY_SPECIFIED"  voided="0"  uuid="a2a03159-3ca4-464f-b4b0-2ee6e902fa80"/>
+    <concept_name  concept_name_id="7368452"  concept_id="168779"  name="EFV Syrup"  locale="en"  locale_preferred="1"  creator="1"  date_created="2023-06-07 11:34:22"  concept_name_type="FULLY_SPECIFIED"  voided="0"  uuid="15db69fa-d400-4806-a406-63369984c96f"/>
+    <concept_name  concept_name_id="7368453"  concept_id="168780"  name="AZT Syrup"  locale="en"  locale_preferred="1"  creator="1"  date_created="2023-06-07 11:36:02"  concept_name_type="FULLY_SPECIFIED"  voided="0"  uuid="28d1b632-1ac1-4ae9-b1c1-72c3e4942bfa"/>
+    <concept_name  concept_name_id="7368454"  concept_id="168781"  name="Cough Syrup"  locale="en"  locale_preferred="1"  creator="1"  date_created="2023-06-07 11:36:21"  concept_name_type="FULLY_SPECIFIED"  voided="0"  uuid="30d3b9a3-ffe7-4de8-bfc4-7ac0a4c44194"/>
+    <concept_name  concept_name_id="7368455"  concept_id="168782"  name="Exposed  Status Indeterminate"  locale="en"  locale_preferred="1"  creator="1"  date_created="2023-06-07 11:37:42"  concept_name_type="FULLY_SPECIFIED"  voided="0"  uuid="5a32bef5-043e-45f6-b98f-bc66e2dd5246"/>
+    <concept_name  concept_name_id="7368456"  concept_id="168783"  name="Age above 50 Years"  locale="en"  locale_preferred="1"  creator="1"  date_created="2023-06-07 11:38:10"  concept_name_type="FULLY_SPECIFIED"  voided="0"  uuid="2fb8c286-cc9a-4dd7-96d4-c1ee312942fe"/>
+    <concept_name  concept_name_id="7368457"  concept_id="168784"  name="High Risk Populations (Special Groups)"  locale="en"  locale_preferred="1"  creator="1"  date_created="2023-06-07 11:39:46"  concept_name_type="FULLY_SPECIFIED"  voided="0"  uuid="208fa4a2-f390-4839-a947-36f716a7b6c0"/>
+    <concept_name  concept_name_id="7368458"  concept_id="168785"  name="Age between 0-14 Years"  locale="en"  locale_preferred="1"  creator="1"  date_created="2023-06-07 11:40:01"  concept_name_type="FULLY_SPECIFIED"  voided="0"  uuid="a3298721-1c56-4411-9ad7-5ac4350b4e1a"/>
+    <concept_name  concept_name_id="7368459"  concept_id="168786"  name="Due for Viral Load"  locale="en"  locale_preferred="1"  creator="1"  date_created="2023-06-07 11:40:16"  concept_name_type="FULLY_SPECIFIED"  voided="0"  uuid="8e62ffb7-1ab3-4d8f-ad88-4966d1cdb4a7"/>
+    <concept_name  concept_name_id="7368460"  concept_id="168787"  name="Ranana Enterprises"  locale="en"  locale_preferred="1"  creator="1"  date_created="2023-06-07 11:40:52"  concept_name_type="FULLY_SPECIFIED"  voided="0"  uuid="7355d5d3-8cc5-464a-a839-c71c5cc9a94f"/>
+    <concept_name  concept_name_id="7368461"  concept_id="168788"  name="Mable Pharmacy"  locale="en"  locale_preferred="1"  creator="1"  date_created="2023-06-07 11:41:04"  concept_name_type="FULLY_SPECIFIED"  voided="0"  uuid="38cef688-15c5-480a-a4f2-11d136222ef8"/>
+    <concept_name  concept_name_id="7368462"  concept_id="168789"  name="Pharis Pharmacy LTD"  locale="en"  locale_preferred="1"  creator="1"  date_created="2023-06-07 11:41:20"  concept_name_type="FULLY_SPECIFIED"  voided="0"  uuid="acc6f887-924c-4f83-8552-11606362fd9a"/>
+    <concept_name  concept_name_id="7368463"  concept_id="168790"  name="TLD+ETR+DVR\r (TLD=TDF-3TC+DGT)"  locale="en"  locale_preferred="1"  creator="1"  date_created="2023-06-07 11:41:51"  concept_name_type="FULLY_SPECIFIED"  voided="0"  uuid="0948e202-7bf0-4c19-8c49-a291cf19e596"/>
 
 
     <!--CONCEPT ANSWERS-->
