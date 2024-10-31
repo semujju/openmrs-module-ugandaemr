@@ -151,12 +151,12 @@
                 "answers": [
                   {
                     "concept": "dcdad102-30ab-102d-86b0-7a5022ba4115",
-                    "label": "NOT ON FAMILY PLANNING",
+                    "label": "Not On Family Planning",
                     "conceptMappings": []
                   },
                   {
                     "concept": "dcdd6c4a-30ab-102d-86b0-7a5022ba4115",
-                    "label": "ON FAMILY PLANNING",
+                    "label": "On Family Planning",
                     "conceptMappings": []
                   }
                 ]
@@ -166,7 +166,7 @@
               "label": "Family Planning Method",
               "type": "obs",
               "questionOptions": {
-                "rendering": "checkbox",
+                "rendering": "multiCheckbox",
                 "concept": "dc7620b3-30ab-102d-86b0-7a5022ba4115",
                 "answers": [
                   {
@@ -567,6 +567,9 @@
               "questionOptions": {
                 "rendering": "date",
                 "concept": "dce02eca-30ab-102d-86b0-7a5022ba4115",
+                "calculate": {
+                  "calculateExpression": "resolve(api.getLatestObs(patient.id, 'dce02eca-30ab-102d-86b0-7a5022ba4115')).then(obs => obs.valueDateTime)"
+                },
                 "conceptMappings": [],
                 "answers": []
               },
@@ -582,6 +585,9 @@
               "questionOptions": {
                 "rendering": "text",
                 "concept": "67e9ec2f-4c72-408b-8122-3706909d77ec",
+                "calculate": {
+                  "calculateExpression": "resolve(api.getLatestObs(patient.id, '67e9ec2f-4c72-408b-8122-3706909d77ec')).then(obs => obs.valueString)"
+                },
                 "conceptMappings": [],
                 "answers": []
               },
@@ -597,6 +603,9 @@
               "questionOptions": {
                 "rendering": "date",
                 "concept": "dd2adde2-30ab-102d-86b0-7a5022ba4115",
+                "calculate": {
+                  "calculateExpression": "resolve(api.getLatestObs(patient.id, 'dd2adde2-30ab-102d-86b0-7a5022ba4115')).then(obs => obs.valueDateTime)"
+                },
                 "conceptMappings": [],
                 "answers": []
               },
@@ -650,6 +659,9 @@
               "questionOptions": {
                 "rendering": "date",
                 "concept": "483939c7-79ba-4ca4-8c3e-346488c97fc7",
+                "calculate": {
+                  "calculateExpression": "resolve(api.getLatestObs(patient.id, '483939c7-79ba-4ca4-8c3e-346488c97fc7')).then(obs => obs.valueDateTime)"
+                },
                 "conceptMappings": [],
                 "answers": []
               },
@@ -664,6 +676,9 @@
               "questionOptions": {
                 "rendering": "date",
                 "concept": "813e21e7-4ccb-4fe9-aaab-3c0e40b6e356",
+                "calculate": {
+                  "calculateExpression": "resolve(api.getLatestObs(patient.id, '813e21e7-4ccb-4fe9-aaab-3c0e40b6e356')).then(obs => obs.valueDateTime)"
+                },
                 "conceptMappings": [],
                 "answers": []
               },
@@ -690,7 +705,7 @@
               "type": "obs",
               "id": "signsAndSymptoms",
               "questionOptions": {
-                "rendering": "checkbox",
+                "rendering": "multiCheckbox",
                 "concept": "dce0e02a-30ab-102d-86b0-7a5022ba4115",
                 "conceptMappings": [],
                 "answers": [
@@ -800,7 +815,7 @@
               "type": "obs",
               "id": "sideEffectsOfART",
               "questionOptions": {
-                "rendering": "checkbox",
+                "rendering": "multiCheckbox",
                 "concept": "dce05b7f-30ab-102d-86b0-7a5022ba4115",
                 "conceptMappings": [],
                 "answers": [
@@ -1056,7 +1071,7 @@
               "id": "artAdherence",
               "required": true,
               "questionOptions": {
-                "rendering": "radio",
+                "rendering": "select",
                 "concept": "dce03b2f-30ab-102d-86b0-7a5022ba4115",
                 "answers": [
                   {
@@ -1070,6 +1085,11 @@
                   {
                     "concept": "dcdf1f4a-30ab-102d-86b0-7a5022ba4115",
                     "label": "Poor"
+                  },
+                  {
+                    "concept": "dc9b0596-30ab-102d-86b0-7a5022ba4115",
+                    "label": "Not Applicable",
+                    "conceptMappings": []
                   }
                 ]
               },
@@ -1153,77 +1173,19 @@
           ]
         },
         {
-          "label": "Viral Load",
+          "label": "Clinic Notes",
           "isExpanded": "true",
           "questions": [
             {
-              "label": "Tests Ordered",
-              "id": "testsOrdered",
-              "type": "testOrder",
+              "label": "Clinical Notes",
+              "type": "obs",
+              "required": false,
+              "id": "clinical-notes",
               "questionOptions": {
-                "rendering": "select",
-                "orderSettingUuid": "OUTPATIENT",
-                "orderType": "testorder",
-                "answers": [
-                  {
-                    "concept": "1eb05918-f50c-4cad-a827-3c78f296a10a",
-                    "label": "VL",
-                    "conceptMappings": []
-                  }
-                ]
+                "rendering": "textarea",
+                "concept": "159395AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
               },
               "validators": []
-            },
-            {
-              "label": "Indication for viral load testing",
-              "type": "obs",
-              "id": "indicationVlTesting",
-              "required": "true",
-              "questionOptions": {
-                "rendering": "select",
-                "concept": "59f36196-3ebe-4fea-be92-6fc9551c3a11",
-                "conceptMappings": [],
-                "answers": [
-                  {
-                    "concept": "67fab588-d3b0-4aa5-a165-ebd3b00b285b",
-                    "label": "12 months after ART initiation",
-                    "conceptMappings": []
-                  },
-                  {
-                    "concept": "224c94e0-2b8b-4deb-892c-04151ee0e885",
-                    "label": "6 months after ART initiation",
-                    "conceptMappings": []
-                  },
-                  {
-                    "concept": "f3cdf0b6-321a-493d-a7e8-9a2b2a077f72",
-                    "label": "Suspected treatment failure",
-                    "conceptMappings": []
-                  },
-                  {
-                    "concept": "bab153f4-7679-4040-9716-6879dffef905",
-                    "label": "Special Considerations",
-                    "conceptMappings": []
-                  },
-                  {
-                    "concept": "20ab2ec5-5390-4461-b85f-69bf650ce992",
-                    "label": "Repeat (after IAC)",
-                    "conceptMappings": []
-                  },
-                  {
-                    "concept": "68b58a80-af4e-43a5-a70d-113747a6cbb7",
-                    "label": "Routine",
-                    "conceptMappings": []
-                  },
-                  {
-                    "concept": "588ac57f-a4d0-47c2-9852-92502194ec4a",
-                    "label": "1st ANC visit",
-                    "conceptMappings": []
-                  }
-                ]
-              },
-              "hide": {
-                "hideWhenExpression": "isEmpty(testsOrdered) || !testsOrdered.includes('1eb05918-f50c-4cad-a827-3c78f296a10a')"
-              }
             }
           ]
         },
@@ -1310,6 +1272,63 @@
               },
               "hide": {
                 "hideWhenExpression": "isEmpty(dsdmApproach) || dsdmApproach == '733144c0-c321-11e8-a355-529269fb1459' || dsdmApproach == '73313c96-c321-11e8-a355-529269fb1459' || dsdmApproach == '73313f20-c321-11e8-a355-529269fb1459' || dsdmApproach == '733139e4-c321-11e8-a355-529269fb1459'"
+              }
+            },
+            {
+              "label": "Pharmacy",
+              "type": "obs",
+              "required": false,
+              "id": "pharmacyDatasource",
+              "questionOptions": {
+                "rendering": "ui-select-extended",
+                "concept": "7a22cfcb-a272-4eff-968c-5e9467125a7b",
+                "datasource": {
+                  "name": "dsdm_categorization_datasource",
+                  "config": {
+                    "cohortUuid": "e50fa0af-df36-4a26-853f-feb05244e5ca"
+                  }
+                }
+              },
+              "hide": {
+                "hideWhenExpression": "isEmpty(dsdmApproach) || dsdmApproach != '73313728-c321-11e8-a355-529269fb1459' || drugPickupModel != 'a6a0ab45-b7dc-43b2-b28c-45a91f968ebf'"
+              }
+            },
+            {
+              "label": "General CDDP Group Name",
+              "type": "obs",
+              "required": false,
+              "id": "generalCDDPDatasource",
+              "questionOptions": {
+                "rendering": "ui-select-extended",
+                "concept": "7a22cfcb-a272-4eff-968c-5e9467125a7b",
+                "datasource": {
+                  "name": "dsdm_categorization_datasource",
+                  "config": {
+                    "cohortUuid": "da964ff0-648e-440b-a219-d2aeba3670d0"
+                  }
+                }
+              },
+              "hide": {
+                "hideWhenExpression": "isEmpty(dsdmApproach) || dsdmApproach != '73313728-c321-11e8-a355-529269fb1459' || drugPickupModel != '1b9b83d4-eaca-40da-a7c6-53b8ea3436ad'"
+              }
+            },
+            {
+              "label": "CLDDP Group",
+              "type": "obs",
+              "required": false,
+              "id": "clddpDatasource",
+              "questionOptions": {
+                "rendering": "ui-select-extended",
+                "concept": "7a22cfcb-a272-4eff-968c-5e9467125a7b",
+                "datasource": {
+                  "name": "dsdm_categorization_datasource",
+                  "config": {
+                    "cohortUuid": "5b7136fa-d207-4229-94a8-da6661ae00bf"
+                  }
+                }
+              },
+              "hide": {
+                "hideWhenExpression": "isEmpty(dsdmApproach) || dsdmApproach != '73313728-c321-11e8-a355-529269fb1459' || drugPickupModel != 'd77cc565-5e53-4633-8fc7-956cfc1831d9'"
               }
             },
             {
