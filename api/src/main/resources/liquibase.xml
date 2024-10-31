@@ -1042,7 +1042,45 @@ VALUES
 		</sql>
 	</changeSet>
 
-	<changeSet id="ugandaemr-20241031-1130" author="dsemujju"> 
+	<changeSet id="ugandaemr-20241015-1111" author="mmwanje">
+		<preConditions onFail="CONTINUE">
+			<tableExists tableName="bed"/>
+			<tableExists tableName="bed_location_map"/>
+			<tableExists tableName="bed_patient_assignment_map"/>
+			<tableExists tableName="bed_tag"/>
+			<tableExists tableName="bed_tag_map"/>
+			<tableExists tableName="bed_type"/>
+		</preConditions>
+
+		<comment>Dropping bed management module related tables</comment>
+
+		<sql>SET FOREIGN_KEY_CHECKS=0;</sql>
+		<dropTable tableName="bed"/>
+		<dropTable tableName="bed_location_map"/>
+		<dropTable tableName="bed_patient_assignment_map"/>
+		<dropTable tableName="bed_tag"/>
+		<dropTable tableName="bed_tag_map"/>
+		<dropTable tableName="bed_type"/>
+		<sql>SET FOREIGN_KEY_CHECKS=1;</sql>
+	</changeSet>
+
+	<changeSet id="ugandaemr-20241029-2256" author="slubwama">
+		<preConditions onFail="CONTINUE">
+			<sqlCheck expectedResult="1">
+				select count(property) from global_property where property="webservices.rest.maxResultsAbsolute";
+			</sqlCheck>
+			<sqlCheck expectedResult="1">
+				select count(property) from global_property where property="webservices.rest.maxResultsDefault";
+			</sqlCheck>
+		</preConditions>
+		<comment>UPDATE GLOBAL PROPERTY OF webservices.rest to UgandaEMR Defaults.</comment>
+		<sql>
+			UPDATE global_property set property_value=500 where property="webservices.rest.maxResultsAbsolute";
+			UPDATE global_property set property_value=100 where property="webservices.rest.maxResultsDefault";
+		</sql>
+	</changeSet>
+
+  <changeSet id="ugandaemr-20241031-1130" author="dsemujju"> 
 		<preConditions onFail="CONTINUE">
 			<sqlCheck expectedResult="1">
 				select count(*) from scheduler_task_config where uuid = '8c17b376-1a2b-11e1-a51a-00248140a5eb';
