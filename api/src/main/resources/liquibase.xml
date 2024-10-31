@@ -1105,6 +1105,75 @@ VALUES
 		</sql>
 	</changeSet>
 
+	<changeSet id="ugandaemr-20241031-1130" author="dsemujju">
+		<preConditions onFail="CONTINUE">
+			<sqlCheck expectedResult="1">
+				select count(*) from scheduler_task_config where uuid = "8c17b376-1a2b-11e1-a51a-00248140a5eb";
+			</sqlCheck>
+		</preConditions>
+		<comment>
+			Delete the following redundant sync task -  Auto close visits task
+		</comment>
+		<sql>
+			delete from scheduler_task_config where uuid ="8c17b376-1a2b-11e1-a51a-00248140a5eb";
+		</sql>
+	</changeSet>
+
+	<changeSet id="ugandaemr-20241031-1131" author="dsemujju">
+		<preConditions onFail="CONTINUE">
+			<sqlCheck expectedResult="1">
+				select count(*) from scheduler_task_config where uuid = "1428cdc3-b340-4c86-8553-7886b88dc4c2";
+			</sqlCheck>
+		</preConditions>
+		<comment>
+			Delete the following redundant sync task -  Intialize logic rule providers
+		</comment>
+		<sql>
+			delete from scheduler_task_config where uuid = "1428cdc3-b340-4c86-8553-7886b88dc4c2";
+		</sql>
+	</changeSet>
+
+	<changeSet id="ugandaemr-20241031-1132" author="dsemujju">
+		<preConditions onFail="CONTINUE">
+			<sqlCheck expectedResult="1">
+				select count(*) from scheduler_task_config where uuid = "eb9e447d-5ef9-4771-9e88-21916340b69c";
+			</sqlCheck>
+		</preConditions>
+		<comment>
+			Delete redundant sync task - Process HL7 task
+		</comment>
+		<sql>
+			delete from scheduler_task_config where uuid = "eb9e447d-5ef9-4771-9e88-21916340b69c";
+		</sql>
+	</changeSet>
+
+	<changeSet id="ugandaemr-20241031-1133" author="dsemujju">
+		<preConditions onFail="CONTINUE">
+			<sqlCheck expectedResult="1">
+				select count(*) from scheduler_task_config where uuid = "8b5caeea-2c3b-11e8-b467-0ed5f89f718b";
+			</sqlCheck>
+		</preConditions>
+		<comment>
+			Delete redundant sync task - Art summary patient transfer migration
+		</comment>
+		<sql>
+			delete from scheduler_task_config where uuid = "8b5caeea-2c3b-11e8-b467-0ed5f89f718b";
+		</sql>
+	</changeSet>
+
+	<changeSet id="ugandaemr-20241031-1134" author="dsemujju">
+		<preConditions onFail="CONTINUE">
+			<sqlCheck expectedResult="1">
+				select count(*) from scheduler_task_config where uuid ="08a36b06-7a71-11eb-9439-0242ac130002";
+			</sqlCheck>
+		</preConditions>
+		<comment>
+			Delete redundant sync task - Sync FHIR records a given server
+		</comment>
+		<sql>
+			delete from scheduler_task_config where uuid ="08a36b06-7a71-11eb-9439-0242ac130002";
+		</sql>
+	</changeSet>
 </databaseChangeLog>
 
 
